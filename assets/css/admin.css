@@ -1,0 +1,5 @@
+.admin-table td { min-width: 100px; }
+.admin-table td:first-child { min-width: 170px; }
+.admin-table .actions-cell { min-width: 170px; }
+.admin-section { scroll-margin-top: 30px; }
+@media (max-width: 760px) { .admin-table-wrap { border: 0; overflow: visible; background: transparent; } .admin-table, .admin-table tbody, .admin-table tr, .admin-table td { display: block; width: 100%; } .admin-table thead { display: none; } .admin-table tr { margin-bottom: 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 14px; } .admin-table td { display: grid; grid-template-columns: 110px 1fr; min-width: 0 !important; border: 0; padding: 6px 0; } .admin-table td::before { content: attr(data-label); color: var(--muted); font-size: 8px; letter-spacing: .08em; } .admin-table .actions-cell { display: flex; margin-top: 10px; } }

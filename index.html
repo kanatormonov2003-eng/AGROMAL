@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>AgroMal — закрытая B2B-платформа агропромышленного снабжения Кыргызстана</title>
+  <meta name="description" content="Закрытая B2B-платформа для оптовых закупок, поставок и цифрового взаимодействия участников агропромышленного рынка Кыргызстана.">
+  <link rel="canonical" href="https://agromal.kg/">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://agromal.kg/">
+  <meta property="og:title" content="AgroMal — закрытая B2B-платформа агропромышленного снабжения Кыргызстана">
+  <meta property="og:description" content="Закрытая B2B-платформа для оптовых закупок, поставок и цифрового взаимодействия участников агропромышленного рынка Кыргызстана.">
+  <meta property="og:image" content="https://agromal.kg/assets/img/og-cover.svg">
+  <meta name="theme-color" content="#121212">
+  <link rel="icon" href="./assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="./assets/js/config.js"></script>
+  <script type="module" src="./assets/js/index.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="shell site-header__inner">
+    <a class="brand" href="./index.html" aria-label="AGROMAL — главная"><img src="./assets/img/logo.svg" alt="" width="42" height="42"><span><b class="brand__name">AGROMAL</b><small class="brand__tag" data-i18n="tagline"></small></span></a>
+    <div class="header-actions"><nav class="lang-switch" aria-label="Язык интерфейса"><button type="button" data-lang="ky">KG</button><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></nav><span class="private-chip" data-i18n="privateAccess"></span></div>
+  </div></header>
+  <main>
+    <section class="hero"><div class="shell hero__grid">
+      <div><span class="micro" data-i18n="heroLabel"></span><h1 data-i18n="heroTitle"></h1><p class="hero__lead" data-i18n="heroText"></p><div class="signal-list"><span data-i18n="verified"></span><span data-i18n="direct"></span><span data-i18n="forward"></span></div></div>
+      <div class="panel login-panel" id="login"><div class="panel__head"><h2 data-i18n="loginTitle"></h2><p data-i18n="loginSub"></p></div>
+        <form id="login-form" novalidate>
+          <div class="field"><label for="identifier" data-i18n="identifier"></label><input id="identifier" name="identifier" type="text" inputmode="numeric" autocomplete="username" maxlength="14" required data-i18n-placeholder="identifierPlaceholder"></div>
+          <div class="field"><label for="password" data-i18n="password"></label><input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required data-i18n-placeholder="passwordPlaceholder"></div>
+          <button class="button button--wide" id="login-button" type="submit" data-i18n="connect"></button>
+          <p class="notice notice--error" id="login-message" role="alert" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </div></section>
+    <div class="ticker" aria-label="Демонстрационный рыночный информер"><div class="ticker__track"><div class="ticker__item"><b data-i18n="demoData"></b><span data-i18n="ticker"></span></div><div class="ticker__item" aria-hidden="true"><b>DEMO DATA</b><span data-i18n="ticker"></span></div></div></div>
+    <section class="section section--muted"><div class="shell"><div class="section__head"><span class="micro" data-i18n="ecosystem"></span><h2 data-i18n="ecosystemTitle"></h2><p data-i18n="ecosystemText"></p></div><div class="ecosystem-grid"><article><strong>01 · ACCESS</strong><p data-i18n="verified"></p></article><article><strong>02 · LOTS</strong><p data-i18n="direct"></p></article><article><strong>03 · CONTRACT</strong><p data-i18n="forward"></p></article></div></div></section>
+    <section class="section" id="access"><div class="shell cta-row"><p data-i18n="requestLead"></p><a class="button button--wide" id="verification-whatsapp" data-i18n="requestAccess" aria-disabled="true"></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer__inner"><span>© 2026 ТОРГОВЫЙ ДОМ AGROMAL</span><div class="footer__docs" title="Документы в подготовке"><span data-i18n="offer"></span><span data-i18n="privacy"></span><span data-i18n="rules"></span></div></div></footer>
+</body>
+</html>
