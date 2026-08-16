@@ -47,3 +47,6 @@ tr:hover td { background: rgba(255,255,255,.015); }
 .spinner { width: 16px; height: 16px; border: 2px solid var(--border-strong); border-top-color: var(--accent-bright); border-radius: 50%; animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (max-width: 760px) { .desktop-table--lots { display: none; } .mobile-lots { display: grid; } .form-grid { grid-template-columns: 1fr; } .form-grid .field--full { grid-column: auto; } }
+.user-meta {
+  display: none !important;
+}

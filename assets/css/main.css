@@ -774,3 +774,6 @@ h3 {
     border-radius: 8px;
   }
 }
+.user-meta {
+  display: none !important;
+}
