@@ -31,7 +31,11 @@ export function whatsappUrl(number, message) {
 
 export function setWhatsappLink(link, number, messages) {
   if (!link) return;
-  const message = typeof messages === "function" ? messages(language()) : messages[language()] || messages.ru;
+  const message = typeof messages === "function"
+    ? messages(language())
+    : typeof messages === "string"
+      ? messages
+      : messages[language()] || messages.ru;
   const url = whatsappUrl(number, message);
   if (url) {
     link.href = url;
@@ -48,6 +52,16 @@ export function setWhatsappLink(link, number, messages) {
 
 export function formatNumber(value) {
   return new Intl.NumberFormat(language() === "ky" ? "ky-KG" : language()).format(Number(value));
+}
+
+export function formatDateTime(value) {
+  return new Intl.DateTimeFormat(language() === "ky" ? "ky-KG" : language(), {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  }).format(new Date(value));
 }
 
 export function escapeFilter(value) {

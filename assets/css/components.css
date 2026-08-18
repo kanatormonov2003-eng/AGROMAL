@@ -1,12 +1,45 @@
 .field { display: grid; gap: 8px; margin-bottom: 18px; }
 .field label { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
-.field input, .field select { width: 100%; min-height: 48px; border: 1px solid var(--border-strong); border-radius: 5px; background: #111412; color: var(--text); padding: 11px 13px; }
-.field input::placeholder { color: #646b66; }
-.field input:focus, .field select:focus { border-color: var(--accent); outline: 0; box-shadow: 0 0 0 3px rgba(79,141,107,.13); }
-.field input[aria-invalid="true"] { border-color: var(--danger); }
+.field input, .field select, .field textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  background: #111412;
+  color: var(--text);
+  padding: 11px 13px;
+}
+.field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+.field input::placeholder, .field textarea::placeholder { color: #646b66; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--accent);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(79,141,107,.13);
+}
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--danger); }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
 .form-grid .field--full { grid-column: 1 / -1; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; border-radius: 5px; padding: 11px 16px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 750; letter-spacing: .08em; text-align: center; text-decoration: none; cursor: pointer; transition: background .18s ease, border-color .18s ease, opacity .18s ease; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 11px 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, opacity .18s ease;
+}
 .button:hover { background: #5a9c78; }
 .button--wide { width: 100%; }
 .button--ghost { border-color: var(--border-strong); background: transparent; color: #d8dcd9; }
@@ -27,26 +60,568 @@ tr:last-child td { border-bottom: 0; }
 tr:hover td { background: rgba(255,255,255,.015); }
 .lot-number { color: var(--accent-bright); font-variant-numeric: tabular-nums; font-weight: 650; }
 .demo-tag { display: inline-block; margin-left: 6px; border: 1px solid #584f35; border-radius: 3px; padding: 2px 4px; color: #cdbb7e; font-size: 7px; vertical-align: middle; }
-.status { display: inline-flex; align-items: center; gap: 7px; max-width: 175px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .05em; }
-.status::before { content: ""; flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: #69716c; }
-.status--available { color: var(--accent-bright); }
-.status--available::before, .status--active::before { background: var(--accent-bright); }
-.status--reserved { color: var(--warning); }
-.status--reserved::before, .status--pending::before { background: var(--warning); }
-.status--blocked::before { background: var(--danger); }
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 240px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.status::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #69716c;
+}
+
+.status--available {
+  color: var(--accent-bright);
+}
+
+.status--available::before,
+.status--active::before {
+  background: var(--accent-bright);
+}
+
+.status--reserved {
+  color: var(--warning);
+}
+
+.status--reserved::before,
+.status--pending::before {
+  background: var(--warning);
+}
+
+/* ЗАКРЫТЫЙ / ВЫКУПЛЕННЫЙ ЛОТ */
+.status--closed {
+  color: var(--danger) !important;
+}
+
+.status--closed::before {
+  background: var(--danger) !important;
+}
+
+.status--sold {
+  color: var(--danger) !important;
+}
+
+.status--sold::before {
+  background: var(--danger) !important;
+}
+
+.status--blocked {
+  color: var(--danger) !important;
+}
+
+.status--blocked::before {
+  background: var(--danger) !important;
+}
 .mobile-lots { display: none; gap: 12px; }
 .lot-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 17px; }
 .lot-card__top { display: flex; align-items: start; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
 .lot-card__title { margin: 7px 0 0; font-size: 17px; }
 .lot-card__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 18px; }
-.data-pair span { display: block; color: var(--muted); font-size: 8px; letter-spacing: .1em; }
+.data-pair span { display: block; color: var(--muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
 .data-pair strong { display: block; margin-top: 4px; color: #d9ddda; font-size: 12px; font-weight: 500; }
 .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
 .toolbar h2 { margin: 0; font-size: 15px; letter-spacing: .08em; }
 .actions-cell { display: flex; flex-wrap: wrap; gap: 6px; }
 .spinner { width: 16px; height: 16px; border: 2px solid var(--border-strong); border-top-color: var(--accent-bright); border-radius: 50%; animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-@media (max-width: 760px) { .desktop-table--lots { display: none; } .mobile-lots { display: grid; } .form-grid { grid-template-columns: 1fr; } .form-grid .field--full { grid-column: auto; } }
+@media (max-width: 760px) {
+  .desktop-table--lots { display: none; }
+  .mobile-lots { display: grid; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .field--full { grid-column: auto; }
+}
 .user-meta {
   display: none !important;
+}
+/* =========================================================
+   LOT MEDIA PREVIEW
+   ========================================================= */
+
+.lot-card__media {
+  display: grid;
+  gap: 8px;
+  margin: -2px 0 18px;
+}
+
+.lot-card__media-visual {
+  position: relative;
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  overflow: hidden;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(117, 181, 143, .08),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #151a17,
+      #0d110f
+    );
+}
+
+.lot-card__media-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 42%,
+      rgba(255,255,255,.025) 42% 43%,
+      transparent 43% 100%
+    );
+
+  pointer-events: none;
+}
+
+.lot-card__media-icon {
+  position: relative;
+  z-index: 1;
+
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(117, 181, 143, .28);
+  border-radius: 6px;
+
+  color: var(--accent-bright);
+  background: rgba(79, 141, 107, .07);
+
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.lot-card__media-info {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.lot-card__media-label {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.lot-card__media-title {
+  color: #e4e8e5;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.lot-card__media-note {
+  color: #7f8882;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.lot-card__media-link {
+  width: 100%;
+  min-height: 34px;
+  font-size: 8px;
+}
+
+@media (min-width: 761px) {
+  .lot-card__media {
+    display: none;
+  }
+}
+/* =========================================================
+   DESKTOP LOT LIST
+   ========================================================= */
+
+.desktop-lots {
+  display: grid;
+  gap: 8px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--surface);
+
+  overflow: hidden;
+}
+
+.desktop-lot {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) 230px;
+
+  gap: 18px;
+  align-items: center;
+
+  padding: 12px 14px;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 27, 25, .98),
+      rgba(20, 23, 21, .98)
+    );
+
+  transition:
+    background .16s ease,
+    border-color .16s ease;
+}
+
+.desktop-lot:last-child {
+  border-bottom: 0;
+}
+
+.desktop-lot:hover {
+  background: var(--surface-2);
+}
+
+.desktop-lot__media {
+  min-width: 0;
+}
+
+.desktop-lot__image {
+  width: 112px;
+  height: 82px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1c211e,
+      #101411
+    );
+}
+
+.desktop-lot__image-product {
+  color: #aeb7b1;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+.desktop-lot__main {
+  min-width: 0;
+}
+
+.desktop-lot__top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.desktop-lot__id {
+  flex: 0 0 auto;
+
+  color: var(--accent-bright);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.desktop-lot__title {
+  min-width: 0;
+
+  margin: 0;
+
+  color: #e2e6e3;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desktop-lot__details {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px 14px;
+
+  margin-top: 9px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.desktop-lot__details span {
+  position: relative;
+}
+
+.desktop-lot__details span + span::before {
+  content: "·";
+
+  margin-right: 8px;
+
+  color: #555d57;
+}
+
+.desktop-lot__side {
+  min-width: 0;
+
+  display: grid;
+  justify-items: end;
+
+  gap: 7px;
+
+  text-align: right;
+}
+
+.desktop-lot__price {
+  color: #e7ebe8;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.desktop-lot__side .status {
+  max-width: 100%;
+
+  justify-content: flex-end;
+
+  text-align: right;
+}
+
+.desktop-lot__actions {
+  justify-content: flex-end;
+}
+
+.desktop-lot__actions .button {
+  min-height: 32px;
+}
+
+/* =========================================================
+   MOBILE MEDIA
+   ========================================================= */
+
+.lot-card__media {
+  width: 100%;
+  margin-bottom: 17px;
+}
+
+.lot-card__media-placeholder {
+  width: 100%;
+  height: 170px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b201d,
+      #101411
+    );
+
+  text-align: center;
+}
+
+.lot-card__media-placeholder strong {
+  color: #d7ddd9;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.lot-card__media-placeholder span {
+  color: var(--muted);
+
+  font-size: 8px;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .desktop-lot {
+    grid-template-columns: 96px minmax(0, 1fr) 190px;
+    gap: 14px;
+  }
+
+  .desktop-lot__image {
+    width: 96px;
+    height: 74px;
+  }
+
+  .desktop-lot__title {
+    font-size: 13px;
+  }
+
+  .desktop-lot__price {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+
+  .desktop-lots {
+    display: none !important;
+  }
+
+  .desktop-lot {
+    display: none;
+  }
+
+  .lot-card__media-placeholder {
+    height: 180px;
+  }
+}
+/* =========================================================
+   LOTS — FULL TEXT
+   ========================================================= */
+
+/* Desktop */
+.desktop-lot__title,
+.desktop-lot__details span,
+.desktop-lot__price,
+.desktop-lot__side .status {
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Цена и примечание могут занимать несколько строк */
+.desktop-lot__price {
+  line-height: 1.35;
+}
+
+/* Основная часть карточки */
+.desktop-lot__main {
+  min-width: 0;
+}
+
+/* Правая колонка */
+.desktop-lot__side {
+  min-width: 0;
+}
+
+.desktop-lot__side .status {
+  max-width: none;
+}
+
+/* Название лота */
+.desktop-lot__title {
+  line-height: 1.3;
+}
+
+/* Детали */
+.desktop-lot__details {
+  min-width: 0;
+}
+
+.desktop-lot__details span {
+  line-height: 1.45;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .lot-card__title,
+  .data-pair strong,
+  .status {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .lot-card__title {
+    line-height: 1.3;
+  }
+
+  .data-pair strong {
+    line-height: 1.4;
+  }
+
+  .status {
+    max-width: 100%;
+    line-height: 1.35;
+  }
+}
+.desktop-lot__price-wrap {
+  min-width: 0;
+}
+
+.desktop-lot__price {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.desktop-lot__price-note {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.35;
+  letter-spacing: .04em;
 }

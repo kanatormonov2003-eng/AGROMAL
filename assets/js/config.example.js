@@ -5,5 +5,6 @@ window.AGROMAL_CONFIG = Object.freeze({
   supabaseAnonKey: "YOUR_SUPABASE_ANON_KEY",
   whatsappVerification: "996XXXXXXXXX",
   whatsappModeration: "996XXXXXXXXX",
+  bookingAppsScriptUrl: "https://script.google.com/macros/s/YOUR_WEB_APP_ID/exec",
   siteUrl: "https://agromal.kg"
 });

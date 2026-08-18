@@ -27,6 +27,7 @@ grant execute on function private.is_admin() to authenticated;
 alter table public.organizations enable row level security;
 alter table public.profiles enable row level security;
 alter table public.lots enable row level security;
+alter table public.booking_requests enable row level security;
 
 drop policy if exists organizations_select_own_or_admin on public.organizations;
 create policy organizations_select_own_or_admin on public.organizations for select to authenticated
@@ -55,5 +56,13 @@ using (private.is_admin()) with check (private.is_admin());
 drop policy if exists lots_delete_admin on public.lots;
 create policy lots_delete_admin on public.lots for delete to authenticated
 using (private.is_admin());
+
+drop policy if exists booking_requests_select_admin on public.booking_requests;
+create policy booking_requests_select_admin on public.booking_requests for select to authenticated
+using (private.is_admin());
+
+drop policy if exists booking_requests_update_admin on public.booking_requests;
+create policy booking_requests_update_admin on public.booking_requests for update to authenticated
+using (private.is_admin()) with check (private.is_admin());
 
 commit;

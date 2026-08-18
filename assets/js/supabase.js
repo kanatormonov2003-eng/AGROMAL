@@ -12,7 +12,9 @@ export function isConfigured() {
     const url = new URL(supabaseUrl);
     const local = ["localhost", "127.0.0.1"].includes(url.hostname);
     return (url.protocol === "https:" || (local && url.protocol === "http:")) && !url.pathname.replaceAll("/", "");
-  } catch { return false; }
+  } catch {
+    return false;
+  }
 }
 
 export function loginEmail(identifier) {
@@ -22,8 +24,11 @@ export function loginEmail(identifier) {
 }
 
 function readSession() {
-  try { return JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null"); }
-  catch { return null; }
+  try {
+    return JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
+  } catch {
+    return null;
+  }
 }
 
 function storeSession(session) {
@@ -36,7 +41,11 @@ async function parseResponse(response) {
   const text = await response.text();
   let body = null;
   if (text) {
-    try { body = JSON.parse(text); } catch { body = { message: text }; }
+    try {
+      body = JSON.parse(text);
+    } catch {
+      body = { message: text };
+    }
   }
   if (!response.ok) {
     const error = new Error(body?.msg || body?.message || body?.error_description || "REQUEST_FAILED");
@@ -75,8 +84,12 @@ export async function getValidSession() {
   if (!session?.access_token || !session?.refresh_token) return null;
   const expiresAt = Number(session.expires_at || 0) * 1000;
   if (expiresAt && expiresAt < Date.now() + 60000) {
-    try { session = await refreshSession(session); }
-    catch { storeSession(null); return null; }
+    try {
+      session = await refreshSession(session);
+    } catch {
+      storeSession(null);
+      return null;
+    }
   }
   return session;
 }
@@ -104,7 +117,9 @@ export async function signOut() {
       method: "POST",
       headers: baseHeaders(session.access_token)
     });
-  } catch { /* Local session is already cleared. */ }
+  } catch {
+    /* Local session is already cleared. */
+  }
 }
 
 export async function getUser() {
@@ -119,6 +134,21 @@ export async function getUser() {
     storeSession(null);
     return null;
   }
+}
+
+export async function publicDb(path, { method = "GET", body, query = "", prefer } = {}) {
+  const { supabaseUrl } = config();
+  const headers = baseHeaders(null, prefer ? { Prefer: prefer } : {});
+  const response = await fetch(`${supabaseUrl}/rest/v1/${path}${query}`, {
+    method,
+    headers,
+    body: body === undefined ? undefined : JSON.stringify(body)
+  });
+  return parseResponse(response);
+}
+
+export function publicRpc(name, body = {}) {
+  return publicDb(`rpc/${name}`, { method: "POST", body });
 }
 
 export async function db(path, { method = "GET", body, query = "", prefer } = {}) {
