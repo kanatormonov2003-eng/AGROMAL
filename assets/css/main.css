@@ -2312,3 +2312,45 @@ html {
     font-size: 8px;
   }
 }
+/* =========================================================
+   MOBILE ADMIN ACTIONS — FIX LEFT OVERFLOW
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .admin-table td:last-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .admin-table .actions-cell {
+    width: 100%;
+    min-width: 0 !important;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .admin-table .actions-cell .button {
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    flex: 0 1 auto;
+
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+
+    padding: 6px 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
