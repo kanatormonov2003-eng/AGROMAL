@@ -1726,7 +1726,7 @@ body.homepage .homepage-lot__animal {
   border: 1px solid #333a35;
   border-radius: 4px;
   background: linear-gradient(135deg, #22271f, #10130f);
-  color: var(--agro-gold-bright);
+  color: #8b938d;
   font-size: 8px;
   font-weight: 800;
   line-height: 1.15;
@@ -2142,4 +2142,277 @@ body.homepage .homepage-lot__note {
 }
 body.homepage .homepage-lot__more {
   display: none !important;
+}
+/* =========================================================
+   FEATURE TITLES — FORCE ONE LINE
+   ========================================================= */
+
+body.homepage .ref-feature__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+body.homepage .ref-feature__head > span:first-child {
+ flex: 0 0 17px;
+  width: 17px;
+  min-width: 17px;
+  max-width: 17px;
+  height: 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  line-height: 1;
+  color: #9a9e9c;
+  flex-shrink: 0;
+}
+body.homepage .ref-feature__head {
+  gap: 8px;
+}
+body.homepage .ref-feature__head > span:last-child {
+  flex: 1 1 auto;
+  width: auto !important;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  display: block;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: clip;
+  line-height: 1.2;
+}
+/* =========================================================
+   BRAND TAG — KYRGYZ FLAG
+   ========================================================= */
+
+body.homepage .brand__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+body.homepage .brand__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 10px;
+
+  flex: 0 0 16px;
+}
+
+body.homepage .brand__flag svg {
+  display: block;
+  width: 16px;
+  height: 10px;
+  max-width: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  body.homepage .brand__flag {
+    width: 14px;
+    height: 9px;
+    flex-basis: 14px;
+  }
+
+  body.homepage .brand__flag svg {
+    width: 14px;
+    height: 9px;
+  }
+}
+/* =========================================================
+   DEMO LOTS — TEXT SIZE
+   ========================================================= */
+
+body.homepage .homepage-lot__animal {
+  font-size: 6px;
+  line-height: 1.15;
+  letter-spacing: .04em;
+  text-align: center;
+  white-space: normal;
+  overflow: hidden;
+  word-break: normal;
+}
+/* =========================================================
+   MOBILE HEADER — TAG РЯДОМ С AGROMAL
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .site-header__inner--home {
+    display: grid !important;
+
+    grid-template-columns:
+      auto
+      auto
+      minmax(0, 1fr)
+      auto;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: calc(100% - 20px);
+    min-height: 54px;
+
+    padding: 4px 0 10px;
+
+    flex-wrap: nowrap !important;
+  }
+
+  /* AGROMAL */
+  body.homepage .brand--home {
+    min-width: max-content;
+    width: auto;
+    flex: none;
+  }
+
+  body.homepage .brand__name {
+    white-space: nowrap !important;
+  }
+
+  /* РАЗДЕЛИТЕЛЬ */
+  body.homepage .brand-divider {
+    width: 1px;
+    min-width: 1px;
+    height: 24px;
+    flex: none;
+  }
+
+  /* TAG */
+  body.homepage .brand__tag {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+
+    font-size: 7px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .045em !important;
+  }
+
+  /* ФЛАГ */
+  body.homepage .brand__flag {
+    flex: 0 0 14px;
+    width: 14px;
+    height: 9px;
+  }
+
+  body.homepage .brand__flag svg {
+    width: 14px;
+    height: 9px;
+  }
+
+  /* ЯЗЫКИ */
+  body.homepage .lang-switch--compact {
+    min-width: max-content;
+    width: auto;
+    margin-left: 0 !important;
+    flex: none;
+  }
+
+  body.homepage .lang-switch button {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+/* =========================================================
+   MOBILE DEMO LOTS — SCROLL LEFT + RIGHT
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .homepage-demo-lots {
+    width: calc(100% - 20px);
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x;
+  }
+
+  body.homepage .homepage-demo-lots::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.homepage .homepage-demo-lots__track {
+    display: block !important;
+    width: max-content !important;
+    min-width: max-content !important;
+  }
+
+  /*
+   * Реальный запас слева.
+   * Благодаря ему можно двигать содержимое вправо
+   * от первоначальной позиции.
+   */
+  body.homepage .homepage-demo-lots__track::before {
+    content: "";
+    display: block;
+    width: 285px;
+    height: 1px;
+  }
+
+  /*
+   * Запас справа.
+   */
+  body.homepage .homepage-demo-lots__track::after {
+    content: "";
+    display: block;
+    width: 285px;
+    height: 1px;
+  }
+
+  body.homepage .homepage-demo-lots__notice {
+    width: 1465px !important;
+    min-width: 1465px !important;
+    max-width: none !important;
+  }
+
+  body.homepage .homepage-demo-lots__grid {
+    width: max-content !important;
+    min-width: max-content !important;
+    grid-template-columns: repeat(5, 285px) !important;
+    padding-right: 0 !important;
+  }
+}
+/* =========================================================
+   HOMEPAGE — REMOVE GOLD FROM SUPPORT / TRUST / LEGAL
+   ========================================================= */
+
+body.homepage .hero-help__content strong,
+body.homepage .hero-help__content a,
+body.homepage .hero-trust__copy,
+body.homepage .hero-help__icon,
+body.homepage .hero-help__icon svg,
+body.homepage .hero-trust__icon,
+body.homepage .hero-trust__icon svg,
+body.homepage .homepage-legal__icon,
+body.homepage .homepage-legal__copy strong,
+body.homepage .homepage-legal__copy i,
+body.homepage .homepage-legal__brand-name {
+  color: #9aa19b !important;
+}
+/* DEMO LOTS — LOT ID GRAY */
+body.homepage .homepage-lot__id {
+  color: #9aa19b !important;
 }

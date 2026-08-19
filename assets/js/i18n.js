@@ -11,9 +11,8 @@ const messages = {
     brandName:
       "AgroMal",
 
-    tagline:
-      "ОПТОВЫЕ ПАРТИИ СКОТА · ДҮҢ МАЛ ПАРТИЯЛАРЫ",
-
+    taglineAfter:
+      "ОПТОВЫЕ ПАРТИИ СКОТА",
     kg:
       "КГ",
 
@@ -86,7 +85,7 @@ const messages = {
       "Цифровая инфраструктура для оптовых закупок животноводческой продукции.",
 
     heroText:
-      "AGROMAL превращает предложение фермера в проверенный оптовый лот с идентификацией, ветеринарной проверкой и фото-видеофиксацией — и напрямую соединяет его с профессиональным покупателем.",
+      "превращает предложение фермера в проверенный оптовый лот с идентификацией, ветеринарной проверкой и фото-видеофиксацией — и напрямую соединяет его с профессиональным покупателем.",
 
     /* =====================================================
        FORMULA / PRINCIPLES
@@ -339,7 +338,7 @@ const messages = {
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-      "КРС",
+      "🔒 Фото-видео доступны после регистрации",
 
     publicLot1Id:
       "[ ЛОТ #00101 | КРС — БЫЧКИ ]",
@@ -354,7 +353,7 @@ const messages = {
       "Чуйская обл., Сокулукский р-н",
 
     publicLot1Status:
-      "🔴 ТОТАЛЬНО ВЫКУПЛЕНО",
+      "ТОТАЛЬНО ВЫКУПЛЕНО",
 
     publicLot1Note:
       "ПО ФИКСИРОВАННОЙ ЦЕНЕ",
@@ -362,7 +361,7 @@ const messages = {
     /* PUBLIC LOT 2 */
 
     publicLot2Animal:
-      "КРС",
+      "🔒 Фото-видео доступны после регистрации",
 
     publicLot2Id:
       "[ ЛОТ #00103 | КРС — ПРОМЫШЛЕННЫЙ ]",
@@ -377,7 +376,7 @@ const messages = {
       "Чуйская обл., Аламединский р-н",
 
     publicLot2Status:
-      "🔴 ТОРГИ ЗАКРЫТЫ",
+      "ТОРГИ ЗАКРЫТЫ",
 
     publicLot2Note:
       "ЛОТ ОТГРУЖЕН НА МЯСОКОМБИНАТ",
@@ -385,7 +384,7 @@ const messages = {
     /* PUBLIC LOT 3 */
 
     publicLot3Animal:
-      "МРС",
+      "🔒 Фото-видео доступны после регистрации",
 
     publicLot3Id:
       "[ ЛОТ #00201 | МРС — ОВЦЫ ]",
@@ -400,7 +399,7 @@ const messages = {
       "Нарынская обл., Кочкорский р-н",
 
     publicLot3Status:
-      "🔴 ТОТАЛЬНО ВЫКУПЛЕНО",
+      "ТОТАЛЬНО ВЫКУПЛЕНО",
 
     publicLot3Note:
       "ТРАНЗИТ ОФОРМЛЕН",
@@ -408,7 +407,7 @@ const messages = {
     /* PUBLIC LOT 4 */
 
     publicLot4Animal:
-      "ЛОШАДИ",
+      "🔒 Фото-видео доступны после регистрации",
 
     publicLot4Id:
       "[ ЛОТ #00301 | ЛОШАДИ — СЕЗОННЫЙ ]",
@@ -426,12 +425,12 @@ const messages = {
       "Таласская обл., Бакай-Атинский р-н",
 
     publicLot4Status:
-      "🔴 ЛОТ ВЫКУПЛЕН ПО КОНТРАКТУ",
+      "ЛОТ ВЫКУПЛЕН ПО КОНТРАКТУ",
 
     /* PUBLIC LOT 5 */
 
     publicLot5Animal:
-      "ЯКИ",
+      "🔒 Фото-видео доступны после регистрации",
 
     publicLot5Id:
       "[ ЛОТ #00401 | ЯКИ — ТОПОЗ ]",
@@ -446,7 +445,7 @@ const messages = {
       "Нарынская обл., Ат-Башинский р-н (Высокогорные сырты)",
 
     publicLot5Status:
-      "🔒 ЛОТ ЗАБРОНИРОВАН",
+      "ЛОТ ЗАБРОНИРОВАН",
 
     publicLot5Note:
       "Обеспечительный форвардный депозит внесён",
@@ -1006,8 +1005,8 @@ const messages = {
     brandName:
       "AgroMal",
 
-    tagline:
-      "ДҮҢ МАЛ ПАРТИЯЛАРЫ · МАЛДЫН ДҮҢ ПАРТИЯЛАРЫ",
+    taglineAfter:
+      "МАЛДЫН ДҮҢ ПАРТИЯЛАРЫ",
 
     kg:
       "КГ",
@@ -1077,7 +1076,7 @@ const messages = {
       "Мал чарба продукциясын дүң сатып алуулар үчүн санариптик инфраструктура.",
 
     heroText:
-      "AGROMAL фермердин сунушун жаныбарларды идентификациялоо, ветеринардык текшерүү жана фото-видео каттоосу менен текшерилген дүң лотко айландырып, аны түздөн-түз кесипкөй сатып алуучу менен байланыштырат.",
+      "фермердин сунушун жаныбарларды идентификациялоо, ветеринардык текшерүү жана фото-видео каттоосу менен текшерилген дүң лотко айландырып, аны түздөн-түз кесипкөй сатып алуучу менен байланыштырат.",
 
     formulaLabel:
       "⚡ ФИРМАЛЫК ФОРМУЛА",
@@ -1310,7 +1309,7 @@ const messages = {
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-      "КРС",
+      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot1Id:
       "[ ЛОТ #00101 | КРС — БУКАЛАР ]",
@@ -1325,7 +1324,7 @@ const messages = {
       "Чүй обл., Сокулук району",
 
     publicLot1Status:
-      "🔴 ТОЛУК САТЫП АЛЫНДЫ",
+      "ТОЛУК САТЫП АЛЫНДЫ",
 
     publicLot1Note:
       "БЕЛГИЛЕНГЕН БАА БОЮНЧА",
@@ -1333,7 +1332,7 @@ const messages = {
     /* PUBLIC LOT 2 */
 
     publicLot2Animal:
-      "КРС",
+      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot2Id:
       "[ ЛОТ #00103 | КРС — ӨНӨР ЖАЙЛЫК ]",
@@ -1348,7 +1347,7 @@ const messages = {
       "Чүй обл., Аламүдүн району",
 
     publicLot2Status:
-      "🔴 СООДА ЖАБЫЛДЫ",
+      "СООДА ЖАБЫЛДЫ",
 
     publicLot2Note:
       "ЛОТ ЭТ КОМБИНАТЫНА ЖӨНӨТҮЛДҮ",
@@ -1356,7 +1355,7 @@ const messages = {
     /* PUBLIC LOT 3 */
 
     publicLot3Animal:
-      "МРС",
+      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot3Id:
       "[ ЛОТ #00201 | МРС — КОЙЛОР ]",
@@ -1371,7 +1370,7 @@ const messages = {
       "Нарын обл., Кочкор району",
 
     publicLot3Status:
-      "🔴 ТОЛУК САТЫП АЛЫНДЫ",
+      "ТОЛУК САТЫП АЛЫНДЫ",
 
     publicLot3Note:
       "ТРАНЗИТ ТАРИЗДЕЛДИ",
@@ -1379,7 +1378,7 @@ const messages = {
     /* PUBLIC LOT 4 */
 
     publicLot4Animal:
-      "ЖЫЛКЫЛАР",
+      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot4Id:
       "[ ЛОТ #00301 | ЖЫЛКЫЛАР — СЕЗОНДУК ]",
@@ -1397,12 +1396,12 @@ const messages = {
       "Талас обл., Бакай-Ата району",
 
     publicLot4Status:
-      "🔴 ЛОТ КЕЛИШИМ БОЮНЧА САТЫП АЛЫНДЫ",
+      "ЛОТ КЕЛИШИМ БОЮНЧА САТЫП АЛЫНДЫ",
 
     /* PUBLIC LOT 5 */
 
     publicLot5Animal:
-      "ТОПОЗДОР",
+      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot5Id:
       "[ ЛОТ #00401 | ТОПОЗДОР — ТОПОЗ ]",
@@ -1417,7 +1416,7 @@ const messages = {
       "Нарын обл., Ат-Башы району (бийик тоолуу сырты)",
 
     publicLot5Status:
-      "🔒 ЛОТ БРОНДОЛГОН",
+      "ЛОТ БРОНДОЛГОН",
 
     publicLot5Note:
       "КАМСЫЗДООЧУ ФОРВАРД ДЕПОЗИТИ ТӨЛӨНДҮ",
@@ -1960,8 +1959,8 @@ const messages = {
     brandName:
       "AgroMal",
 
-    tagline:
-      "WHOLESALE LIVESTOCK LOTS · ДҮҢ МАЛ ПАРТИЯЛАРЫ",
+    taglineAfter:
+      "WHOLESALE LIVESTOCK LOTS",
 
     kg:
       "KY",
@@ -2031,7 +2030,7 @@ const messages = {
       "Digital infrastructure for wholesale livestock procurement.",
 
     heroText:
-      "AGROMAL turns a farmer’s offering into a verified wholesale lot with animal identification, veterinary inspection, and photo-video documentation — and directly connects it with a professional buyer.",
+      "turns a farmer’s offering into a verified wholesale lot with animal identification, veterinary inspection, and photo-video documentation — and directly connects it with a professional buyer.",
 
     formulaLabel:
       "⚡ SIGNATURE FORMULA",
@@ -2264,7 +2263,7 @@ const messages = {
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-      "CATTLE",
+    "🔒 Photo and video available after registration",
 
     publicLot1Id:
       "[ LOT #00101 | CATTLE — BULLS ]",
@@ -2279,7 +2278,7 @@ const messages = {
       "Chuy Region, Sokuluk District",
 
     publicLot1Status:
-      "🔴 FULLY PURCHASED",
+      "FULLY PURCHASED",
 
     publicLot1Note:
       "AT A FIXED PRICE",
@@ -2287,7 +2286,7 @@ const messages = {
     /* PUBLIC LOT 2 */
 
     publicLot2Animal:
-      "CATTLE",
+      "🔒 Photo and video available after registration",
 
     publicLot2Id:
       "[ LOT #00103 | CATTLE — INDUSTRIAL ]",
@@ -2302,7 +2301,7 @@ const messages = {
       "Chuy Region, Alamüdün District",
 
     publicLot2Status:
-      "🔴 TRADING CLOSED",
+      "TRADING CLOSED",
 
     publicLot2Note:
       "LOT SHIPPED TO MEAT PROCESSING PLANT",
@@ -2310,7 +2309,7 @@ const messages = {
     /* PUBLIC LOT 3 */
 
     publicLot3Animal:
-      "SHEEP",
+      "🔒 Photo and video available after registration",
 
     publicLot3Id:
       "[ LOT #00201 | SHEEP — RAMS ]",
@@ -2333,7 +2332,7 @@ const messages = {
     /* PUBLIC LOT 4 */
 
     publicLot4Animal:
-      "HORSES",
+      "🔒 Photo and video available after registration",
 
     publicLot4Id:
       "[ LOT #00301 | HORSES — SEASONAL ]",
@@ -2351,12 +2350,12 @@ const messages = {
       "Talas Region, Bakai-Ata District",
 
     publicLot4Status:
-      "🔴 LOT PURCHASED UNDER CONTRACT",
+      "LOT PURCHASED UNDER CONTRACT",
 
     /* PUBLIC LOT 5 */
 
     publicLot5Animal:
-      "YAKS",
+      "🔒 Photo and video available after registration",
 
     publicLot5Id:
       "[ LOT #00401 | YAKS — TOPOZ ]",
@@ -2371,7 +2370,7 @@ const messages = {
       "Naryn Region, At-Bashy District (Highland pastures)",
 
     publicLot5Status:
-      "🔒 LOT RESERVED",
+      "LOT RESERVED",
 
     publicLot5Note:
       "SECURITY FORWARD DEPOSIT PAID",
