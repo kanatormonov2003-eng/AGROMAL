@@ -2484,3 +2484,62 @@ body.homepage .homepage-legal__icon svg {
   }
 
 }
+/* =========================================================
+   MOBILE — MOVE KYRGYZ FLAG TO FOOTER BRAND
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* Верхний флаг возле слогана скрываем */
+  body.homepage .brand__tag .brand__flag {
+    display: none !important;
+  }
+
+  /* AgroMal внизу */
+  body.homepage .homepage-legal__brand-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  /* Добавляем флаг справа от AgroMal */
+
+}
+@media (max-width: 767px) {
+
+  body.homepage .brand__tag .brand__flag {
+    display: none !important;
+  }
+
+  body.homepage .homepage-legal__brand-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 12px;
+    flex: 0 0 18px;
+  }
+
+  body.homepage .homepage-legal__brand-flag svg {
+    width: 18px;
+    height: 12px;
+    display: block;
+  }
+
+}
+/* =========================================================
+   RESTORE GRAY — SUPPORT / FEATURE ACCENTS
+   ========================================================= */
+
+/* =========================================================
+   RESTORE GRAY — FEATURES + SUPPORT
+   ========================================================= */
+
+body.homepage .ref-feature__head,
+body.homepage .ref-feature__head > span:first-child,
+body.homepage .hero-help__content strong,
+body.homepage .hero-help__content a,
+body.homepage .hero-help__icon,
+body.homepage .hero-help__icon svg {
+  color: #9aa19b !important;
+}
