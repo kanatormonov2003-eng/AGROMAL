@@ -9,10 +9,14 @@ const messages = {
        ===================================================== */
 
     brandName:
-      "AgroMal",
+      "AgroMal.kg",
+
+    taglineBefore:
+     "ОПТОВЫЕ ПАРТИИ СКОТА",
 
     taglineAfter:
-      "ОПТОВЫЕ ПАРТИИ СКОТА",
+      "ДҮҢ МАЛ ПАРТИЯЛАРЫ",  
+       
     kg:
       "КГ",
 
@@ -110,7 +114,7 @@ const messages = {
       "AGROMAL верифицирует лот, проверяет идентификацию животных и формирует торговое предложение.",
 
     principle3:
-      "Покупатель получает проверенный объём по заранее известной цене.",
+      "Покупатель получает проверенный объём по заранее известной цене. Оплачивает напрямую фермеру.",
 
     principle4:
       "Фермер получает 100% своей стоимости у ворот БЕЗ ТОРГА.",
@@ -338,7 +342,7 @@ const messages = {
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-      "🔒 Фото-видео доступны после регистрации",
+      "Фото-видео доступны после регистрации",
 
     publicLot1Id:
       "[ ЛОТ #00101 | КРС — БЫЧКИ ]",
@@ -361,7 +365,7 @@ const messages = {
     /* PUBLIC LOT 2 */
 
     publicLot2Animal:
-      "🔒 Фото-видео доступны после регистрации",
+      "Фото-видео доступны после регистрации",
 
     publicLot2Id:
       "[ ЛОТ #00103 | КРС — ПРОМЫШЛЕННЫЙ ]",
@@ -384,7 +388,7 @@ const messages = {
     /* PUBLIC LOT 3 */
 
     publicLot3Animal:
-      "🔒 Фото-видео доступны после регистрации",
+      "Фото-видео доступны после регистрации",
 
     publicLot3Id:
       "[ ЛОТ #00201 | МРС — ОВЦЫ ]",
@@ -407,7 +411,7 @@ const messages = {
     /* PUBLIC LOT 4 */
 
     publicLot4Animal:
-      "🔒 Фото-видео доступны после регистрации",
+      "Фото-видео доступны после регистрации",
 
     publicLot4Id:
       "[ ЛОТ #00301 | ЛОШАДИ — СЕЗОННЫЙ ]",
@@ -430,7 +434,7 @@ const messages = {
     /* PUBLIC LOT 5 */
 
     publicLot5Animal:
-      "🔒 Фото-видео доступны после регистрации",
+      "Фото-видео доступны после регистрации",
 
     publicLot5Id:
       "[ ЛОТ #00401 | ЯКИ — ТОПОЗ ]",
@@ -1005,9 +1009,11 @@ const messages = {
     brandName:
       "AgroMal",
 
-    taglineAfter:
-      "МАЛДЫН ДҮҢ ПАРТИЯЛАРЫ",
-
+    ky: {
+      taglineBefore: "ОПТОВЫЕ ПАРТИИ СКОТА",
+      taglineAfter: "",
+      
+        },
     kg:
       "КГ",
 
@@ -1097,7 +1103,7 @@ const messages = {
       "AGROMAL лотту текшерет, жаныбарлардын идентификациясын ырастайт жана соода сунушун түзөт.",
 
     principle3:
-      "Сатып алуучу алдын ала белгилүү баада текшерилген көлөмдү алат.",
+      "Сатып алуучу алдын ала белгилүү баада текшерилген көлөмдү алат. Түздөн-түз фермерге төлөйт.",
 
     principle4:
       "Фермер өз наркынын 100%ын чарбанын дарбазасынан СООДАЛАШУУСУЗ алат.",
@@ -1309,7 +1315,7 @@ const messages = {
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
+      "Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot1Id:
       "[ ЛОТ #00101 | КРС — БУКАЛАР ]",
@@ -1332,7 +1338,7 @@ const messages = {
     /* PUBLIC LOT 2 */
 
     publicLot2Animal:
-      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
+      "Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot2Id:
       "[ ЛОТ #00103 | КРС — ӨНӨР ЖАЙЛЫК ]",
@@ -1355,7 +1361,7 @@ const messages = {
     /* PUBLIC LOT 3 */
 
     publicLot3Animal:
-      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
+      "Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot3Id:
       "[ ЛОТ #00201 | МРС — КОЙЛОР ]",
@@ -1378,7 +1384,7 @@ const messages = {
     /* PUBLIC LOT 4 */
 
     publicLot4Animal:
-      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
+      "Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot4Id:
       "[ ЛОТ #00301 | ЖЫЛКЫЛАР — СЕЗОНДУК ]",
@@ -1401,7 +1407,7 @@ const messages = {
     /* PUBLIC LOT 5 */
 
     publicLot5Animal:
-      "🔒 Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
+      "Фото-видео каттоодон өткөндөн кийин жеткиликтүү",
 
     publicLot5Id:
       "[ ЛОТ #00401 | ТОПОЗДОР — ТОПОЗ ]",
@@ -2051,7 +2057,7 @@ const messages = {
       "AGROMAL verifies the lot, checks animal identification, and prepares the trading offer.",
 
     principle3:
-      "The buyer receives verified volume at a pre-agreed price.",
+      "The buyer receives verified volume at a pre-agreed price. Pays the farmer directly.",
 
     principle4:
       "The farmer receives 100% of the agreed value at the farm gate — NO HAGGLING.",
@@ -2263,7 +2269,7 @@ const messages = {
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-    "🔒 Photo and video available after registration",
+    "Photo and video available after registration",
 
     publicLot1Id:
       "[ LOT #00101 | CATTLE — BULLS ]",
@@ -2286,7 +2292,7 @@ const messages = {
     /* PUBLIC LOT 2 */
 
     publicLot2Animal:
-      "🔒 Photo and video available after registration",
+      "Photo and video available after registration",
 
     publicLot2Id:
       "[ LOT #00103 | CATTLE — INDUSTRIAL ]",
@@ -2309,7 +2315,7 @@ const messages = {
     /* PUBLIC LOT 3 */
 
     publicLot3Animal:
-      "🔒 Photo and video available after registration",
+      "Photo and video available after registration",
 
     publicLot3Id:
       "[ LOT #00201 | SHEEP — RAMS ]",
@@ -2332,7 +2338,7 @@ const messages = {
     /* PUBLIC LOT 4 */
 
     publicLot4Animal:
-      "🔒 Photo and video available after registration",
+      "Photo and video available after registration",
 
     publicLot4Id:
       "[ LOT #00301 | HORSES — SEASONAL ]",
@@ -2355,7 +2361,7 @@ const messages = {
     /* PUBLIC LOT 5 */
 
     publicLot5Animal:
-      "🔒 Photo and video available after registration",
+      "Photo and video available after registration",
 
     publicLot5Id:
       "[ LOT #00401 | YAKS — TOPOZ ]",

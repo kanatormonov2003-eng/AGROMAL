@@ -13,31 +13,26 @@
    ========================================================= */
 
 :root {
-   /* ОСНОВА */
   --agro-bg: #090B0B;
   --agro-panel: #0D1110;
   --agro-panel-deep: #090B0B;
 
-  /* ГРАНИЦЫ */
   --agro-border: #242927;
   --agro-border-soft: #1B201D;
 
-  /* ТЕКСТ */
   --agro-text: #E7E8E5;
   --agro-text-soft: #B9BFBB;
   --agro-muted: #858B87;
 
-  /* ШАМПАНСКОЕ ЗОЛОТО */
-  --agro-gold: #A9905E;
-  --agro-gold-bright: #B9A16D;
-  --agro-gold-soft: rgba(169, 144, 94, .30);
+  --agro-gold: #B89A55;
+  --agro-gold-bright: #D0B56A;
+  --agro-gold-soft: rgba(184, 154, 85, .32);
 
-  /* ГЛУБОКИЙ ЗЕЛЁНЫЙ */
   --agro-green: #176B3A;
   --agro-green-bright: #3F8A5D;
 
-  /* КРАСНЫЙ — ТОЛЬКО ПРЕДУПРЕЖДЕНИЯ */
   --agro-red: #C45D5D;
+
   --agro-shell: 1266px;
   --agro-rail: 190px;
   --agro-terminal: 508px;
@@ -486,15 +481,14 @@ body.homepage .ref-feature {
   min-width: 0;
   min-height: 0;
   padding: 9px 11px 10px;
-  border: 1px solid #262D28;
+  border: 1px solid #262d28;
   border-radius: 4px;
-  background: linear-gradient(180deg, #121613, #0C100E);
+  background: linear-gradient(180deg, #12160f, #0c0f0c);
   transition: border-color .18s ease, transform .18s ease;
 }
 
 body.homepage .ref-feature:hover {
-  border-color: #344039;
-  background: linear-gradient(180deg, #151A17, #0D1210);
+  border-color: rgba(201, 166, 84, .45);
   transform: translateY(-1px);
 }
 
@@ -502,7 +496,7 @@ body.homepage .ref-feature__head {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #3F8A5D !important;
+  color: var(--agro-gold-bright);
   font-size: 8.5px;
   font-weight: 800;
   line-height: 1.2;
@@ -787,12 +781,12 @@ body.homepage #login-button {
   min-height: 46px;
   margin-top: 3px;
   padding: 10px 12px;
-   border: 1px solid #2F754B;
+   border: 1px solid #1F7845;
   border-radius: 5px;
   background: linear-gradient(
     180deg,
-    #216D43,
-    #1B6239
+    #1B7040,
+    #176B3A
   );
   color: #E7E8E5;
   font-size: 11px;
@@ -802,11 +796,11 @@ body.homepage #login-button {
 }
 
 body.homepage #login-button:hover {
-  border-color: #2F754B;
+  border-color: #2B8752;
   background: linear-gradient(
     180deg,
-    #216D43,
-    #1B6239
+    #217A46,
+    #1B7040
   );
   filter: none;
 }
@@ -954,22 +948,7 @@ body.homepage .hero-access-card--buyer .hero-access-card__arrow {
 
 body.homepage .hero-access-card--farm {
   border: 1px solid rgba(200, 167, 85, .62);
-  background: #0D1110;
-}
-
-body.homepage .hero-access-card--farm .hero-access-card__icon {
-  border: 1px solid rgba(200, 167, 85, .72);
-  color: var(--agro-gold-bright);
-  background: rgba(52, 42, 22, .22);
-}
-
-body.homepage .hero-access-card--farm .hero-access-card__content strong,
-body.homepage .hero-access-card--farm .hero-access-card__arrow {
-  color: var(--agro-gold-bright);
-}
-
-body.homepage .hero-access-card--farm .hero-access-card__content small {
-  color: #b6bdb7;
+  background: #201a11;
 }
 
 body.homepage .hero-access-card--farm .hero-access-card__icon {
@@ -1727,6 +1706,18 @@ body.homepage .homepage-demo-lots__notice strong {
   font-weight: 800;
   letter-spacing: .05em;
 }
+
+@media (max-width: 767px) {
+  body.homepage .homepage-demo-lots__notice {
+    padding: 8px 10px;
+    gap: 7px;
+  }
+
+  body.homepage .homepage-demo-lots__notice p {
+    font-size: 7.5px;
+    line-height: 1.5;
+  }
+}
 body.homepage .homepage-lot__animal {
   width: 58px;
   height: 52px;
@@ -2179,7 +2170,7 @@ body.homepage .ref-feature__head > span:first-child {
 
   font-size: 17px;
   line-height: 1;
-  color: #3F8A5D !important;
+  color: #9a9e9c;
   flex-shrink: 0;
 }
 body.homepage .ref-feature__head {
@@ -2214,9 +2205,10 @@ body.homepage .brand__flag {
   align-items: center;
   justify-content: center;
 
-    width: 18px;
-    height: 11px;
-    flex-basis: 18px;
+  width: 16px;
+  height: 10px;
+
+  flex: 0 0 16px;
 }
 
 body.homepage .brand__flag svg {
@@ -2236,8 +2228,8 @@ body.homepage .brand__flag svg {
   }
 
   body.homepage .brand__flag svg {
-    width: 18px;
-    height: 11px;
+    width: 14px;
+    height: 9px;
   }
 }
 /* =========================================================
@@ -2409,8 +2401,11 @@ body.homepage .homepage-lot__animal {
 
 body.homepage .hero-help__content strong,
 body.homepage .hero-help__content a,
+body.homepage .hero-trust__copy,
 body.homepage .hero-help__icon,
 body.homepage .hero-help__icon svg,
+body.homepage .hero-trust__icon,
+body.homepage .hero-trust__icon svg,
 body.homepage .homepage-legal__icon,
 body.homepage .homepage-legal__copy strong,
 body.homepage .homepage-legal__copy i,
@@ -2420,50 +2415,4 @@ body.homepage .homepage-legal__brand-name {
 /* DEMO LOTS — LOT ID GRAY */
 body.homepage .homepage-lot__id {
   color: #9aa19b !important;
-}
-/* TRUST — GREEN */
-body.homepage .hero-help__content strong,
-body.homepage .hero-trust__copy,
-body.homepage .hero-trust__icon,
-body.homepage .hero-trust__icon svg {
-  color: #3F8A5D !important;
-}
-body.homepage .hero-help__content a {
-  color: #3F8A5D !important;
-}
-/* Нижний AgroMal — такой же цвет, как логотип сверху */
-body.homepage .homepage-legal__brand-name {
-  color: var(--agro-gold-bright) !important;
-}
-/* =========================================================
-   BOTTOM / SUPPORT / LEGAL
-   ========================================================= */
-
-/* Иконка поддержки */
-body.homepage .hero-help__icon,
-body.homepage .hero-help__icon svg {
-  color: #3F8A5D !important;
-}
-
-/* Юридический блок */
-body.homepage .homepage-legal__icon {
-  color: #D6DAD6 !important;
-}
-
-/* Copyright */
-body.homepage .homepage-legal__copyright span {
-  color: #68716B !important;
-}
-body.homepage .hero-help__content a {
-  color: #3F8A5D !important;
-}
-body.homepage .homepage-legal__icon,
-body.homepage .homepage-legal__icon svg {
-  color: #A9905E !important;
-  stroke: #A9905E !important;
-}
-@media (max-width: 767px) {
-  body.homepage .homepage-demo-lots__notice p {
-    font-size: 7px !important;
-  }
 }

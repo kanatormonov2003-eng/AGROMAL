@@ -625,3 +625,8 @@ tr:hover td { background: rgba(255,255,255,.015); }
   line-height: 1.35;
   letter-spacing: .04em;
 }
+.brand__name,
+.dashboard .brand__name,
+.admin .brand__name {
+  color: #A9905E !important;
+}
