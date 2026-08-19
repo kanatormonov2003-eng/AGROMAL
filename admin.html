@@ -237,21 +237,84 @@
 
             </div>
 
+            <div class="field field--full">
+
+  <label
+    for="lot-image"
+    data-i18n="lotImage"
+  ></label>
+
+  <input
+    id="lot-image"
+    type="file"
+    accept="image/jpeg,image/png,image/webp"
+  >
+
+  <small
+    class="field__hint"
+    data-i18n="lotImageHint"
+  ></small>
+
+  <div
+    id="lot-image-preview"
+    class="lot-image-preview"
+    hidden
+  ></div>
+
+</div>
 
             <div class="field">
 
-              <label
-                for="region"
-                data-i18n="region"
-              ></label>
+  <label
+    for="region"
+    data-i18n="region"
+  ></label>
 
-              <input
-                id="region"
-                maxlength="160"
-                required
-              >
+  <select id="region" required>
 
-            </div>
+    <option
+      value=""
+      data-i18n="select"
+    ></option>
+
+    <option
+      value="batken"
+      data-i18n="regionBatken"
+    ></option>
+
+    <option
+      value="jalal_abad"
+      data-i18n="regionJalalAbad"
+    ></option>
+
+    <option
+      value="issyk_kul"
+      data-i18n="regionIssykKul"
+    ></option>
+
+    <option
+      value="naryn"
+      data-i18n="regionNaryn"
+    ></option>
+
+    <option
+      value="osh"
+      data-i18n="regionOsh"
+    ></option>
+
+    <option
+      value="talas"
+      data-i18n="regionTalas"
+    ></option>
+
+    <option
+      value="chuy"
+      data-i18n="regionChuy"
+    ></option>
+
+  </select>
+
+</div>
 
 
             <div class="field">
@@ -293,18 +356,46 @@
 
             <div class="field">
 
-              <label
-                for="price-unit"
-                data-i18n="priceUnit"
-              ></label>
+  <label
+    for="price-unit"
+    data-i18n="priceUnit"
+  ></label>
 
-              <input
-                id="price-unit"
-                maxlength="40"
-                required
-              >
+  <select id="price-unit" required>
 
-            </div>
+    <option
+      value=""
+      data-i18n="select"
+    ></option>
+
+    <option
+      value="KGS"
+      data-i18n="currencyKgs"
+    ></option>
+
+    <option
+      value="KZT"
+      data-i18n="currencyKzt"
+    ></option>
+
+    <option
+      value="RUB"
+      data-i18n="currencyRub"
+    ></option>
+
+    <option
+      value="EUR"
+      data-i18n="currencyEur"
+    ></option>
+
+    <option
+      value="USD"
+      data-i18n="currencyUsd"
+    ></option>
+
+  </select>
+
+</div>
 
 
             <div class="field field--full">

@@ -630,3 +630,16 @@ tr:hover td { background: rgba(255,255,255,.015); }
 .admin .brand__name {
   color: #A9905E !important;
 }
+.desktop-lot__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.lot-card__media-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}

@@ -65,7 +65,14 @@ const messages = {
 
     railDirectB2B:
       "ПРЯМЫЕ B2B-СДЕЛКИ",
+    lotImage:
+  "ФОТО ЛОТА",
 
+lotImageHint:
+  "JPG, PNG или WebP. Максимум 5 МБ.",
+
+lotImageRemove:
+  "УБРАТЬ ФОТО",
     railFullSupport:
       "ПОЛНОЕ СОПРОВОЖДЕНИЕ",
 
@@ -97,7 +104,28 @@ const messages = {
 
     formulaLabel:
       "",
+    /* REGIONS — ADMIN CODES */
 
+batken:
+  "Баткенская область",
+
+jalal_abad:
+  "Джалал-Абадская область",
+
+issyk_kul:
+  "Иссык-Кульская область",
+
+naryn:
+  "Нарынская область",
+
+osh:
+  "Ошская область",
+
+talas:
+  "Таласская область",
+
+chuy:
+  "Чуйская область",
     formulaMain:
       "ОДИН ЛОТ. ОДНА ЦЕНА. ОДНА СДЕЛКА.",
 
@@ -199,7 +227,11 @@ const messages = {
 
     passwordPlaceholder:
       "Введите пароль доступа",
-
+    currencyKgs: "Сом",
+currencyKzt: "Тенге",
+currencyRub: "Рубль",
+currencyEur: "Евро",
+currencyUsd: "Доллар",
     passwordAria:
       "Пароль доступа",
 
@@ -372,7 +404,17 @@ const messages = {
 
     publicLot2Name:
       "Коровы / Швицы (Крупный опт / Фаршевое сырье для перерабатывающих цехов)",
+    lotImageInvalid:
+  "Не удалось обработать фотографию.",
 
+lotImageInvalidType:
+  "Можно загрузить только JPG, PNG или WebP.",
+
+lotImageTooLarge:
+  "Размер фотографии не должен превышать 5 МБ.",
+
+lotImageProcessingFailed:
+  "Не удалось подготовить фотографию. Попробуйте другой файл.",
     publicLot2Volume:
       "18 голов",
 
@@ -873,7 +915,13 @@ const messages = {
 
     actionNote:
       "ТЕКСТ DISABLED-КНОПКИ",
-
+    regionBatken: "Баткенская область",
+    regionJalalAbad: "Джалал-Абадская область",
+    regionIssykKul: "Иссык-Кульская область",
+    regionNaryn: "Нарынская область",
+    regionOsh: "Ошская область",
+    regionTalas: "Таласская область",
+    regionChuy: "Чуйская область",
     metricLabel1:
       "ДОП. ПОЛЕ 1 — ЗАГОЛОВОК",
 
@@ -1009,11 +1057,10 @@ const messages = {
     brandName:
       "AgroMal",
 
-    ky: {
+   
       taglineBefore: "ОПТОВЫЕ ПАРТИИ СКОТА",
       taglineAfter: "",
-      
-        },
+    
     kg:
       "КГ",
 
@@ -1051,7 +1098,14 @@ const messages = {
 
     railMinimumVolume:
       "СЕССИЯНЫН МИНИМАЛДУУ КӨЛӨМҮ",
+    lotImage:
+  "ЛОТТУН СҮРӨТҮ",
 
+lotImageHint:
+  "JPG, PNG же WebP. Максимум 5 МБ.",
+
+lotImageRemove:
+  "СҮРӨТТҮ ӨЧҮРҮҮ",
     railMinimumValue:
       "700 000 СОМДОН БАШТАЛАТ",
 
@@ -1135,7 +1189,13 @@ const messages = {
 
     kyrgyzEmblem:
       "",
-
+        regionBatken: "Баткен облусу",
+        regionJalalAbad: "Жалал-Абад облусу",
+        regionIssykKul: "Ысык-Көл облусу",
+        regionNaryn: "Нарын облусу",
+        regionOsh: "Ош облусу",
+        regionTalas: "Талас облусу",
+        regionChuy: "Чүй облусу",
     tunduk:
       "ТҮНДҮК",
 
@@ -1241,7 +1301,11 @@ const messages = {
 
     supplierAccessTitle:
       "ЛОТТОРДУ ЖАЙГАШТЫРУУ ЖАНА ЖАБДУУ",
-
+    currencyKgs: "Сом",
+currencyKzt: "Теңге",
+currencyRub: "Рубль",
+currencyEur: "Евро",
+currencyUsd: "Доллар",
     supplierAccessText:
       "Фермердик чарбалардан жана платформанын талаа инспекторлорунан малдын дүң партияларын акысыз жайгаштыруу үчүн өтүнмөлөрдү кабыл алуу.",
 
@@ -1665,7 +1729,26 @@ const messages = {
 
     bookingConfigMissing:
       "Google Sheets өтүнмө кызматынын дареги жөндөлгөн эмес. assets/js/config.js ичиндеги bookingAppsScriptUrl талаасын толтуруңуз.",
+    batken:
+  "Баткен облусу",
 
+jalal_abad:
+  "Жалал-Абад облусу",
+
+issyk_kul:
+  "Ысык-Көл облусу",
+
+naryn:
+  "Нарын облусу",
+
+osh:
+  "Ош облусу",
+
+talas:
+  "Талас облусу",
+
+chuy:
+  "Чүй облусу",
     bookingServiceUnavailable:
       "Google Sheets өтүнмө кызматына туташуу мүмкүн болгон жок. Apps Script URL, Web App жарыялоосу жана CORS'ту текшериңиз.",
 
@@ -1796,7 +1879,17 @@ const messages = {
 
     block:
       "БӨГӨТТӨӨ",
+    lotImageInvalid:
+  "Сүрөттү иштетүү мүмкүн болгон жок.",
 
+lotImageInvalidType:
+  "JPG, PNG же WebP гана жүктөөгө болот.",
+
+lotImageTooLarge:
+  "Сүрөттүн көлөмү 5 МБдан ашпашы керек.",
+
+lotImageProcessingFailed:
+  "Сүрөттү даярдоо мүмкүн болгон жок. Башка файлды байкап көрүңүз.",
     unblock:
       "БӨГӨТТӨН ЧЫГАРУУ",
 
@@ -2209,7 +2302,13 @@ const messages = {
 
     supportPhone:
       "+996 (501) 09-59-50",
-
+    regionBatken: "Batken Region",
+    regionJalalAbad: "Jalal-Abad Region",
+    regionIssykKul: "Issyk-Kul Region",
+    regionNaryn: "Naryn Region",
+    regionOsh: "Osh Region",
+    regionTalas: "Talas Region",
+    regionChuy: "Chuy Region",
     trustTitle:
       "SECURITY.\nTRANSPARENCY.\nVERIFIED DEALS.",
 
@@ -2299,7 +2398,14 @@ const messages = {
 
     publicLot2Name:
       "Cows / Swiss cattle (large wholesale / minced-meat raw material for processing plants)",
+    lotImage:
+  "LOT PHOTO",
 
+lotImageHint:
+  "JPG, PNG or WebP. Maximum 5 MB.",
+
+lotImageRemove:
+  "REMOVE PHOTO",
     publicLot2Volume:
       "18 head",
 
@@ -2325,7 +2431,17 @@ const messages = {
 
     publicLot3Volume:
       "220 head",
+    lotImageInvalid:
+  "The photo could not be processed.",
 
+lotImageInvalidType:
+  "Only JPG, PNG or WebP images are allowed.",
+
+lotImageTooLarge:
+  "The photo must not exceed 5 MB.",
+
+lotImageProcessingFailed:
+  "The photo could not be processed. Try another file.",
     publicLot3Region:
       "Naryn Region, Kochkor District",
 
@@ -2417,7 +2533,11 @@ const messages = {
 
     filterRegion:
       "REGION",
-
+    currencyKgs: "Kyrgyz Som",
+currencyKzt: "Kazakhstani Tenge",
+currencyRub: "Russian Ruble",
+currencyEur: "Euro",
+currencyUsd: "US Dollar",
     filterStatus:
       "STATUS",
 
@@ -2640,7 +2760,26 @@ const messages = {
 
     bookingRequests:
       "RESERVATION REQUESTS",
+batken:
+  "Batken Region",
 
+jalal_abad:
+  "Jalal-Abad Region",
+
+issyk_kul:
+  "Issyk-Kul Region",
+
+naryn:
+  "Naryn Region",
+
+osh:
+  "Osh Region",
+
+talas:
+  "Talas Region",
+
+chuy:
+  "Chuy Region",
     bookingNumber:
       "REQUEST",
 
@@ -3050,7 +3189,7 @@ const dynamicTranslations = {
 
     YAKS:
       "ТОПОЗДОР",
-
+    
     BREEDING:
       "СЕЛЕКЦИЯ",
 

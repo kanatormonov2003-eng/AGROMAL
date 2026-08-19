@@ -6,7 +6,10 @@ import {
   setState,
   setWhatsappLink
 } from "./common.js";
-import { db } from "./supabase.js";
+import {
+  db,
+  createLotImageSignedUrl
+} from "./supabase.js";
 import { language, t } from "./i18n.js";
 
 initCommon();
@@ -784,6 +787,16 @@ function renderMobileLot(lot) {
     "lot-card__media-placeholder"
   );
 
+  if (lot.image_signed_url) {
+  const img = document.createElement("img");
+
+  img.src = lot.image_signed_url;
+  img.alt = lotTitle(lot);
+  img.loading = "lazy";
+  img.className = "lot-card__media-image";
+
+  mediaBox.append(img);
+} else {
   mediaBox.append(
     create(
       "strong",
@@ -797,6 +810,7 @@ function renderMobileLot(lot) {
       t("lotMediaPlaceholder")
     )
   );
+}
 
   media.append(mediaBox);
 
@@ -957,6 +971,15 @@ function renderDesktopLot(lot) {
     "desktop-lot__image"
   );
 
+if (lot.image_signed_url) {
+  const img = document.createElement("img");
+
+  img.src = lot.image_signed_url;
+  img.alt = lotTitle(lot);
+  img.loading = "lazy";
+
+  image.append(img);
+} else {
   const product = create(
     "div",
     "desktop-lot__image-product",
@@ -964,7 +987,9 @@ function renderDesktopLot(lot) {
   );
 
   image.append(product);
-  media.append(image);
+}
+
+media.append(image);
 
 
   /* MAIN */
@@ -1124,6 +1149,32 @@ function getLotTranslation(lot, field) {
 
   const lang = language();
 
+  /* Новые коды регионов из админ-панели */
+  if (field === "region") {
+    const regionKeys = {
+      batken: "regionBatken",
+      jalal_abad: "regionJalalAbad",
+      issyk_kul: "regionIssykKul",
+      naryn: "regionNaryn",
+      osh: "regionOsh",
+      talas: "regionTalas",
+      chuy: "regionChuy"
+    };
+
+    const regionCode =
+      String(lot?.region ?? "")
+        .trim()
+        .toLowerCase();
+
+    const regionKey =
+      regionKeys[regionCode];
+
+    if (regionKey) {
+      return t(regionKey);
+    }
+  }
+
+  /* Старые лоты работают как раньше */
   return (
     lotTranslations[lotNumber]?.[field]?.[lang] ??
     lotTranslations[lotNumber]?.[field]?.ru ??
@@ -2028,10 +2079,35 @@ async function loadLots() {
       "lots",
       {
         query:
-          "?select=id,lot_number,animal_type,breed,region,quantity,weight_kg,feed_type,contract_type,contract_label,price,price_unit,price_note,primary_metric_label,primary_metric_value,secondary_metric_label,secondary_metric_value,tertiary_metric_label,tertiary_metric_value,status,status_note,action_note,is_demo&order=created_at.asc"
+          "?select=id,lot_number,animal_type,breed,region,quantity,weight_kg,feed_type,contract_type,contract_label,price,price_unit,price_note,primary_metric_label,primary_metric_value,secondary_metric_label,secondary_metric_value,tertiary_metric_label,tertiary_metric_value,status,status_note,action_note,is_demo,image_url&order=created_at.asc"
       }
     );
+    lots = await Promise.all(
+  lots.map(async (lot) => {
+    if (!lot.image_url) {
+      return lot;
+    }
 
+    try {
+      return {
+        ...lot,
+        image_signed_url:
+          await createLotImageSignedUrl(
+            lot.image_url,
+            3600
+          )
+      };
+    } catch (error) {
+      console.warn(
+        "AGROMAL lot image URL failed:",
+        lot.id,
+        error
+      );
+
+      return lot;
+    }
+  })
+);
     loadStatus =
       "loaded";
 

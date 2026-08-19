@@ -1,6 +1,12 @@
 import { redirectForAccess, requireAccess } from "./auth.js";
 import { create, formatNumber, initCommon, setState } from "./common.js";
-import { db, invokeFunction } from "./supabase.js";
+import {
+  db,
+  invokeFunction,
+  uploadLotImage,
+  deleteLotImage,
+  createLotImageSignedUrl
+} from "./supabase.js";
 import { t } from "./i18n.js";
 
 initCommon();
@@ -12,7 +18,11 @@ let currentOrganizationId = null;
 const notice = document.querySelector("#admin-notice");
 const lotForm = document.querySelector("#lot-form");
 const userForm = document.querySelector("#user-form");
+const lotImage =
+  document.querySelector("#lot-image");
 
+const lotImagePreview =
+  document.querySelector("#lot-image-preview");
 const lotFields = {
   id: document.querySelector("#lot-id"),
   lot_number: document.querySelector("#lot-number"),
@@ -37,7 +47,143 @@ function lotTitle(lot) {
 function priceLabel(price, unit) {
   return `${formatNumber(price)} ${unit}`;
 }
+async function compressLotImage(file) {
+  if (!(file instanceof File)) {
+    throw new Error("INVALID_FILE");
+  }
 
+  const allowedTypes = [
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+  ];
+
+  if (!allowedTypes.includes(file.type)) {
+    throw new Error("INVALID_FILE_TYPE");
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    throw new Error("FILE_TOO_LARGE");
+  }
+
+  const bitmap =
+    await createImageBitmap(file);
+
+  const maxSize = 1600;
+
+  const scale =
+    Math.min(
+      1,
+      maxSize /
+        Math.max(
+          bitmap.width,
+          bitmap.height
+        )
+    );
+
+  const width =
+    Math.max(
+      1,
+      Math.round(bitmap.width * scale)
+    );
+
+  const height =
+    Math.max(
+      1,
+      Math.round(bitmap.height * scale)
+    );
+
+  const canvas =
+    document.createElement("canvas");
+
+  canvas.width = width;
+  canvas.height = height;
+
+  const context =
+    canvas.getContext("2d");
+
+  if (!context) {
+    bitmap.close();
+    throw new Error("IMAGE_PROCESSING_FAILED");
+  }
+
+  context.drawImage(
+    bitmap,
+    0,
+    0,
+    width,
+    height
+  );
+
+  bitmap.close();
+
+  const blob =
+    await new Promise((resolve) => {
+      canvas.toBlob(
+        resolve,
+        "image/jpeg",
+        0.86
+      );
+    });
+
+  if (!blob) {
+    throw new Error("IMAGE_PROCESSING_FAILED");
+  }
+
+  return new File(
+    [blob],
+    "lot-photo.jpg",
+    {
+      type: "image/jpeg"
+    }
+  );
+}
+function clearLotImagePreview() {
+  if (!lotImagePreview) {
+    return;
+  }
+
+  lotImagePreview.replaceChildren();
+  lotImagePreview.hidden = true;
+}
+
+function showLotImagePreview(file) {
+  if (!lotImagePreview || !file) {
+    return;
+  }
+
+  const url =
+    URL.createObjectURL(file);
+
+  const image =
+    document.createElement("img");
+
+  image.src = url;
+  image.alt = t("lotImage");
+  image.onload = () => {
+    URL.revokeObjectURL(url);
+  };
+
+  lotImagePreview.replaceChildren(image);
+  lotImagePreview.hidden = false;
+}
+
+if (lotImage) {
+  lotImage.addEventListener(
+    "change",
+    () => {
+      const file =
+        lotImage.files?.[0];
+
+      if (!file) {
+        clearLotImagePreview();
+        return;
+      }
+
+      showLotImagePreview(file);
+    }
+  );
+}
 function tableCell(label, text, className = "") {
   const cell = create("td", className, text);
   cell.dataset.label = label;
@@ -55,36 +201,136 @@ function showError(error, fallback = "formError") {
   const keys = {
     SELF_BLOCK_FORBIDDEN: "selfBlock",
     LAST_ADMIN_REQUIRED: "lastAdmin",
-    DUPLICATE_ORGANIZATION: "duplicateOrganization"
+    DUPLICATE_ORGANIZATION: "duplicateOrganization",
+    INVALID_FILE: "lotImageInvalid",
+    INVALID_FILE_TYPE: "lotImageInvalidType",
+    FILE_TOO_LARGE: "lotImageTooLarge",
+    IMAGE_PROCESSING_FAILED: "lotImageProcessingFailed"
   };
-  setState(notice, "error", t(keys[error?.code || error?.message] || fallback));
+
+  setState(
+    notice,
+    "error",
+    t(
+      keys[
+        error?.code ||
+        error?.message
+      ] || fallback
+    )
+  );
 }
 
 function resetLotForm() {
   lotForm.reset();
+
   lotFields.id.value = "";
-  document.querySelector("#lot-submit").textContent = t("createLot");
-  document.querySelector("#lot-cancel").hidden = true;
-}
 
-function editLot(lot) {
+  clearLotImagePreview();
+
+  document.querySelector(
+    "#lot-submit"
+  ).textContent = t("createLot");
+
+  document.querySelector(
+    "#lot-cancel"
+  ).hidden = true;
+}
+async function editLot(lot) {
   Object.entries(lotFields).forEach(([key, field]) => {
-    field.value = key === "id" ? lot.id : lot[key] ?? "";
+    field.value =
+      key === "id"
+        ? lot.id
+        : lot[key] ?? "";
   });
-  document.querySelector("#lot-submit").textContent = t("save");
-  document.querySelector("#lot-cancel").hidden = false;
-  lotForm.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-}
 
+  clearLotImagePreview();
+
+  if (lot.image_url) {
+    try {
+      const signedUrl =
+        await createLotImageSignedUrl(
+          lot.image_url,
+          3600
+        );
+
+      const image =
+        document.createElement("img");
+
+      image.src = signedUrl;
+      image.alt = t("lotImage");
+
+      lotImagePreview.replaceChildren(image);
+      lotImagePreview.hidden = false;
+
+    } catch (error) {
+      console.warn(
+        "Existing lot image preview failed:",
+        error
+      );
+    }
+  }
+
+  document.querySelector(
+    "#lot-submit"
+  ).textContent = t("save");
+
+  document.querySelector(
+    "#lot-cancel"
+  ).hidden = false;
+
+  lotForm.scrollIntoView({
+    behavior:
+      matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches
+        ? "auto"
+        : "smooth"
+  });
+}
 async function deleteLot(lot) {
   if (!confirm(t("confirmDelete"))) return;
+
   try {
-    const removed = await db("lots", { method: "DELETE", query: `?id=eq.${encodeURIComponent(lot.id)}&select=id`, prefer: "return=representation" });
-    if (!Array.isArray(removed) || removed.length !== 1) throw new Error("LOT_NOT_FOUND");
+    const removed = await db("lots", {
+      method: "DELETE",
+      query:
+        `?id=eq.${encodeURIComponent(lot.id)}&select=id`,
+      prefer: "return=representation"
+    });
+
+    if (
+      !Array.isArray(removed) ||
+      removed.length !== 1
+    ) {
+      throw new Error("LOT_NOT_FOUND");
+    }
+
+    if (lot.image_url) {
+      try {
+        await deleteLotImage(
+          lot.image_url
+        );
+      } catch (storageError) {
+        console.warn(
+          "Lot image cleanup failed:",
+          storageError
+        );
+      }
+    }
+
     await loadLots();
-    setState(notice, "success", t("successSaved"));
+
+    setState(
+      notice,
+      "success",
+      t("successSaved")
+    );
+
   } catch (error) {
-    showError(error, "deleteError");
+    showError(
+      error,
+      "deleteError"
+    );
   }
 }
 
@@ -152,7 +398,7 @@ function renderOrganizations() {
 }
 
 async function loadLots() {
-  lots = await db("lots", { query: "?select=id,lot_number,animal_type,breed,region,quantity,weight_kg,feed_type,contract_type,contract_label,price,price_unit,price_note,primary_metric_label,primary_metric_value,secondary_metric_label,secondary_metric_value,tertiary_metric_label,tertiary_metric_value,status,status_note,action_note,is_demo&order=created_at.asc" });
+  lots = await db("lots", { query: "?select=id,lot_number,animal_type,breed,region,quantity,weight_kg,feed_type,contract_type,contract_label,price,price_unit,price_note,primary_metric_label,primary_metric_value,secondary_metric_label,secondary_metric_value,tertiary_metric_label,tertiary_metric_value,status,status_note,action_note,is_demo,image_url&order=created_at.asc" });
   renderLots();
 }
 
@@ -174,32 +420,131 @@ async function setOrganizationStatus(organizationId, status) {
 
 lotForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
   if (!lotForm.reportValidity()) return;
-  const payload = {
-  lot_number: lotFields.lot_number.value.trim(),
-  animal_type: lotFields.animal_type.value,
-  breed: lotFields.breed.value.trim(),
-  region: lotFields.region.value.trim(),
-  quantity: Number(lotFields.quantity.value),
-  contract_type: "spot",
-  price: Number(lotFields.price.value),
-  price_unit: lotFields.price_unit.value.trim(),
-  status: lotFields.status.value,
-  status_note: lotFields.status_note.value.trim() || null,
-  action_note: lotFields.action_note.value.trim() || null,
-  is_demo: false
-};
+
+  const selectedImage = lotImage?.files?.[0] || null;
   const submit = document.querySelector("#lot-submit");
+
+  const payload = {
+    lot_number: lotFields.lot_number.value.trim(),
+    animal_type: lotFields.animal_type.value,
+    breed: lotFields.breed.value.trim(),
+    region: lotFields.region.value,
+    quantity: Number(lotFields.quantity.value),
+    contract_type: "spot",
+    price: Number(lotFields.price.value),
+    price_unit: lotFields.price_unit.value,
+    status: lotFields.status.value,
+    status_note: lotFields.status_note.value.trim() || null,
+    action_note: lotFields.action_note.value.trim() || null,
+    is_demo: false
+  };
+
   submit.disabled = true;
+
   try {
-    const changed = lotFields.id.value
-      ? await db("lots", { method: "PATCH", query: `?id=eq.${encodeURIComponent(lotFields.id.value)}&select=id`, body: payload, prefer: "return=representation" })
-      : await db("lots", { method: "POST", body: payload, prefer: "return=representation" });
-    if (!Array.isArray(changed) || changed.length !== 1) throw new Error("LOT_NOT_SAVED");
+    const editingId = lotFields.id.value.trim();
+
+    let changed;
+    let oldImagePath = "";
+
+    /* =====================================================
+       UPDATE
+       ===================================================== */
+
+    if (editingId) {
+      const currentLot = lots.find(
+        (lot) =>
+          String(lot.id) === String(editingId)
+      );
+
+      oldImagePath =
+        currentLot?.image_url || "";
+
+      changed = await db("lots", {
+        method: "PATCH",
+        query:
+          `?id=eq.${encodeURIComponent(editingId)}&select=id,image_url`,
+        body: payload,
+        prefer: "return=representation"
+      });
+    }
+
+    /* =====================================================
+       CREATE
+       ===================================================== */
+
+    else {
+      changed = await db("lots", {
+        method: "POST",
+        body: payload,
+        prefer: "return=representation"
+      });
+    }
+
+    if (!Array.isArray(changed) || changed.length !== 1) {
+      throw new Error("LOT_NOT_SAVED");
+    }
+
+    const savedLot = changed[0];
+
+    /* =====================================================
+       IMAGE UPLOAD
+       ===================================================== */
+
+    if (selectedImage) {
+      const compressedImage =
+        await compressLotImage(selectedImage);
+
+      const newImagePath =
+        await uploadLotImage(
+          savedLot.id,
+          compressedImage
+        );
+
+      /* Сначала привязываем новое фото */
+      await db("lots", {
+        method: "PATCH",
+        query:
+          `?id=eq.${encodeURIComponent(savedLot.id)}`,
+        body: {
+          image_url: newImagePath
+        }
+      });
+
+      /* И только после этого удаляем старое */
+      if (
+        oldImagePath &&
+        oldImagePath !== newImagePath
+      ) {
+        try {
+          await deleteLotImage(oldImagePath);
+        } catch (storageError) {
+          console.warn(
+            "Old lot image cleanup failed:",
+            storageError
+          );
+        }
+      }
+    }
+
     resetLotForm();
+
     await loadLots();
-    setState(notice, "success", t("successSaved"));
+
+    setState(
+      notice,
+      "success",
+      t("successSaved")
+    );
+
   } catch (error) {
+    console.error(
+      "AGROMAL lot save failed:",
+      error
+    );
+
     showError(error);
   } finally {
     submit.disabled = false;

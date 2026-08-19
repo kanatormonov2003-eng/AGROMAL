@@ -182,3 +182,161 @@ export async function invokeFunction(name, body) {
     body: JSON.stringify(body)
   }));
 }
+const LOT_MEDIA_BUCKET = "lot-media";
+
+function storageHeaders(token, extra = {}) {
+  const { supabaseAnonKey } = config();
+
+  return {
+    apikey: supabaseAnonKey,
+    Authorization: `Bearer ${token}`,
+    ...extra
+  };
+}
+
+function storagePathUrl(path) {
+  return encodeURIComponent(
+    String(path)
+      .split("/")
+      .map((part) => encodeURIComponent(part))
+      .join("/")
+  ).replaceAll("%2F", "/");
+}
+
+export async function uploadLotImage(
+  lotId,
+  file
+) {
+  const session = await getValidSession();
+
+  if (!session) {
+    throw new Error("UNAUTHORIZED");
+  }
+
+  if (!(file instanceof File)) {
+    throw new Error("INVALID_FILE");
+  }
+
+  const extensionMap = {
+    "image/jpeg": "jpg",
+    "image/png": "png",
+    "image/webp": "webp"
+  };
+
+  const extension =
+    extensionMap[file.type];
+
+  if (!extension) {
+    throw new Error("INVALID_FILE_TYPE");
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    throw new Error("FILE_TOO_LARGE");
+  }
+
+  const filename =
+    `${crypto.randomUUID()}.${extension}`;
+
+  const path =
+    `${lotId}/${filename}`;
+
+  const {
+    supabaseUrl
+  } = config();
+
+  const response = await fetch(
+    `${supabaseUrl}/storage/v1/object/${LOT_MEDIA_BUCKET}/${storagePathUrl(path)}`,
+    {
+      method: "POST",
+      headers: storageHeaders(
+        session.access_token,
+        {
+          "Content-Type": file.type,
+          "x-upsert": "false",
+          "Cache-Control": "3600"
+        }
+      ),
+      body: file
+    }
+  );
+
+  await parseResponse(response);
+
+  return path;
+}
+
+export async function createLotImageSignedUrl(
+  path,
+  expiresIn = 3600
+) {
+  if (!path) {
+    return "";
+  }
+
+  const session = await getValidSession();
+
+  if (!session) {
+    throw new Error("UNAUTHORIZED");
+  }
+
+  const {
+    supabaseUrl
+  } = config();
+
+  const response = await fetch(
+    `${supabaseUrl}/storage/v1/object/sign/${LOT_MEDIA_BUCKET}/${storagePathUrl(path)}`,
+    {
+      method: "POST",
+      headers: storageHeaders(
+        session.access_token,
+        {
+          "Content-Type": "application/json"
+        }
+      ),
+      body: JSON.stringify({
+        expiresIn
+      })
+    }
+  );
+
+  const result =
+    await parseResponse(response);
+
+  if (!result?.signedURL) {
+    throw new Error("SIGNED_URL_FAILED");
+  }
+
+  if (/^https?:\/\//i.test(result.signedURL)) {
+    return result.signedURL;
+  }
+
+  return `${supabaseUrl}/storage/v1${result.signedURL}`;
+}
+
+export async function deleteLotImage(path) {
+  if (!path) {
+    return;
+  }
+
+  const session = await getValidSession();
+
+  if (!session) {
+    throw new Error("UNAUTHORIZED");
+  }
+
+  const {
+    supabaseUrl
+  } = config();
+
+  const response = await fetch(
+    `${supabaseUrl}/storage/v1/object/${LOT_MEDIA_BUCKET}/${storagePathUrl(path)}`,
+    {
+      method: "DELETE",
+      headers: storageHeaders(
+        session.access_token
+      )
+    }
+  );
+
+  await parseResponse(response);
+}
