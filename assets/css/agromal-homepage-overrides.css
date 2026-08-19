@@ -2491,9 +2491,6 @@ body.homepage .homepage-legal__icon svg {
 @media (max-width: 767px) {
 
   /* Верхний флаг возле слогана скрываем */
-  body.homepage .brand__tag .brand__flag {
-    display: none !important;
-  }
 
   /* AgroMal внизу */
   body.homepage .homepage-legal__brand-name {
@@ -2507,9 +2504,7 @@ body.homepage .homepage-legal__icon svg {
 }
 @media (max-width: 767px) {
 
-  body.homepage .brand__tag .brand__flag {
-    display: none !important;
-  }
+
 
   body.homepage .homepage-legal__brand-flag {
     display: inline-flex;
@@ -2542,4 +2537,205 @@ body.homepage .hero-help__content a,
 body.homepage .hero-help__icon,
 body.homepage .hero-help__icon svg {
   color: #9aa19b !important;
+}
+/* =========================================================
+   KYRGYZSTAN FLAG — REAL SVG IMAGE
+   ========================================================= */
+
+body.homepage .brand__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 12px;
+  flex: 0 0 18px;
+  overflow: hidden;
+}
+
+body.homepage .brand__flag img {
+  display: block;
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+}
+
+body.homepage .homepage-legal__brand-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 12px;
+  flex: 0 0 18px;
+  overflow: hidden;
+}
+
+body.homepage .homepage-legal__brand-flag img {
+  display: block;
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+
+  body.homepage .brand__flag {
+    width: 14px;
+    height: 9px;
+    flex-basis: 14px;
+  }
+
+  body.homepage .brand__flag img {
+    width: 14px;
+    height: 9px;
+  }
+
+  body.homepage .homepage-legal__brand-flag {
+    width: 18px;
+    height: 12px;
+    flex-basis: 18px;
+  }
+
+  body.homepage .homepage-legal__brand-flag img {
+    width: 18px;
+    height: 12px;
+  }
+
+}
+/* =========================================================
+   FOOTER FLAG POSITION
+   DESKTOP: flag left of © 2026
+   MOBILE: flag stays next to AgroMal.kg
+   ========================================================= */
+
+/* ---------- DESKTOP ---------- */
+
+body.homepage .homepage-legal__brand-flag {
+  display: none;
+}
+
+body.homepage .homepage-copyright-year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+body.homepage .homepage-copyright-year img {
+  display: block;
+  width: 18px !important;
+  height: 12px !important;
+  min-width: 18px;
+  min-height: 12px;
+  max-width: 18px;
+  max-height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: fill !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 767px) {
+
+  /* Возвращаем флаг рядом с AgroMal.kg */
+  body.homepage .homepage-legal__brand-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 12px;
+    min-width: 18px;
+    flex: 0 0 18px;
+    overflow: hidden;
+  }
+
+  body.homepage .homepage-legal__brand-flag img {
+    display: block;
+    width: 18px !important;
+    height: 12px !important;
+    min-width: 18px;
+    min-height: 12px;
+    max-width: 18px;
+    max-height: 12px;
+    border: 0 !important;
+    border-radius: 0 !important;
+    object-fit: fill !important;
+  }
+
+  /* В строке с © 2026 флаг не показываем */
+  body.homepage .homepage-copyright-year img {
+    display: none;
+  }
+
+  body.homepage .homepage-copyright-year {
+    display: inline;
+    white-space: nowrap;
+  }
+}
+/* =========================================================
+   MOBILE — TAG TWO LINES
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .brand__tag {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
+    gap: 2px;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+
+    font-size: 7px !important;
+    line-height: 1.15 !important;
+    letter-spacing: .045em !important;
+  }
+
+  body.homepage .brand__tag-line {
+    display: block;
+    white-space: nowrap !important;
+    line-height: 1.15;
+  }
+
+  body.homepage .brand__tag-line--ru {
+    grid-row: 1;
+  }
+
+  body.homepage .brand__tag-bottom {
+    grid-row: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  body.homepage .brand__flag {
+    display: inline-flex !important;
+    width: 14px !important;
+    height: 9px !important;
+    min-width: 14px;
+    flex: 0 0 14px;
+    overflow: hidden;
+  }
+
+  body.homepage .brand__flag img {
+    display: block;
+    width: 14px !important;
+    height: 9px !important;
+    object-fit: fill;
+  }
 }
