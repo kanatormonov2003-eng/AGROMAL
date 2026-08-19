@@ -1708,14 +1708,69 @@ body.homepage .homepage-demo-lots__notice strong {
 }
 
 @media (max-width: 767px) {
+
+  /* =======================================================
+     CONFIDENTIALITY NOTICE — HORIZONTAL SCROLL
+     Текст ведёт себя так же, как горизонтальные лоты.
+     ======================================================= */
+
   body.homepage .homepage-demo-lots__notice {
-    padding: 8px 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
     gap: 7px;
+
+    padding: 8px 10px;
+
+    box-sizing: border-box;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    white-space: nowrap;
+  }
+
+  body.homepage .homepage-demo-lots__notice::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.homepage .homepage-demo-lots__notice-icon {
+    flex: 0 0 auto;
+
+    width: 16px;
+    min-width: 16px;
+
+    margin: 0;
+
+    font-size: 10px;
+    line-height: 1;
   }
 
   body.homepage .homepage-demo-lots__notice p {
+    flex: 0 0 auto;
+
+    width: max-content;
+    min-width: max-content;
+    max-width: none;
+
+    margin: 0;
+
+    white-space: nowrap;
+
+    overflow: visible;
+
     font-size: 7.5px;
     line-height: 1.5;
+
+    overflow-wrap: normal;
+    word-break: normal;
   }
 }
 body.homepage .homepage-lot__animal {
