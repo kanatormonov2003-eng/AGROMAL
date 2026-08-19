@@ -2467,3 +2467,20 @@ body.homepage .homepage-legal__icon svg {
     font-size: 7px !important;
   }
 }
+@media (max-width: 767px) {
+
+  body.homepage .homepage-demo-lots__notice {
+    padding-left: 570px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
+  }
+
+  body.homepage .homepage-demo-lots__notice p {
+    width: 850px !important;
+    max-width: 850px !important;
+    flex: 0 0 850px !important;
+    margin: 0 !important;
+    white-space: normal !important;
+  }
+
+}
