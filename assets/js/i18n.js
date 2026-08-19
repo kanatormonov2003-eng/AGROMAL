@@ -55,7 +55,7 @@ const messages = {
       "МИНИМАЛЬНЫЙ ОБЪЁМ СЕССИИ",
 
     railMinimumValue:
-      "ОТ 1 000 000 СОМ",
+      "ОТ 700 000 СОМ",
 
     railVerifiedApproach:
       "ПРОВЕРЕННЫЙ ПОДХОД",
@@ -1048,7 +1048,7 @@ const messages = {
       "СЕССИЯНЫН МИНИМАЛДУУ КӨЛӨМҮ",
 
     railMinimumValue:
-      "1 000 000 СОМДОН БАШТАЛАТ",
+      "700 000 СОМДОН БАШТАЛАТ",
 
     railVerifiedApproach:
       "ТЕКШЕРИЛГЕН ЫКМА",
@@ -2002,7 +2002,7 @@ const messages = {
       "MINIMUM SESSION VOLUME",
 
     railMinimumValue:
-      "FROM 1,000,000 KGS",
+      "FROM 700 000 KGS",
 
     railVerifiedApproach:
       "VERIFIED APPROACH",
