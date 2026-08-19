@@ -145,7 +145,7 @@ const messages = {
        ===================================================== */
 
     kyrgyzEmblem:
-      "ГЕРБ",
+      "",
 
     tunduk:
       "ТҮНДҮК",
@@ -1128,7 +1128,7 @@ const messages = {
     /* SYSTEMS */
 
     kyrgyzEmblem:
-      "ГЕРБ",
+      "",
 
     tunduk:
       "ТҮНДҮК",
@@ -2082,7 +2082,7 @@ const messages = {
     /* SYSTEMS */
 
     kyrgyzEmblem:
-      "EMBLEM",
+      "",
 
     tunduk:
       "TUNDÜK",
