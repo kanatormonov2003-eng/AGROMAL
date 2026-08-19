@@ -92,7 +92,7 @@ const messages = {
        ===================================================== */
 
     formulaLabel:
-      "⚡ ФИРМЕННАЯ ФОРМУЛА",
+      "",
 
     formulaMain:
       "ОДИН ЛОТ. ОДНА ЦЕНА. ОДНА СДЕЛКА.",
@@ -1079,7 +1079,7 @@ const messages = {
       "фермердин сунушун жаныбарларды идентификациялоо, ветеринардык текшерүү жана фото-видео каттоосу менен текшерилген дүң лотко айландырып, аны түздөн-түз кесипкөй сатып алуучу менен байланыштырат.",
 
     formulaLabel:
-      "⚡ ФИРМАЛЫК ФОРМУЛА",
+      "",
 
     formulaMain:
       "БИР ЛОТ. БИР БАА. БИР КЕЛИШИМ.",
@@ -2033,7 +2033,7 @@ const messages = {
       "turns a farmer’s offering into a verified wholesale lot with animal identification, veterinary inspection, and photo-video documentation — and directly connects it with a professional buyer.",
 
     formulaLabel:
-      "⚡ SIGNATURE FORMULA",
+      "",
 
     formulaMain:
       "ONE LOT. ONE PRICE. ONE DEAL.",
