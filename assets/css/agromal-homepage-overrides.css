@@ -1708,69 +1708,14 @@ body.homepage .homepage-demo-lots__notice strong {
 }
 
 @media (max-width: 767px) {
-
-  /* =======================================================
-     CONFIDENTIALITY NOTICE — HORIZONTAL SCROLL
-     Текст ведёт себя так же, как горизонтальные лоты.
-     ======================================================= */
-
   body.homepage .homepage-demo-lots__notice {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-
     padding: 8px 10px;
-
-    box-sizing: border-box;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-
-    white-space: nowrap;
-  }
-
-  body.homepage .homepage-demo-lots__notice::-webkit-scrollbar {
-    display: none;
-  }
-
-  body.homepage .homepage-demo-lots__notice-icon {
-    flex: 0 0 auto;
-
-    width: 16px;
-    min-width: 16px;
-
-    margin: 0;
-
-    font-size: 10px;
-    line-height: 1;
+    gap: 7px;
   }
 
   body.homepage .homepage-demo-lots__notice p {
-    flex: 0 0 auto;
-
-    width: max-content;
-    min-width: max-content;
-    max-width: none;
-
-    margin: 0;
-
-    white-space: nowrap;
-
-    overflow: visible;
-
     font-size: 7.5px;
     line-height: 1.5;
-
-    overflow-wrap: normal;
-    word-break: normal;
   }
 }
 body.homepage .homepage-lot__animal {
@@ -1932,12 +1877,19 @@ body.homepage .homepage-lot__note {
    На телефоне текст читается, кнопка становится нормальной.
    ========================================================= */
 
+/* =========================================================
+   MOBILE — NOTICE + LOTS = ONE HORIZONTAL SCROLL
+   Уведомление и лоты прокручиваются вместе
+   ========================================================= */
+
 @media (max-width: 767px) {
 
   body.homepage .homepage-demo-lots {
     width: calc(100% - 20px);
+
     overflow-x: auto;
     overflow-y: hidden;
+
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -1946,18 +1898,81 @@ body.homepage .homepage-lot__note {
     display: none;
   }
 
+
+  /* ---------------------------------------------------------
+     ВЕСЬ ВНУТРЕННИЙ БЛОК = ШИРОКАЯ ЛЕНТА
+     --------------------------------------------------------- */
+
+  body.homepage .homepage-demo-lots__notice,
   body.homepage .homepage-demo-lots__grid {
-    min-width: 0;
     width: max-content;
+    min-width: max-content;
+  }
+
+
+  /* ---------------------------------------------------------
+     NOTICE
+     Теперь он имеет ту же ширину,
+     что и вся лента лотов
+     --------------------------------------------------------- */
+
+  body.homepage .homepage-demo-lots__notice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    width: 100%;
+    min-width: calc(285px * 5);
+
+    box-sizing: border-box;
+
+    padding: 8px 12px 9px;
+
+    white-space: normal;
+  }
+
+  body.homepage .homepage-demo-lots__notice-icon {
+    flex: 0 0 auto;
+  }
+
+  body.homepage .homepage-demo-lots__notice p {
+    flex: 0 0 auto;
+
+    width: calc((285px * 5) - 40px);
+
+    max-width: none;
+
+    margin: 0;
+
+    white-space: normal;
+
+    font-size: 7.5px;
+    line-height: 1.5;
+  }
+
+
+  /* ---------------------------------------------------------
+     LOTS
+     --------------------------------------------------------- */
+
+  body.homepage .homepage-demo-lots__grid {
 
     display: grid;
+
+    width: max-content;
+    min-width: max-content;
+
     grid-template-columns:
-      repeat(5, minmax(285px, 285px));
+      repeat(5, 285px);
 
     padding-right: 0;
   }
 
+
   body.homepage .homepage-lot {
+
     width: 285px;
     min-width: 285px;
     max-width: 285px;
@@ -1965,38 +1980,53 @@ body.homepage .homepage-lot__note {
     min-height: 150px;
 
     display: grid;
-    grid-template-columns: 58px minmax(0, 1fr) 32px;
+
+   grid-template-columns: 58px minmax(0, 1fr);
 
     gap: 10px;
+
     align-items: start;
 
     padding: 12px;
 
+    box-sizing: border-box;
+
     overflow: hidden;
   }
 
-  /* Изображение / тип животного */
+
   body.homepage .homepage-lot__animal {
     width: 58px;
-    height: 52px;
     min-width: 58px;
+    height: 52px;
   }
 
-  /* Текстовый блок */
+
   body.homepage .homepage-lot__meta {
     min-width: 0;
     width: 100%;
     overflow: hidden;
   }
 
-  /*
-     На мобильном разрешаем тексту занимать
-     несколько строк вместо обрезания.
-  */
+
+  body.homepage .homepage-lot__id,
+  body.homepage .homepage-lot__name,
+  body.homepage .homepage-lot__volume,
+  body.homepage .homepage-lot__status,
+  body.homepage .homepage-lot__note {
+
+    white-space: normal;
+
+    overflow: hidden;
+
+    text-overflow: clip;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
 
   body.homepage .homepage-lot__id {
-    white-space: normal;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -2004,9 +2034,8 @@ body.homepage .homepage-lot__note {
     line-height: 1.3;
   }
 
+
   body.homepage .homepage-lot__name {
-    white-space: normal;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -2014,29 +2043,26 @@ body.homepage .homepage-lot__note {
     line-height: 1.35;
   }
 
+
   body.homepage .homepage-lot__volume {
-    white-space: normal;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
     line-height: 1.35;
   }
+
 
   body.homepage .homepage-lot__status {
-    white-space: normal;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
     line-height: 1.35;
   }
+
 
   body.homepage .homepage-lot__note {
-    white-space: normal;
-    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -2044,12 +2070,13 @@ body.homepage .homepage-lot__note {
     line-height: 1.35;
   }
 
-  /*
-     Кнопка ••• больше и удобнее для телефона.
-     Никаких изменений её логики.
-  */
+
+  /* ---------------------------------------------------------
+     КНОПКА ЛОТА
+     --------------------------------------------------------- */
 
   body.homepage .homepage-lot__more {
+
     width: 32px;
     min-width: 32px;
     max-width: 32px;
@@ -2072,16 +2099,47 @@ body.homepage .homepage-lot__note {
     background: rgba(184, 154, 85, .05);
   }
 
-  body.homepage .homepage-lot__more:active {
-    background: rgba(184, 154, 85, .12);
-  }
 
-  /*
-     Убираем стрелку справа — она на мобильном
-     сейчас скрыта и не занимает место.
-  */
-
+  /* Внутренняя стрелка не нужна */
   body.homepage .homepage-demo-lots__next {
     display: none;
   }
+}
+@media (max-width: 767px) {
+
+  body.homepage .homepage-demo-lots {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.homepage .homepage-demo-lots::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.homepage .homepage-demo-lots__track {
+    width: max-content;
+    min-width: max-content;
+    display: block;
+  }
+
+  body.homepage .homepage-demo-lots__notice {
+    width: 1465px;
+    min-width: 1465px;
+  }
+
+  body.homepage .homepage-demo-lots__notice p {
+    width: 1400px;
+    max-width: none;
+  }
+
+  body.homepage .homepage-demo-lots__grid {
+    width: max-content;
+    min-width: max-content;
+    grid-template-columns: repeat(5, 285px);
+  }
+}
+body.homepage .homepage-lot__more {
+  display: none !important;
 }
