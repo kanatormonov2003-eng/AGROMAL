@@ -2973,3 +2973,9 @@ body.homepage .brand__flag img {
     height: 8px !important;
   }
 }
+@media (max-width: 767px) {
+  body.homepage .brand__name {
+    font-size: 17px !important;
+    letter-spacing: -0.02em !important;
+  }
+}
