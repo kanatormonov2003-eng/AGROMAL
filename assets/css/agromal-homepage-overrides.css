@@ -2979,3 +2979,39 @@ body.homepage .brand__flag img {
     letter-spacing: -0.02em !important;
   }
 }
+/* =========================================================
+   LEFT RAIL PHOTO
+   ========================================================= */
+
+body.homepage .ref-rail__photo {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+body.homepage .ref-rail__photo picture,
+body.homepage .ref-rail__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.homepage .ref-rail__photo img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Desktop — вертикальное фото */
+
+/* Mobile — горизонтальное фото */
+@media (max-width: 767px) {
+  body.homepage .ref-rail__photo {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+    margin-top: 8px;
+  }
+}
