@@ -2299,37 +2299,82 @@ body.homepage .homepage-lot__animal {
     flex: none;
   }
 
-  /* TAG */
+   /* TAG — НА МОБИЛЬНОМ:
+     строка 1: ОПТОВЫЕ ПАРТИИ СКОТА + ФЛАГ
+     строка 2: WHOLESALE LIVESTOCK LOTS
+  */
   body.homepage .brand__tag {
-    display: block !important;
+    display: grid !important;
 
-    width: 100% !important;
+    grid-template-columns: max-content 14px;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      "ru flag"
+      "en en";
+
+    align-items: center;
+    column-gap: 5px;
+    row-gap: 2px;
+
+    width: max-content !important;
     min-width: 0 !important;
     max-width: none !important;
 
     margin: 0 !important;
+    padding: 0 !important;
 
     white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: clip !important;
+    overflow: visible !important;
 
     font-size: 7px !important;
     line-height: 1.2 !important;
     letter-spacing: .045em !important;
   }
 
+  body.homepage .brand__tag-line--ru {
+    grid-area: ru;
+    display: block !important;
+    white-space: nowrap !important;
+  }
+
+  body.homepage .brand__tag-bottom {
+    display: contents !important;
+  }
+
+  body.homepage .brand__tag-line--ky {
+    grid-area: en;
+    display: block !important;
+
+    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   /* ФЛАГ */
   body.homepage .brand__flag {
-    flex: 0 0 14px;
-    width: 14px;
-    height: 9px;
+    grid-area: flag;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 14px !important;
+    height: 9px !important;
+    min-width: 14px !important;
+    flex: none !important;
+
+    overflow: hidden;
   }
 
-  body.homepage .brand__flag svg {
-    width: 14px;
-    height: 9px;
-  }
+  body.homepage .brand__flag img {
+    display: block;
 
+    width: 14px !important;
+    height: 9px !important;
+
+    object-fit: fill;
+  }
   /* ЯЗЫКИ */
   body.homepage .lang-switch--compact {
     min-width: max-content;
@@ -2737,5 +2782,175 @@ body.homepage .homepage-copyright-year img {
     width: 14px !important;
     height: 9px !important;
     object-fit: fill;
+  }
+}
+/* =========================================================
+   TAGLINE — FINAL ALIGNMENT
+   ========================================================= */
+
+/* DESKTOP */
+body.homepage .brand__tag {
+  display: grid !important;
+
+  grid-template-columns: max-content 18px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "ru flag"
+    "en en";
+
+  align-items: center;
+  justify-items: start;
+
+  column-gap: 5px;
+  row-gap: 2px;
+
+  width: max-content !important;
+  max-width: none !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+  overflow: visible !important;
+
+  text-align: left !important;
+
+  font-size: 9px;
+  line-height: 1.25;
+  letter-spacing: .075em;
+}
+
+body.homepage .brand__tag-line--ru {
+  grid-area: ru;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+  text-align: left !important;
+}
+
+body.homepage .brand__tag-bottom {
+  display: contents !important;
+}
+
+body.homepage .brand__tag-line--ky {
+  grid-area: en;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+  text-align: left !important;
+}
+
+body.homepage .brand__flag {
+  grid-area: flag;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px !important;
+  height: 12px !important;
+  min-width: 18px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden;
+}
+
+body.homepage .brand__flag img {
+  display: block !important;
+
+  width: 18px !important;
+  height: 12px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: fill;
+}
+
+
+/* =========================================================
+   MOBILE — ЛЕВЕЕ + 2 СТРОКИ
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .brand__tag {
+    grid-template-columns: max-content 14px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "ru flag"
+      "en en";
+
+    column-gap: 5px;
+    row-gap: 2px;
+
+    width: max-content !important;
+
+    font-size: 7px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .045em !important;
+
+    /* сдвигаем весь блок левее */
+    transform: translateX(-6px);
+  }
+
+  body.homepage .brand__tag-line--ru {
+    text-align: left !important;
+  }
+
+  body.homepage .brand__tag-line--ky {
+    text-align: left !important;
+  }
+
+  body.homepage .brand__flag {
+    width: 14px !important;
+    height: 9px !important;
+    min-width: 14px !important;
+  }
+
+  body.homepage .brand__flag img {
+    width: 14px !important;
+    height: 9px !important;
+  }
+
+}
+/* =========================================================
+   HEADER — LOGO LEFT / TAG CLOSER
+   ========================================================= */
+
+body.homepage .site-header__inner--home {
+  gap: 10px;
+}
+
+body.homepage .brand--home {
+  transform: translateX(-6px);
+}
+
+body.homepage .brand-divider {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+body.homepage .brand__tag {
+  margin-left: 0 !important;
+}
+@media (max-width: 767px) {
+  body.homepage .brand--home {
+    transform: translateX(-3px);
+  }
+
+  body.homepage .site-header__inner--home {
+    column-gap: 6px;
   }
 }
