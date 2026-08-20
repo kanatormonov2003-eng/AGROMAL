@@ -2792,16 +2792,17 @@ body.homepage .homepage-copyright-year img {
 body.homepage .brand__tag {
   display: grid !important;
 
-  grid-template-columns: max-content 18px;
+  grid-template-columns: max-content;
   grid-template-rows: auto auto;
+
   grid-template-areas:
-    "ru flag"
-    "en en";
+    "ru"
+    "en";
 
   align-items: center;
   justify-items: start;
 
-  column-gap: 5px;
+  column-gap: 0;
   row-gap: 2px;
 
   width: max-content !important;
@@ -2823,35 +2824,32 @@ body.homepage .brand__tag {
 
 body.homepage .brand__tag-line--ru {
   grid-area: ru;
-
   display: block !important;
-
   margin: 0 !important;
   padding: 0 !important;
-
   white-space: nowrap !important;
-  text-align: left !important;
 }
 
 body.homepage .brand__tag-bottom {
-  display: contents !important;
-}
-
-body.homepage .brand__tag-line--ky {
   grid-area: en;
-
-  display: block !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
 
   margin: 0 !important;
   padding: 0 !important;
 
   white-space: nowrap !important;
-  text-align: left !important;
+}
+
+body.homepage .brand__tag-line--ky {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
 }
 
 body.homepage .brand__flag {
-  grid-area: flag;
-
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -2863,18 +2861,16 @@ body.homepage .brand__flag {
   margin: 0 !important;
   padding: 0 !important;
 
+  flex: 0 0 18px !important;
   overflow: hidden;
 }
 
 body.homepage .brand__flag img {
   display: block !important;
-
   width: 18px !important;
   height: 12px !important;
-
   margin: 0 !important;
   padding: 0 !important;
-
   object-fit: fill;
 }
 
@@ -2883,74 +2879,97 @@ body.homepage .brand__flag img {
    MOBILE — ЛЕВЕЕ + 2 СТРОКИ
    ========================================================= */
 
+/* =========================================================
+   MOBILE — TAG TWO LINES
+   ========================================================= */
+
 @media (max-width: 767px) {
 
   body.homepage .brand__tag {
-    grid-template-columns: max-content 14px;
+    display: grid !important;
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas:
-      "ru flag"
-      "en en";
 
-    column-gap: 5px;
-    row-gap: 2px;
+    gap: 2px;
 
-    width: max-content !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    white-space: normal !important;
+    overflow: visible !important;
 
     font-size: 7px !important;
-    line-height: 1.2 !important;
+    line-height: 1.15 !important;
     letter-spacing: .045em !important;
+  }
 
-    /* сдвигаем весь блок левее */
-    transform: translateX(-6px);
+  body.homepage .brand__tag-line {
+    display: block;
+    white-space: nowrap !important;
+    line-height: 1.15;
   }
 
   body.homepage .brand__tag-line--ru {
-    text-align: left !important;
+    grid-row: 1;
   }
 
-  body.homepage .brand__tag-line--ky {
-    text-align: left !important;
+  body.homepage .brand__tag-bottom {
+    grid-row: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    min-width: 0;
+    white-space: nowrap;
   }
 
   body.homepage .brand__flag {
+    display: inline-flex !important;
     width: 14px !important;
     height: 9px !important;
-    min-width: 14px !important;
+    min-width: 14px;
+    flex: 0 0 14px;
+    overflow: hidden;
   }
 
   body.homepage .brand__flag img {
+    display: block;
     width: 14px !important;
     height: 9px !important;
+    object-fit: fill;
   }
-
-}
-/* =========================================================
-   HEADER — LOGO LEFT / TAG CLOSER
-   ========================================================= */
-
-body.homepage .site-header__inner--home {
-  gap: 10px;
-}
-
-body.homepage .brand--home {
-  transform: translateX(-6px);
-}
-
-body.homepage .brand-divider {
-  margin-left: -2px;
-  margin-right: -2px;
-}
-
-body.homepage .brand__tag {
-  margin-left: 0 !important;
 }
 @media (max-width: 767px) {
-  body.homepage .brand--home {
-    transform: translateX(-3px);
+  body.homepage .brand__tag {
+    font-size: 5.8px !important;
+    letter-spacing: .02em !important;
+    line-height: 1.15 !important;
+    gap: 2px !important;
   }
 
-  body.homepage .site-header__inner--home {
-    column-gap: 6px;
+  body.homepage .brand__tag-line,
+  body.homepage .brand__tag-line--ru,
+  body.homepage .brand__tag-line--ky {
+    font-size: 5.8px !important;
+    letter-spacing: .02em !important;
+  }
+
+  body.homepage .brand__tag-bottom {
+    gap: 3px !important;
+  }
+
+  body.homepage .brand__flag {
+    width: 12px !important;
+    height: 8px !important;
+    min-width: 12px !important;
+    flex-basis: 12px !important;
+  }
+
+  body.homepage .brand__flag img {
+    width: 12px !important;
+    height: 8px !important;
   }
 }
