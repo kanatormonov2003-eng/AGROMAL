@@ -1059,7 +1059,7 @@ lotImageProcessingFailed:
 
    
       taglineBefore: "ОПТОВЫЕ ПАРТИИ СКОТА",
-      taglineAfter: "",
+      taglineAfter: "ДҮҢ МАЛ ПАРТИЯЛАРЫ",
     
     kg:
       "КГ",
