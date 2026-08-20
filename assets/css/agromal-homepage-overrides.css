@@ -3032,41 +3032,135 @@ body.homepage .ref-rail__photo img {
     font-size: 11px;
   }
 }
+
 /* =========================================================
-   PRIVATE DIGITAL PLATFORM — KYRGYZ FLAG
+   TAGLINE — KYRGYZ FLAG ON FIRST LINE
+   DESKTOP + MOBILE
    ========================================================= */
 
-body.homepage .ref-rail__private-content {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  padding-left: 2px;
+body.homepage .brand__tag {
+  display: grid !important;
+
+  grid-template-columns: max-content auto;
+  grid-template-rows: auto auto;
+
+  grid-template-areas:
+    "first flag"
+    "second second";
+
+  align-items: center;
+  justify-items: start;
+
+  column-gap: 5px;
+  row-gap: 2px;
+
+  width: max-content !important;
+  min-width: 0 !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-align: left !important;
 }
 
-body.homepage .ref-rail__flag {
-  display: block;
-  width: 100%;
-  max-width: 112px;
-  height: 36px;
-  flex: 0 0 36px;
-  object-fit: fill;
+/* Первая строка: taglineBefore */
+body.homepage .brand__tag-line--ru {
+  grid-area: first;
+
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
 }
 
-/* MOBILE */
+/* Вторая строка: taglineAfter */
+body.homepage .brand__tag-bottom {
+  display: contents !important;
+}
+
+body.homepage .brand__tag-line--ky {
+  grid-area: second;
+
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+/* Флаг — рядом с первой строкой */
+body.homepage .brand__flag {
+  grid-area: flag;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px !important;
+  height: 12px !important;
+  min-width: 18px !important;
+  min-height: 12px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  flex: 0 0 18px !important;
+  overflow: hidden;
+}
+
+body.homepage .brand__flag img {
+  display: block !important;
+
+  width: 18px !important;
+  height: 12px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: fill !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 767px) {
 
-  body.homepage .ref-rail__private-content {
-    align-items: center;
-    width: 100%;
-    padding-left: 0;
+  body.homepage .brand__tag {
+    grid-template-columns: max-content auto;
+    grid-template-rows: auto auto;
+
+    column-gap: 3px;
+    row-gap: 2px;
+
+    font-size: 5.8px !important;
+    line-height: 1.15 !important;
+    letter-spacing: .02em !important;
   }
 
-  body.homepage .ref-rail__flag {
-    width: 38px;
-    height: 25px;
-    flex: 0 0 25px;
+  body.homepage .brand__tag-line--ru,
+  body.homepage .brand__tag-line--ky {
+    font-size: 5.8px !important;
+    line-height: 1.15 !important;
+    letter-spacing: .02em !important;
   }
 
+  body.homepage .brand__flag {
+    width: 12px !important;
+    height: 8px !important;
+    min-width: 12px !important;
+    min-height: 8px !important;
+
+    flex-basis: 12px !important;
+  }
+
+  body.homepage .brand__flag img {
+    width: 12px !important;
+    height: 8px !important;
+  }
 }
