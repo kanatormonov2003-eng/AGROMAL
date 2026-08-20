@@ -536,7 +536,7 @@ body.homepage .ref-feature p {
 body.homepage .hero-b2b-systems {
   width: 100%;
   max-width: none;
-  margin-top: 18px;
+  margin-top: 0px;
   padding-top: 13px;
   border-top: 1px solid rgba(255, 255, 255, .05);
 }
@@ -2997,6 +2997,14 @@ body.homepage .ref-rail__photo img {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 767px) {
+  body.homepage .ref-rail__photo picture,
+  body.homepage .ref-rail__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 body.homepage .ref-rail__photo img {
   object-fit: cover;
@@ -3162,5 +3170,310 @@ body.homepage .brand__flag img {
   body.homepage .brand__flag img {
     width: 12px !important;
     height: 8px !important;
+  }
+}
+/* =========================================================
+   DESKTOP — SYSTEMS UNDER PHOTO
+   CAN CROSS THE RAIL BOUNDARY
+   SAME BACKGROUND AS LEFT RAIL
+   MOBILE — NO CHANGE
+   ========================================================= */
+
+/* =========================================================
+   DESKTOP — SYSTEMS DIRECTLY UNDER PHOTO
+   5% EMPTY SPACE IS OVERLAPPED
+   MOBILE — NO CHANGE
+   ========================================================= */
+
+/* =========================================================
+   DESKTOP — SYSTEMS GLUED TO PHOTO
+   НЕ ВЛИЯЕТ НА РАЗМЕР ФОТО
+   MOBILE — NO CHANGE
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .hero-b2b-systems--center {
+    display: none;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail {
+    display: block;
+
+    position: relative;
+    z-index: 5;
+
+    width: max-content;
+    min-width: 100%;
+
+    margin: 0;
+    padding: 2px 8px 6px;
+
+    border-top: 1px solid rgba(255, 255, 255, .05);
+
+    background: linear-gradient(
+      180deg,
+      #101410,
+      #0a0d0b
+    );
+
+    box-sizing: border-box;
+    overflow: visible;
+
+    /* Только визуально поднимаем блок.
+       Высоту фотографии НЕ трогаем. */
+    transform: none;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-strip--homepage {
+    width: max-content;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-strip__flow--homepage {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow: visible;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-logo {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #8a928c;
+    font-size: 6.5px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-logo img,
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-platform-mark,
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-halal-mark {
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    min-height: 27px;
+    flex-basis: 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .02);
+    box-sizing: border-box;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-logo img {
+    padding: 3px;
+    object-fit: contain;
+    opacity: .92;
+    filter: grayscale(1);
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-arrow {
+    flex: 0 0 auto;
+    color: #5b635d;
+    font-size: 10px;
+    line-height: 1;
+  }
+}
+
+/* MOBILE — НЕ ТРОГАЕМ */
+
+@media (max-width: 767px) {
+
+  body.homepage .hero-b2b-systems--center {
+    display: block;
+  }
+
+  body.homepage .hero-b2b-systems--rail {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE — ABSOLUTELY NO CHANGE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .hero-b2b-systems--center {
+    display: block;
+  }
+
+  body.homepage .hero-b2b-systems--rail {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE — НЕ МЕНЯЕМ
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .hero-b2b-systems--center {
+    display: block;
+  }
+
+  body.homepage .hero-b2b-systems--rail {
+    display: none;
+  }
+}
+/* =========================================================
+   DESKTOP — SYSTEMS BACKGROUND FILLS PHOTO GAP
+   HERBS / ICONS — SIZE UNCHANGED
+   MOBILE — NO CHANGE
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail {
+    display: block;
+    position: relative;
+    z-index: 5;
+
+    width: max-content;
+    min-width: 100%;
+
+    margin-top: 0;
+    padding: 0 8px 205px;
+
+    border-top: 1px solid rgba(255, 255, 255, .05);
+
+    background: linear-gradient(
+      180deg,
+      #101410 0%,
+      #0a0d0b 100%
+    );
+
+    box-sizing: border-box;
+    overflow: visible;
+
+    transform: none;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail
+    .sync-strip--homepage {
+    width: max-content;
+    margin: 0;
+    padding: 10px 0;
+
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+}
+
+/* =========================================================
+   MOBILE — ABSOLUTELY NO CHANGE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .hero-b2b-systems--center {
+    display: block;
+  }
+
+  body.homepage .hero-b2b-systems--rail {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+
+  body.homepage .ref-rail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.homepage .ref-rail__photo {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+
+  body.homepage .ref-rail__photo picture,
+  body.homepage .ref-rail__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  body.homepage .ref-rail__photo img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail {
+    flex: 0 0 auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+
+    width: max-content;
+    min-width: 100%;
+
+    margin: 0;
+    padding: 0 8px;
+
+    box-sizing: border-box;
+
+    background: #0a0d0b;
+    border-top: 1px solid rgba(255,255,255,.05);
+
+    overflow: visible;
+  }
+}
+@media (min-width: 768px) {
+  body.homepage .hero-b2b-principles-wrap {
+    align-items: stretch;
+  }
+
+  body.homepage .hero-b2b-principles {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.homepage .hero-b2b-principles ol {
+    flex: 1;
+  }
+
+  body.homepage .ref-feature-grid {
+    height: 100%;
+    align-content: stretch;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  body.homepage .ref-feature {
+    height: 100%;
+    box-sizing: border-box;
   }
 }
