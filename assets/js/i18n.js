@@ -12,10 +12,10 @@ const messages = {
       "AgroMal.kg",
 
     taglineBefore:
-     "ОПТОВЫЕ ПАРТИИ СКОТА",
+     "ДҮҢ МАЛ ПАРТИЯЛАРЫ", 
 
     taglineAfter:
-      "ДҮҢ МАЛ ПАРТИЯЛАРЫ",  
+      "ОПТОВЫЕ ПАРТИИ СКОТА",
        
     kg:
       "КГ",
@@ -1057,9 +1057,9 @@ lotImageProcessingFailed:
     brandName:
       "AgroMal",
 
-   
-      taglineBefore: "ОПТОВЫЕ ПАРТИИ СКОТА",
-      taglineAfter: "ДҮҢ МАЛ ПАРТИЯЛАРЫ",
+       
+      taglineBefore: "ДҮҢ МАЛ ПАРТИЯЛАРЫ",
+      taglineAfter: "ОПТОВЫЕ ПАРТИИ СКОТА",
     
     kg:
       "КГ",
