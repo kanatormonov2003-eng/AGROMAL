@@ -3624,3 +3624,14 @@ body.homepage .hero-b2b-systems--center
     margin-top: 10px;
   }
 }
+@media (min-width: 768px) {
+
+  body.homepage .hero--homepage {
+    padding-bottom: 14px !important;
+  }
+
+  body.homepage .homepage-demo-lots {
+    margin-top: 0 !important;
+  }
+
+}
