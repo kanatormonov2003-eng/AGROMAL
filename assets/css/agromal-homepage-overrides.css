@@ -3360,7 +3360,6 @@ body.homepage .brand__flag img {
     min-width: 100%;
 
     margin-top: 0;
-    padding: 0 8px 205px;
 
     border-top: 1px solid rgba(255, 255, 255, .05);
 
@@ -3475,5 +3474,153 @@ body.homepage .brand__flag img {
   body.homepage .ref-feature {
     height: 100%;
     box-sizing: border-box;
+  }
+}
+/* =========================================================
+   DESKTOP — SYSTEMS STRIP UNDER FORMULA
+   MOBILE (<768px) — NO CHANGE
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  /* Убираем копию из левого rail */
+  body.homepage .ref-rail > .hero-b2b-systems--rail {
+    display: none !important;
+  }
+
+  /* Центральная копия остаётся внутри обычного потока */
+  body.homepage .hero-b2b-systems--center {
+    display: block !important;
+
+    position: relative;
+    z-index: 6;
+
+    width: 100%;
+    max-width: none;
+
+    margin-top: -1px;
+    padding-top: 4px;
+
+    border-top: 0;
+  }
+
+  /* Не меняем layout hero__content */
+  body.homepage .hero__content--reference {
+    display: block;
+    overflow: visible;
+  }
+
+  /* Лента */
+  body.homepage .hero-b2b-systems--center .sync-strip__flow--homepage {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+    flex-wrap: nowrap;
+    overflow: visible;
+  }
+
+  body.homepage .hero-b2b-systems--center .sync-logo {
+    gap: 5px;
+    flex: 0 0 auto;
+  }
+
+body.homepage .hero-b2b-systems--center {
+  position: relative;
+  z-index: 6;
+
+  width: 100%;
+  max-width: none;
+
+  margin-top: -1px;
+  padding-top: 4px;
+
+  border-top: 0;
+
+  transform: translateY(0);
+}
+
+body.homepage .hero-b2b-systems--center
+.sync-strip__flow--homepage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+}
+@media (min-width: 768px) {
+
+  body.homepage .hero-b2b-systems--center
+  .sync-strip__flow--homepage {
+    transform: translateY(3px);
+  }
+
+}
+@media (min-width: 768px) {
+
+  body.homepage .ref-rail > .hero-b2b-systems--rail {
+    display: none !important;
+  }
+
+  body.homepage .hero-b2b-systems--center {
+    display: block !important;
+
+    position: relative;
+    z-index: 6;
+
+    width: 100%;
+    max-width: none;
+
+    margin-top: -1px;
+    padding-top: 4px;
+
+    border-top: 0;
+    transform: translateY(0);
+  }
+
+  body.homepage .hero__content--reference {
+    display: block;
+    overflow: visible;
+  }
+
+  body.homepage .hero-b2b-systems--center
+  .sync-strip__flow--homepage {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 6px;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    transform: translateY(3px);
+  }
+
+  body.homepage .hero-b2b-systems--center
+  .sync-strip__flow--homepage::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.homepage .hero-b2b-systems--center .sync-logo {
+    gap: 5px;
+    flex: 0 0 auto;
+  }
+
+  body.homepage .hero-b2b-systems--center
+  + .hero-b2b-principles-wrap {
+    margin-top: 10px;
   }
 }
