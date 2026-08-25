@@ -3972,13 +3972,13 @@ body.homepage .brand__name {
    увеличиваться и остаётся мобильным */
 @media (max-width: 767px) {
   body.homepage .brand__logo {
-    width: clamp(36px, 11vw, 44px);
-    height: clamp(36px, 11vw, 44px);
-    flex-basis: clamp(36px, 11vw, 44px);
+    width: 36px !important;
+    height: 36px !important;
+    flex-basis: 36px !important;
   }
 
   body.homepage .brand__name {
-    font-size: clamp(17px, 5vw, 21px);
+    font-size: 17px !important;
   }
 }
 /* =========================================================
