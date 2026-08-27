@@ -4223,4 +4223,12 @@ left: 3px;
     top: -3px;
     left: 5px;
   }
+  
+}
+@media (min-width: 768px) {
+  body.homepage .homepage-lot__animal {
+    font-size: 5px !important;
+    line-height: 1.05 !important;
+    letter-spacing: .02em !important;
+  }
 }
