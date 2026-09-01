@@ -55,26 +55,28 @@ const messages = {
       "ЗАКРЫТАЯ ЦИФРОВАЯ ПЛАТФОРМА",
 
     railMinimumVolume:
-      "МИНИМАЛЬНЫЙ ОБЪЁМ СЕССИИ",
+      "МИНИМАЛЬНЫЙ ОБЪЁМ ЛОТА",
 
     railMinimumValue:
-      "ОТ 700 000 СОМ",
+      "ОТ 800 000 СОМ",
 
     railVerifiedApproach:
       "ПРОВЕРЕННЫЙ ПОДХОД",
 
     railDirectB2B:
       "ПРЯМЫЕ B2B-СДЕЛКИ",
+
     lotImage:
-  "ФОТО ЛОТА",
+      "ФОТО ЛОТА",
 
-lotImageHint:
-  "JPG, PNG или WebP. Максимум 5 МБ.",
+    lotImageHint:
+      "JPG, PNG или WebP. Максимум 5 МБ.",
 
-lotImageRemove:
-  "УБРАТЬ ФОТО",
+    lotImageRemove:
+      "УБРАТЬ ФОТО",
+
     railFullSupport:
-      "ПОЛНОЕ СОПРОВОЖДЕНИЕ",
+      "КООРДИНАЦИЯ СДЕЛКИ",
 
     railSecurity:
       "БЕЗОПАСНОСТЬ И КОНФИДЕНЦИАЛЬНОСТЬ",
@@ -96,7 +98,7 @@ lotImageRemove:
       "Цифровая инфраструктура для оптовых закупок животноводческой продукции.",
 
     heroText:
-      "превращает предложение фермера в проверенный оптовый лот с идентификацией, ветеринарной проверкой и фото-видеофиксацией — и напрямую соединяет его с профессиональным покупателем.",
+      "AGROMAL превращает предложение фермера в структурированный оптовый лот с идентификацией, полевой верификацией и фото-видеофиксацией — и соединяет его с профессиональным закупщиком.",
 
     /* =====================================================
        FORMULA / PRINCIPLES
@@ -104,73 +106,75 @@ lotImageRemove:
 
     formulaLabel:
       "",
+
     /* REGIONS — ADMIN CODES */
 
-batken:
-  "Баткенская область",
+    batken:
+      "Баткенская область",
 
-jalal_abad:
-  "Джалал-Абадская область",
+    jalal_abad:
+      "Джалал-Абадская область",
 
-issyk_kul:
-  "Иссык-Кульская область",
+    issyk_kul:
+      "Иссык-Кульская область",
 
-naryn:
-  "Нарынская область",
+    naryn:
+      "Нарынская область",
 
-osh:
-  "Ошская область",
+    osh:
+      "Ошская область",
 
-talas:
-  "Таласская область",
+    talas:
+      "Таласская область",
 
-chuy:
-  "Чуйская область",
+    chuy:
+      "Чуйская область",
+
     formulaMain:
       "ОДИН ЛОТ. ОДНА ЦЕНА. ОДНА СДЕЛКА.",
 
     formulaNote:
-      "Без базара. Без лишних посредников. Без покупки скота на свой баланс.",
+      "Без базара. Без обязательств для фермера. Без покупки скота AGROMAL на свой баланс.",
 
     principlesTitle:
       "ПРИНЦИП РАБОТЫ ПЛАТФОРМЫ",
 
     principle1:
-      "Фермер называет свою чистую цену.",
+      "Фермер фиксирует количество и свою цену.",
 
     principle2:
-      "AGROMAL верифицирует лот, проверяет идентификацию животных и формирует торговое предложение.",
+      "AGROMAL верифицирует заявленные данные, идентификацию животных и формирует карточку лота.",
 
     principle3:
-      "Покупатель получает проверенный объём по заранее известной цене. Оплачивает напрямую фермеру.",
+      "Закупщик изучает лот и при необходимости запрашивает дополнительную проверку.",
 
     principle4:
-      "Фермер получает 100% своей стоимости у ворот БЕЗ ТОРГА.",
+      "Договор купли-продажи заключается непосредственно между Фермером и Закупщиком. Расчёт за скот производится напрямую между сторонами.",
 
     principle5:
-      "Фиксированный сервисный сбор взимается только за фактически состоявшуюся сделку.",
+      "AGROMAL получает сервисный сбор 4% только за фактически состоявшуюся сделку.",
 
     /* =====================================================
        FEATURES
        ===================================================== */
 
     featureVerifiedLot:
-      "ПРОВЕРЕННЫЙ ЛОТ",
+      "ВЕРИФИЦИРОВАННЫЙ ЛОТ",
 
     featureVerifiedLotText:
-      "Идентификация, ветеринарная проверка и фото-видеофиксация каждой партии скота.",
+      "Идентификация, полевой осмотр при необходимости и фото-видеофиксация партии.",
 
     featureFullSupport:
-      "ПОЛНОЕ СОПРОВОЖДЕНИЕ",
+      "КООРДИНАЦИЯ СДЕЛКИ",
 
     featureFullSupportText:
-      "Ветеринарно-санитарные документы и юридическое оформление сделок.",
+      "Организация взаимодействия сторон и координация необходимых процедур.",
 
     featureDirectB2B:
       "ПРЯМЫЕ B2B-СДЕЛКИ",
 
     featureDirectB2BText:
-      "Прозрачные условия, фиксированная цена, без посредников и скрытых комиссий.",
+      "Прозрачные условия, заранее согласованная цена и прямой расчёт между сторонами.",
 
     /* =====================================================
        SYSTEMS
@@ -227,11 +231,22 @@ chuy:
 
     passwordPlaceholder:
       "Введите пароль доступа",
-    currencyKgs: "Сом",
-currencyKzt: "Тенге",
-currencyRub: "Рубль",
-currencyEur: "Евро",
-currencyUsd: "Доллар",
+
+    currencyKgs:
+      "Сом",
+
+    currencyKzt:
+      "Тенге",
+
+    currencyRub:
+      "Рубль",
+
+    currencyEur:
+      "Евро",
+
+    currencyUsd:
+      "Доллар",
+
     passwordAria:
       "Пароль доступа",
 
@@ -404,17 +419,19 @@ currencyUsd: "Доллар",
 
     publicLot2Name:
       "Коровы / Швицы (Крупный опт / Фаршевое сырье для перерабатывающих цехов)",
+
     lotImageInvalid:
-  "Не удалось обработать фотографию.",
+      "Не удалось обработать фотографию.",
 
-lotImageInvalidType:
-  "Можно загрузить только JPG, PNG или WebP.",
+    lotImageInvalidType:
+      "Можно загрузить только JPG, PNG или WebP.",
 
-lotImageTooLarge:
-  "Размер фотографии не должен превышать 5 МБ.",
+    lotImageTooLarge:
+      "Размер фотографии не должен превышать 5 МБ.",
 
-lotImageProcessingFailed:
-  "Не удалось подготовить фотографию. Попробуйте другой файл.",
+    lotImageProcessingFailed:
+      "Не удалось подготовить фотографию. Попробуйте другой файл.",
+
     publicLot2Volume:
       "18 голов",
 
@@ -653,7 +670,8 @@ lotImageProcessingFailed:
       "ЗАКРЫТЬ",
 
     bookLot:
-  "⚖️ ЗАБРОНИРОВАТЬ\nЛОТ",
+      "⚖️ ЗАБРОНИРОВАТЬ\nЛОТ",
+
     whatsapp:
       "WHATSAPP",
 
@@ -782,7 +800,71 @@ lotImageProcessingFailed:
 
     bookingStatusNew:
       "Новая заявка",
+    featureVerifiedLotDisclaimer:
+  "Верификация отражает результаты проведённых процедур и не является гарантией отсутствия скрытых заболеваний или иных скрытых обстоятельств.",
 
+inspectionTitle:
+  "ПРОВЕРЬТЕ ЛОТ ПЕРЕД ПОКУПКОЙ",
+
+inspectionText:
+  "Закупщик может приехать самостоятельно, направить своего представителя, запросить дополнительное фото/видео или заказать дополнительный выезд ветеринарного специалиста через AGROMAL.",
+
+inspectionNote:
+  "Дополнительная проверка оплачивается отдельно. Официальное ветеринарное оформление осуществляется уполномоченными специалистами в установленном порядке.",
+
+inspectionButton:
+  "ЗАПРОСИТЬ ПРОВЕРКУ",
+
+controlWeightTitle:
+  "КОНТРОЛЬНЫЙ ВЕС",
+
+controlWeightText:
+  "Вес в карточке лота до контрольного взвешивания может быть предварительным. Окончательный вес и порядок расчёта Фермер и Закупщик фиксируют в договоре сделки.",
+
+freeLotTitle:
+  "РАЗМЕЩЕНИЕ ЛОТА — БЕСПЛАТНО",
+
+freeLotText:
+  "Фермер может разместить партию скота на AGROMAL бесплатно и без обязательств. Он вправе в любой момент самостоятельно продать скот или выбрать другой способ реализации. Если лот уже продан — достаточно сообщить AGROMAL.",
+
+serviceFeeTitle:
+  "СЕРВИС AGROMAL — 4%",
+
+serviceFeeText:
+  "При бронировании лота оплачивается сервисный сбор 4% от суммы сделки. AGROMAL проводит проверку лота по своему регламенту и координирует необходимые процедуры до сделки и погрузки.",
+
+serviceFeeSelfCheck:
+  "Хотите проверить самостоятельно? Вы можете приехать лично или направить своего представителя.",
+
+freeLotShort:
+  "Размещение лота для фермера — бесплатно и ни к чему его не обязывает.",
+
+farmerPriceTitle:
+  "ЦЕНА ФЕРМЕРА",
+
+farmerPriceText:
+  "Цена фермера фиксируется при размещении лота. Условия окончательного расчёта определяются сторонами в договоре сделки.",
+
+footerLegalNew1:
+  "AGROMAL — независимая информационно-техническая B2B-платформа для взаимодействия Поставщиков и Закупщиков сельскохозяйственных животных.",
+
+footerLegalNew2:
+  "AGROMAL не является продавцом, покупателем, собственником, хранителем или перевозчиком животных и не принимает денежные средства в оплату товара.",
+
+footerLegalNew3:
+  "Договор купли-продажи заключается непосредственно между Поставщиком и Закупщиком. Расчёты за животных осуществляются непосредственно между сторонами сделки.",
+
+footerLegalNew4:
+  "Полевой осмотр и верификация AGROMAL не заменяют обязательное ветеринарное оформление.",
+
+footerLegalNew5:
+  "Оператор платформы: ИП [ФИО].",
+
+lotPlacementRules:
+  "ПРАВИЛА РАЗМЕЩЕНИЯ ЛОТОВ",
+
+saleContract:
+  "ДОГОВОР КУПЛИ-ПРОДАЖИ",
     bookingStatusConfirmed:
       "Подтверждено",
 
@@ -915,13 +997,28 @@ lotImageProcessingFailed:
 
     actionNote:
       "ТЕКСТ DISABLED-КНОПКИ",
-    regionBatken: "Баткенская область",
-    regionJalalAbad: "Джалал-Абадская область",
-    regionIssykKul: "Иссык-Кульская область",
-    regionNaryn: "Нарынская область",
-    regionOsh: "Ошская область",
-    regionTalas: "Таласская область",
-    regionChuy: "Чуйская область",
+
+    regionBatken:
+      "Баткенская область",
+
+    regionJalalAbad:
+      "Джалал-Абадская область",
+
+    regionIssykKul:
+      "Иссык-Кульская область",
+
+    regionNaryn:
+      "Нарынская область",
+
+    regionOsh:
+      "Ошская область",
+
+    regionTalas:
+      "Таласская область",
+
+    regionChuy:
+      "Чуйская область",
+
     metricLabel1:
       "ДОП. ПОЛЕ 1 — ЗАГОЛОВОК",
 
@@ -1032,6 +1129,153 @@ lotImageProcessingFailed:
     privacySection12:
       "Контакты оператора",
 
+    privacyIntro:
+      "Настоящая Политика определяет порядок обработки и защиты персональных и коммерческих данных пользователей цифровой B2B-платформы AGROMAL.KG.",
+
+    privacyOperator:
+      "Оператор платформы: ИП [ФИО].",
+
+    privacyGeneralText:
+      "AGROMAL использует предоставленные пользователями данные исключительно для работы платформы, верификации участников, формирования и сопровождения B2B-лотов, связи между Поставщиками и Закупщиками и выполнения иных функций, предусмотренных условиями работы платформы.",
+
+    privacyGeneralText2:
+      "Обработка данных осуществляется в соответствии с действующим законодательством Кыргызской Республики, включая положения Цифрового кодекса Кыргызской Республики.",
+
+    privacyDataIntro:
+      "В зависимости от типа пользователя могут обрабатываться:",
+
+    privacyData1:
+      "имя и контактные данные;",
+
+    privacyData2:
+      "данные организации и ИНН;",
+
+    privacyData3:
+      "сведения о фермерском хозяйстве или предприятии;",
+
+    privacyData4:
+      "данные, необходимые для B2B-верификации;",
+
+    privacyData5:
+      "информация о предлагаемых или запрашиваемых лотах;",
+
+    privacyData6:
+      "фотографии и видеоматериалы животных;",
+
+    privacyData7:
+      "сведения об идентификации животных и сопроводительных документах;",
+
+    privacyData8:
+      "данные полевых инспекторов, необходимые для выполнения их работы;",
+
+    privacyData9:
+      "технические данные, необходимые для функционирования платформы.",
+
+    privacyDataFinal:
+      "AGROMAL не запрашивает данные, которые не нужны для соответствующей цели обработки.",
+
+    privacyPurposesIntro:
+      "Данные могут использоваться для:",
+
+    privacyPurpose1:
+      "регистрации и идентификации участников;",
+
+    privacyPurpose2:
+      "B2B-верификации;",
+
+    privacyPurpose3:
+      "размещения и проверки лотов;",
+
+    privacyPurpose4:
+      "связи между Поставщиком и Закупщиком;",
+
+    privacyPurpose5:
+      "ветеринарного и документального сопровождения лотов;",
+
+    privacyPurpose6:
+      "организации работы полевых инспекторов;",
+
+    privacyPurpose7:
+      "обеспечения безопасности платформы;",
+
+    privacyPurpose8:
+      "обработки обращений пользователей;",
+
+    privacyPurpose9:
+      "выполнения требований законодательства Кыргызской Республики.",
+
+    privacyCommercialText:
+      "Коммерческие сведения пользователей, включая объёмы, цены, контакты, местонахождение хозяйств и условия поставок, не публикуются в открытом доступе без соответствующего основания или согласия пользователя.",
+
+    privacyCommercialText2:
+      "Публичные демонстрационные и архивные лоты могут содержать обезличенные или изменённые данные и не должны восприниматься как актуальные предложения для заключения сделки.",
+
+    privacyCommercialText3:
+      "Актуальные коммерческие данные доступны только участникам платформы в соответствии с установленными правилами доступа.",
+
+    privacySecurityText:
+      "AGROMAL принимает разумные организационные и технические меры для защиты данных от неправомерного доступа, изменения, утраты, раскрытия и иного неправомерного использования.",
+
+    privacySecurityText2:
+      "Доступ сотрудников и привлечённых специалистов к данным предоставляется только в объёме, необходимом для выполнения их функций.",
+
+    privacySecurityText3:
+      "AGROMAL не гарантирует абсолютную защиту информации от любых возможных угроз, но принимает необходимые меры безопасности в пределах своей ответственности.",
+
+    privacyTransferText:
+      "AGROMAL не продаёт персональные данные пользователей третьим лицам.",
+
+    privacyTransferText2:
+      "Передача отдельных данных может осуществляться непосредственно участнику сделки, привлечённому специалисту или иному лицу только в объёме, необходимом для выполнения соответствующей функции платформы, исполнения договорных обязательств либо в случаях, предусмотренных законодательством Кыргызской Республики.",
+
+    privacyMediaIntro:
+      "Фотографии и видеозаписи животных могут использоваться для:",
+
+    privacyMedia1:
+      "верификации лота;",
+
+    privacyMedia2:
+      "подтверждения его характеристик;",
+
+    privacyMedia3:
+      "формирования торгового предложения;",
+
+    privacyMedia4:
+      "предоставления информации потенциальному Закупщику.",
+
+    privacyMediaText:
+      "Публичное размещение материалов осуществляется с учётом установленного режима доступа и конфиденциальности.",
+
+    privacyMessengerText:
+      "Пользователь может передавать AGROMAL информацию через предусмотренные платформой каналы связи, включая мессенджеры.",
+
+    privacyMessengerText2:
+      "Полученные таким способом данные обрабатываются AGROMAL в соответствии с настоящей Политикой и применимым законодательством.",
+
+    privacyMessengerText3:
+      "AGROMAL не распространяет на сторонние сервисы собственные гарантии безопасности их информационной инфраструктуры.",
+
+    privacyRetentionText:
+      "Данные хранятся в течение периода, необходимого для выполнения целей их обработки, работы платформы и исполнения обязательств, а также в случаях, когда дальнейшее хранение требуется законодательством Кыргызской Республики.",
+
+    privacyRightsText:
+      "Пользователь вправе обращаться к Оператору по вопросам обработки своих данных, уточнения предоставленной информации и иным вопросам, связанным с обработкой данных, в порядке, предусмотренном действующим законодательством Кыргызской Республики.",
+
+    privacyChangesText:
+      "AGROMAL вправе обновлять настоящую Политику при изменении законодательства, функциональности платформы или порядка обработки данных.",
+
+    privacyChangesText2:
+      "Актуальная версия Политики размещается на сайте AGROMAL.KG.",
+
+    privacyContactsOperator:
+      "Оператор: ИП [ФИО]",
+
+    privacyContactsSite:
+      "Сайт: agromal.kg",
+
+    privacyContactsContact:
+      "Контакт: [телефон / e-mail]",
+
     privacyBack:
       "← ВЕРНУТЬСЯ НА ГЛАВНУЮ",
 
@@ -1055,12 +1299,14 @@ lotImageProcessingFailed:
     /* HEADER */
 
     brandName:
-      "AgroMal",
+      "Сервис AgroMal",
 
-       
-      taglineBefore: "ДҮҢ МАЛ ПАРТИЯЛАРЫ",
-      taglineAfter: "ОПТОВЫЕ ПАРТИИ СКОТА",
-    
+    taglineBefore:
+      "ДҮҢ МАЛ ПАРТИЯЛАРЫ",
+
+    taglineAfter:
+      "ОПТОВЫЕ ПАРТИИ СКОТА",
+
     kg:
       "КГ",
 
@@ -1097,17 +1343,19 @@ lotImageProcessingFailed:
       "ЖАБЫК САНАРИПТИК ПЛАТФОРМА",
 
     railMinimumVolume:
-      "СЕССИЯНЫН МИНИМАЛДУУ КӨЛӨМҮ",
+      "ЛОТТУН МИНИМАЛДУУ КӨЛӨМҮ",
+
     lotImage:
-  "ЛОТТУН СҮРӨТҮ",
+      "ЛОТТУН СҮРӨТҮ",
 
-lotImageHint:
-  "JPG, PNG же WebP. Максимум 5 МБ.",
+    lotImageHint:
+      "JPG, PNG же WebP. Максимум 5 МБ.",
 
-lotImageRemove:
-  "СҮРӨТТҮ ӨЧҮРҮҮ",
+    lotImageRemove:
+      "СҮРӨТТҮ ӨЧҮРҮҮ",
+
     railMinimumValue:
-      "700 000 СОМДОН БАШТАЛАТ",
+      "800 000 СОМДОН БАШТАЛАТ",
 
     railVerifiedApproach:
       "ТЕКШЕРИЛГЕН ЫКМА",
@@ -1116,7 +1364,7 @@ lotImageRemove:
       "ТҮЗ B2B-КЕЛИШИМДЕР",
 
     railFullSupport:
-      "ТОЛУК КОШТОП ЖҮРҮҮ",
+      "БҮТҮМДҮ КООРДИНАЦИЯЛОО",
 
     railSecurity:
       "КООПСУЗДУК ЖАНА КУПУЯЛУУЛУК",
@@ -1136,66 +1384,145 @@ lotImageRemove:
       "Мал чарба продукциясын дүң сатып алуулар үчүн санариптик инфраструктура.",
 
     heroText:
-      "фермердин сунушун жаныбарларды идентификациялоо, ветеринардык текшерүү жана фото-видео каттоосу менен текшерилген дүң лотко айландырып, аны түздөн-түз кесипкөй сатып алуучу менен байланыштырат.",
+      "AGROMAL фермердин сунушун жаныбарларды идентификациялоо, талаада верификациялоо жана фото-видео каттоосу менен түзүмдөлгөн дүң лотко айландырып, аны кесипкөй сатып алуучу менен байланыштырат.",
 
     formulaLabel:
       "",
+    featureVerifiedLotDisclaimer:
+  "Верификация жүргүзүлгөн процедуралардын жыйынтыгын чагылдырат жана жашыруун оорулардын же башка жашыруун жагдайлардын жоктугуна кепилдик бербейт.",
 
+inspectionTitle:
+  "САТЫП АЛУУДАН МУРДА ЛОТТУ ТЕКШЕРИҢИЗ",
+
+inspectionText:
+  "Сатып алуучу өзү келип, өзүнүн өкүлүн жөнөтүп, кошумча фото/видео сурап же AGROMAL аркылуу ветеринардык адистин кошумча чыгуусуна буйрутма бере алат.",
+
+inspectionNote:
+  "Кошумча текшерүү өзүнчө төлөнөт. Расмий ветеринардык жол-жоболор белгиленген тартипте ыйгарым укуктуу адистер тарабынан жүргүзүлөт.",
+
+inspectionButton:
+  "ТЕКШЕРҮҮНҮ СУРОО",
+
+controlWeightTitle:
+  "КОНТРОЛДУК САЛМАК",
+
+controlWeightText:
+  "Контролдук таразага тартылганга чейин лоттун карточкасындагы салмак алдын ала болушу мүмкүн. Акыркы салмак жана эсептешүү тартиби Фермер менен Сатып алуучу тарабынан келишимде белгиленет.",
+
+freeLotTitle:
+  "ЛОТТУ ЖАЙГАШТЫРУУ — АКЫСЫЗ",
+
+freeLotText:
+  "Фермер мал партиясын AGROMALга акысыз жана милдеттенмесиз жайгаштыра алат. Ал каалаган учурда малды өз алдынча сата алат же башка сатуу ыкмасын тандай алат. Эгер лот сатылып кеткен болсо — AGROMALга билдирүү жетиштүү.",
+
+serviceFeeTitle:
+  "AGROMAL КЫЗМАТЫ — 4%",
+
+serviceFeeText:
+  "Лот брондолгондо бүтүмдүн суммасынан 4% сервистик төлөм алынат. AGROMAL өзүнүн регламенти боюнча лотту текшерип, бүтүмгө жана жүктөөгө чейин зарыл процедураларды координациялайт.",
+
+serviceFeeSelfCheck:
+  "Өз алдынча текшергиңиз келеби? Өзүңүз келип же өкүлүңүздү жөнөтө аласыз.",
+
+freeLotShort:
+  "Фермер үчүн лотту жайгаштыруу — акысыз жана аны эч нерсеге милдеттендирбейт.",
+
+farmerPriceTitle:
+  "ФЕРМЕРДИН БААСЫ",
+
+farmerPriceText:
+  "Фермердин баасы лот жайгаштырылганда бекитилет. Акыркы эсептешүүнүн шарттарын тараптар бүтүмдүн келишиминде аныкташат.",
+
+footerLegalNew1:
+  "AGROMAL — айыл чарба жаныбарларынын Жеткирүүчүлөрү менен Сатып алуучуларынын өз ара аракеттенүүсү үчүн көз карандысыз маалыматтык-техникалык B2B-платформа.",
+
+footerLegalNew2:
+  "AGROMAL жаныбарлардын сатуучусу, сатып алуучусу, ээси, сактоочусу же ташуучусу болуп саналбайт жана товар үчүн төлөм катары акча каражаттарын кабыл албайт.",
+
+footerLegalNew3:
+  "Сатып алуу-сатуу келишими түздөн-түз Жеткирүүчү менен Сатып алуучунун ортосунда түзүлөт. Жаныбарлар үчүн эсептешүү түздөн-түз бүтүмдүн тараптарынын ортосунда жүргүзүлөт.",
+
+footerLegalNew4:
+  "AGROMALдын талаадагы кароосу жана верификациясы милдеттүү ветеринардык тариздөөнү алмаштырбайт.",
+
+footerLegalNew5:
+  "Платформанын оператору: ИП [Аты-жөнү].",
+
+lotPlacementRules:
+  "ЛОТТОРДУ ЖАЙГАШТЫРУУ ЭРЕЖЕЛЕРИ",
+
+saleContract:
+  "САТУУ-САТЫП АЛУУ КЕЛИШИМИ",
     formulaMain:
       "БИР ЛОТ. БИР БАА. БИР КЕЛИШИМ.",
 
     formulaNote:
-      "Соодалашуу жок. Ашыкча ортомчулар жок. Малды өз балансына сатып алуу жок.",
+      "Соодалашуу жок. Фермер үчүн милдеттенме жок. AGROMAL малды өз балансына сатып албайт.",
 
     principlesTitle:
       "ПЛАТФОРМАНЫН ИШТӨӨ ПРИНЦИБИ",
 
     principle1:
-      "Фермер өзүнүн таза баасын айтат.",
+      "Фермер санын жана өзүнүн баасын бекитет.",
 
     principle2:
-      "AGROMAL лотту текшерет, жаныбарлардын идентификациясын ырастайт жана соода сунушун түзөт.",
+      "AGROMAL берилген маалыматтарды, жаныбарлардын идентификациясын верификациялап жана лоттун карточкасын түзөт.",
 
     principle3:
-      "Сатып алуучу алдын ала белгилүү баада текшерилген көлөмдү алат. Түздөн-түз фермерге төлөйт.",
+      "Сатып алуучу лотту изилдеп чыгып, зарыл болсо кошумча текшерүүнү талап кыла алат.",
 
     principle4:
-      "Фермер өз наркынын 100%ын чарбанын дарбазасынан СООДАЛАШУУСУЗ алат.",
+      "Сатып алуу-сатуу келишими түздөн-түз Фермер менен Сатып алуучунун ортосунда түзүлөт. Эсептешүү тараптардын ортосунда түз жүргүзүлөт.",
 
     principle5:
-      "Туруктуу сервистик төлөм иш жүзүндө аяктаган бүтүм үчүн гана алынат.",
+      "AGROMAL иш жүзүндө аяктаган бүтүм үчүн гана 4% сервистик төлөм алат.",
 
     /* FEATURES */
 
     featureVerifiedLot:
-      "ТЕКШЕРИЛГЕН ЛОТ",
+      "ВЕРИФИКАЦИЯДАН ӨТКӨН ЛОТ",
 
     featureVerifiedLotText:
-      "Ар бир мал партиясын идентификациялоо, ветеринардык текшерүү жана фото-видео каттоо.",
+      "Идентификация, зарыл болгон учурда талаа кароосу жана партиянын фото-видео каттоосу.",
 
     featureFullSupport:
-      "ТОЛУК КОШТОП ЖҮРҮҮ",
+      "БҮТҮМДҮ КООРДИНАЦИЯЛОО",
 
     featureFullSupportText:
-      "Ветеринардык-санитардык документтер жана бүтүмдөрдү юридикалык тариздөө.",
+      "Тараптардын өз ара аракеттенүүсүн уюштуруу жана зарыл процедураларды координациялоо.",
 
     featureDirectB2B:
-      "ТҮЗ B2B-КЕЛИШИМДЕР",
+      "ТҮЗ B2B-БҮТҮМДӨР",
 
     featureDirectB2BText:
-      "Ачык шарттар, белгиленген баа, ортомчуларсыз жана жашыруун комиссияларсыз.",
+      "Ачык шарттар, алдын ала макулдашылган баа жана тараптардын түз эсептешүүсү.",
 
     /* SYSTEMS */
 
     kyrgyzEmblem:
       "",
-        regionBatken: "Баткен облусу",
-        regionJalalAbad: "Жалал-Абад облусу",
-        regionIssykKul: "Ысык-Көл облусу",
-        regionNaryn: "Нарын облусу",
-        regionOsh: "Ош облусу",
-        regionTalas: "Талас облусу",
-        regionChuy: "Чүй облусу",
+
+    regionBatken:
+      "Баткен облусу",
+
+    regionJalalAbad:
+      "Жалал-Абад облусу",
+
+    regionIssykKul:
+      "Ысык-Көл облусу",
+
+    regionNaryn:
+      "Нарын облусу",
+
+    regionOsh:
+      "Ош облусу",
+
+    regionTalas:
+      "Талас облусу",
+
+    regionChuy:
+      "Чүй облусу",
+
     tunduk:
       "ТҮНДҮК",
 
@@ -1242,6 +1569,21 @@ lotImageRemove:
 
     passwordPlaceholder:
       "Кирүү сырсөзүн киргизиңиз",
+
+    currencyKgs:
+      "Сом",
+
+    currencyKzt:
+      "Теңге",
+
+    currencyRub:
+      "Рубль",
+
+    currencyEur:
+      "Евро",
+
+    currencyUsd:
+      "Доллар",
 
     passwordAria:
       "Кирүү сырсөзү",
@@ -1301,11 +1643,22 @@ lotImageRemove:
 
     supplierAccessTitle:
       "ЛОТТОРДУ ЖАЙГАШТЫРУУ ЖАНА ЖАБДУУ",
-    currencyKgs: "Сом",
-currencyKzt: "Теңге",
-currencyRub: "Рубль",
-currencyEur: "Евро",
-currencyUsd: "Доллар",
+
+    currencyKgs:
+      "Сом",
+
+    currencyKzt:
+      "Теңге",
+
+    currencyRub:
+      "Рубль",
+
+    currencyEur:
+      "Евро",
+
+    currencyUsd:
+      "Доллар",
+
     supplierAccessText:
       "Фермердик чарбалардан жана платформанын талаа инспекторлорунан малдын дүң партияларын акысыз жайгаштыруу үчүн өтүнмөлөрдү кабыл алуу.",
 
@@ -1644,7 +1997,7 @@ currencyUsd: "Доллар",
       "ЖАБУУ",
 
     bookLot:
-  "⚖️ ЛОТТУ\nБРОНДОО",
+      "⚖️ ЛОТТУ\nБРОНДОО",
 
     whatsapp:
       "WHATSAPP",
@@ -1729,26 +2082,28 @@ currencyUsd: "Доллар",
 
     bookingConfigMissing:
       "Google Sheets өтүнмө кызматынын дареги жөндөлгөн эмес. assets/js/config.js ичиндеги bookingAppsScriptUrl талаасын толтуруңуз.",
+
     batken:
-  "Баткен облусу",
+      "Баткен облусу",
 
-jalal_abad:
-  "Жалал-Абад облусу",
+    jalal_abad:
+      "Жалал-Абад облусу",
 
-issyk_kul:
-  "Ысык-Көл облусу",
+    issyk_kul:
+      "Ысык-Көл облусу",
 
-naryn:
-  "Нарын облусу",
+    naryn:
+      "Нарын облусу",
 
-osh:
-  "Ош облусу",
+    osh:
+      "Ош облусу",
 
-talas:
-  "Талас облусу",
+    talas:
+      "Талас облусу",
 
-chuy:
-  "Чүй облусу",
+    chuy:
+      "Чүй облусу",
+
     bookingServiceUnavailable:
       "Google Sheets өтүнмө кызматына туташуу мүмкүн болгон жок. Apps Script URL, Web App жарыялоосу жана CORS'ту текшериңиз.",
 
@@ -1879,17 +2234,19 @@ chuy:
 
     block:
       "БӨГӨТТӨӨ",
+
     lotImageInvalid:
-  "Сүрөттү иштетүү мүмкүн болгон жок.",
+      "Сүрөттү иштетүү мүмкүн болгон жок.",
 
-lotImageInvalidType:
-  "JPG, PNG же WebP гана жүктөөгө болот.",
+    lotImageInvalidType:
+      "JPG, PNG же WebP гана жүктөөгө болот.",
 
-lotImageTooLarge:
-  "Сүрөттүн көлөмү 5 МБдан ашпашы керек.",
+    lotImageTooLarge:
+      "Сүрөттүн көлөмү 5 МБдан ашпашы керек.",
 
-lotImageProcessingFailed:
-  "Сүрөттү даярдоо мүмкүн болгон жок. Башка файлды байкап көрүңүз.",
+    lotImageProcessingFailed:
+      "Сүрөттү даярдоо мүмкүн болгон жок. Башка файлды байкап көрүңүз.",
+
     unblock:
       "БӨГӨТТӨН ЧЫГАРУУ",
 
@@ -2035,6 +2392,153 @@ lotImageProcessingFailed:
     privacySection12:
       "12. Оператордун байланыштары",
 
+    privacyIntro:
+      "Бул Саясат AGROMAL.KG санариптик B2B-платформасынын колдонуучуларынын жеке жана коммерциялык маалыматтарын иштетүүнүн жана коргоонун тартибин аныктайт.",
+
+    privacyOperator:
+      "Платформанын оператору: ИП [Аты-жөнү].",
+
+    privacyGeneralText:
+      "AGROMAL колдонуучулар тарабынан берилген маалыматтарды платформанын иштеши, катышуучуларды верификациялоо, B2B-лотторду түзүү жана коштоо, Жеткирүүчүлөр менен Сатып алуучулардын байланышын камсыз кылуу жана платформанын иш шарттарында каралган башка функцияларды аткаруу үчүн гана колдонот.",
+
+    privacyGeneralText2:
+      "Маалыматтарды иштетүү Кыргыз Республикасынын колдонуудагы мыйзамдарына, анын ичинде Кыргыз Республикасынын Санариптик кодексинин жоболоруна ылайык жүргүзүлөт.",
+
+    privacyDataIntro:
+      "Колдонуучунун түрүнө жараша төмөнкү маалыматтар иштетилиши мүмкүн:",
+
+    privacyData1:
+      "аты-жөнү жана байланыш маалыматтары;",
+
+    privacyData2:
+      "уюмдун маалыматтары жана ИНН;",
+
+    privacyData3:
+      "фермердик чарба же ишкана жөнүндө маалыматтар;",
+
+    privacyData4:
+      "B2B-верификация үчүн зарыл болгон маалыматтар;",
+
+    privacyData5:
+      "сунушталган же суралган лоттор жөнүндө маалымат;",
+
+    privacyData6:
+      "жаныбарлардын сүрөттөрү жана видеоматериалдары;",
+
+    privacyData7:
+      "жаныбарларды идентификациялоо жана коштомо документтер жөнүндө маалыматтар;",
+
+    privacyData8:
+      "талаа инспекторлорунун ишин аткаруу үчүн зарыл болгон маалыматтар;",
+
+    privacyData9:
+      "платформанын иштеши үчүн зарыл болгон техникалык маалыматтар.",
+
+    privacyDataFinal:
+      "AGROMAL тиешелүү иштетүү максаты үчүн зарыл болбогон маалыматтарды сурабайт.",
+
+    privacyPurposesIntro:
+      "Маалыматтар төмөнкү максаттарда колдонулушу мүмкүн:",
+
+    privacyPurpose1:
+      "катышуучуларды каттоо жана идентификациялоо;",
+
+    privacyPurpose2:
+      "B2B-верификация;",
+
+    privacyPurpose3:
+      "лотторду жайгаштыруу жана текшерүү;",
+
+    privacyPurpose4:
+      "Жеткирүүчү менен Сатып алуучунун байланышын камсыз кылуу;",
+
+    privacyPurpose5:
+      "лотторду ветеринардык жана документтик коштоо;",
+
+    privacyPurpose6:
+      "талаа инспекторлорунун ишин уюштуруу;",
+
+    privacyPurpose7:
+      "платформанын коопсуздугун камсыз кылуу;",
+
+    privacyPurpose8:
+      "колдонуучулардын кайрылууларын иштетүү;",
+
+    privacyPurpose9:
+      "Кыргыз Республикасынын мыйзамдарынын талаптарын аткаруу.",
+
+    privacyCommercialText:
+      "Колдонуучулардын коммерциялык маалыматтары, анын ичинде көлөмдөр, баалар, байланыш маалыматтары, чарбанын жайгашкан жери жана жеткирүү шарттары тиешелүү негизсиз же колдонуучунун макулдугусуз ачык жеткиликтүүлүктө жарыяланбайт.",
+
+    privacyCommercialText2:
+      "Ачык демонстрациялык жана архивдик лоттордо жеке маалыматтан ажыратылган же өзгөртүлгөн маалыматтар болушу мүмкүн жана алар бүтүм түзүү үчүн актуалдуу сунуш катары кабыл алынбашы керек.",
+
+    privacyCommercialText3:
+      "Актуалдуу коммерциялык маалыматтар платформанын белгиленген жеткиликтүүлүк эрежелерине ылайык анын катышуучуларына гана жеткиликтүү.",
+
+    privacySecurityText:
+      "AGROMAL маалыматтарды мыйзамсыз жеткиликтүүлүктөн, өзгөртүүдөн, жоготуудан, ачыкка чыгаруудан жана башка мыйзамсыз колдонуудан коргоо үчүн акылга сыярлык уюштуруучулук жана техникалык чараларды көрөт.",
+
+    privacySecurityText2:
+      "Кызматкерлердин жана тартылган адистердин маалыматтарга жеткиликтүүлүгү алардын функцияларын аткаруу үчүн зарыл болгон көлөмдө гана берилет.",
+
+    privacySecurityText3:
+      "AGROMAL маалыматты бардык мүмкүн болгон коркунучтардан абсолюттук коргоого кепилдик бербейт, бирок өз жоопкерчилигинин чегинде зарыл коопсуздук чараларын көрөт.",
+
+    privacyTransferText:
+      "AGROMAL колдонуучулардын жеке маалыматтарын үчүнчү жактарга сатпайт.",
+
+    privacyTransferText2:
+      "Айрым маалыматтар бүтүмдүн катышуучусуна, тартылган адиске же башка жакка платформанын тиешелүү функциясын аткаруу, келишимдик милдеттенмелерди аткаруу үчүн зарыл болгон көлөмдө же Кыргыз Республикасынын мыйзамдарында каралган учурларда гана берилиши мүмкүн.",
+
+    privacyMediaIntro:
+      "Жаныбарлардын сүрөттөрү жана видеожазуулары төмөнкү максаттарда колдонулушу мүмкүн:",
+
+    privacyMedia1:
+      "лотту верификациялоо;",
+
+    privacyMedia2:
+      "анын мүнөздөмөлөрүн ырастоо;",
+
+    privacyMedia3:
+      "соода сунушун түзүү;",
+
+    privacyMedia4:
+      "потенциалдуу Сатып алуучуга маалымат берүү.",
+
+    privacyMediaText:
+      "Материалдарды ачык жайгаштыруу белгиленген жеткиликтүүлүк жана купуялуулук режимин эске алуу менен жүргүзүлөт.",
+
+    privacyMessengerText:
+      "Колдонуучу AGROMALга платформада каралган байланыш каналдары, анын ичинде мессенжерлер аркылуу маалымат бере алат.",
+
+    privacyMessengerText2:
+      "Мындай жол менен алынган маалыматтар ушул Саясатка жана колдонулуучу мыйзамдарга ылайык иштетилет.",
+
+    privacyMessengerText3:
+      "AGROMAL тышкы сервистердин маалыматтык инфраструктурасынын коопсуздугу боюнча өзүнүн кепилдиктерин бул сервистерге жайылтпайт.",
+
+    privacyRetentionText:
+      "Маалыматтар аларды иштетүүнүн максаттарын аткаруу, платформанын иштеши жана милдеттенмелерди аткаруу үчүн зарыл болгон мөөнөттө, ошондой эле Кыргыз Республикасынын мыйзамдары боюнча андан ары сактоо талап кылынган учурларда сакталат.",
+
+    privacyRightsText:
+      "Колдонуучу өз маалыматтарын иштетүү, берилген маалыматтарды тактоо жана маалыматтарды иштетүүгө байланыштуу башка маселелер боюнча Операторго Кыргыз Республикасынын колдонуудагы мыйзамдарында белгиленген тартипте кайрыла алат.",
+
+    privacyChangesText:
+      "AGROMAL мыйзамдар, платформанын функционалдуулугу же маалыматтарды иштетүү тартиби өзгөргөн учурда ушул Саясатты жаңыртууга укуктуу.",
+
+    privacyChangesText2:
+      "Саясаттын актуалдуу версиясы AGROMAL.KG сайтында жайгаштырылат.",
+
+    privacyContactsOperator:
+      "Оператор: ИП [Аты-жөнү]",
+
+    privacyContactsSite:
+      "Сайт: agromal.kg",
+
+    privacyContactsContact:
+      "Байланыш: [телефон / e-mail]",
+
     privacyBack:
       "← БАШКЫ БЕТКЕ КАЙТУУ",
 
@@ -2097,10 +2601,10 @@ lotImageProcessingFailed:
       "PRIVATE DIGITAL PLATFORM",
 
     railMinimumVolume:
-      "MINIMUM SESSION VOLUME",
+      "MINIMUM LOT VALUE",
 
     railMinimumValue:
-      "FROM 700 000 KGS",
+      "FROM 800 000 KGS",
 
     railVerifiedApproach:
       "VERIFIED APPROACH",
@@ -2109,7 +2613,7 @@ lotImageProcessingFailed:
       "DIRECT B2B DEALS",
 
     railFullSupport:
-      "FULL SUPPORT",
+      "DEAL COORDINATION",
 
     railSecurity:
       "SECURITY & CONFIDENTIALITY",
@@ -2129,7 +2633,7 @@ lotImageProcessingFailed:
       "Digital infrastructure for wholesale livestock procurement.",
 
     heroText:
-      "turns a farmer’s offering into a verified wholesale lot with animal identification, veterinary inspection, and photo-video documentation — and directly connects it with a professional buyer.",
+      "AGROMAL turns a farmer’s offering into a structured wholesale lot with animal identification, field verification, and photo-video documentation — and connects it with a professional buyer.",
 
     formulaLabel:
       "",
@@ -2138,25 +2642,25 @@ lotImageProcessingFailed:
       "ONE LOT. ONE PRICE. ONE DEAL.",
 
     formulaNote:
-      "No haggling. No unnecessary intermediaries. No livestock purchase onto our balance sheet.",
+      "No haggling. No obligations for the farmer. No livestock purchase onto AGROMAL’s balance sheet.",
 
     principlesTitle:
       "HOW THE PLATFORM WORKS",
 
     principle1:
-      "The farmer states the net price.",
+      "The farmer fixes the quantity and price in advance.",
 
     principle2:
-      "AGROMAL verifies the lot, checks animal identification, and prepares the trading offer.",
+      "AGROMAL verifies the submitted data and animal identification and prepares the lot card.",
 
     principle3:
-      "The buyer receives verified volume at a pre-agreed price. Pays the farmer directly.",
+      "The buyer reviews the lot and may request an additional inspection if necessary.",
 
     principle4:
-      "The farmer receives 100% of the agreed value at the farm gate — NO HAGGLING.",
+      "The sale and purchase agreement is concluded directly between the Farmer and the Buyer. Payment for the livestock is made directly between the parties.",
 
     principle5:
-      "A fixed service fee is charged only on a completed transaction.",
+      "AGROMAL charges a 4% service fee only on a completed transaction.",
 
     /* FEATURES */
 
@@ -2164,19 +2668,19 @@ lotImageProcessingFailed:
       "VERIFIED LOT",
 
     featureVerifiedLotText:
-      "Identification, veterinary inspection, and photo-video documentation for every livestock batch.",
+      "Identification, field inspection when necessary, and photo-video documentation of the batch.",
 
     featureFullSupport:
-      "FULL SUPPORT",
+      "DEAL COORDINATION",
 
     featureFullSupportText:
-      "Veterinary and sanitary documentation and legal transaction support.",
+      "Organization of interaction between the parties and coordination of necessary procedures.",
 
     featureDirectB2B:
       "DIRECT B2B DEALS",
 
     featureDirectB2BText:
-      "Transparent terms, fixed pricing, no intermediaries, and no hidden commissions.",
+      "Transparent terms, a pre-agreed price, and direct settlement between the parties.",
 
     /* SYSTEMS */
 
@@ -2230,6 +2734,21 @@ lotImageProcessingFailed:
     passwordPlaceholder:
       "Enter access password",
 
+    currencyKgs:
+      "Kyrgyz Som",
+
+    currencyKzt:
+      "Kazakhstani Tenge",
+
+    currencyRub:
+      "Russian Ruble",
+
+    currencyEur:
+      "Euro",
+
+    currencyUsd:
+      "US Dollar",
+
     passwordAria:
       "Access password",
 
@@ -2244,7 +2763,71 @@ lotImageProcessingFailed:
 
     connecting:
       "CONNECTING…",
+    featureVerifiedLotDisclaimer:
+  "Verification reflects the results of the procedures performed and does not guarantee the absence of hidden diseases or other undisclosed circumstances.",
 
+inspectionTitle:
+  "CHECK THE LOT BEFORE PURCHASE",
+
+inspectionText:
+  "The buyer may visit personally, send a representative, request additional photo/video, or order an additional veterinary specialist visit through AGROMAL.",
+
+inspectionNote:
+  "Additional inspection is charged separately. Official veterinary procedures are performed by authorized specialists in accordance with the established procedure.",
+
+inspectionButton:
+  "REQUEST INSPECTION",
+
+controlWeightTitle:
+  "CONTROL WEIGHT",
+
+controlWeightText:
+  "The weight shown in the lot card may be preliminary until control weighing. The final weight and settlement procedure are determined by the Farmer and Buyer in the transaction agreement.",
+
+freeLotTitle:
+  "LOT PLACEMENT — FREE",
+
+freeLotText:
+  "A farmer may place a livestock batch on AGROMAL free of charge and without obligation. The farmer may independently sell the livestock at any time or choose another method of sale. If the lot has already been sold, it is sufficient to notify AGROMAL.",
+
+serviceFeeTitle:
+  "AGROMAL SERVICE — 4%",
+
+serviceFeeText:
+  "A 4% service fee of the transaction value is charged when the lot is reserved. AGROMAL verifies the lot according to its procedures and coordinates the necessary processes before the transaction and loading.",
+
+serviceFeeSelfCheck:
+  "Want to verify it yourself? You may visit personally or send your representative.",
+
+freeLotShort:
+  "Lot placement for the farmer is free and does not obligate the farmer to anything.",
+
+farmerPriceTitle:
+  "FARMER'S PRICE",
+
+farmerPriceText:
+  "The farmer's price is fixed when the lot is listed. The terms of the final settlement are determined by the parties in the transaction agreement.",
+
+footerLegalNew1:
+  "AGROMAL is an independent information and technical B2B platform for interaction between Suppliers and Buyers of agricultural animals.",
+
+footerLegalNew2:
+  "AGROMAL is not the seller, buyer, owner, custodian, or carrier of animals and does not accept payment for the goods.",
+
+footerLegalNew3:
+  "The sale and purchase agreement is concluded directly between the Supplier and the Buyer. Payment for the animals is made directly between the parties to the transaction.",
+
+footerLegalNew4:
+  "AGROMAL field inspection and verification do not replace mandatory veterinary procedures.",
+
+footerLegalNew5:
+  "Platform operator: Sole proprietor [Full Name].",
+
+lotPlacementRules:
+  "LOT PLACEMENT RULES",
+
+saleContract:
+  "SALE AND PURCHASE AGREEMENT",
     loginDenied:
       "Access denied. Check the organization identifier and password.",
 
@@ -2302,13 +2885,28 @@ lotImageProcessingFailed:
 
     supportPhone:
       "+996 (501) 09-59-50",
-    regionBatken: "Batken Region",
-    regionJalalAbad: "Jalal-Abad Region",
-    regionIssykKul: "Issyk-Kul Region",
-    regionNaryn: "Naryn Region",
-    regionOsh: "Osh Region",
-    regionTalas: "Talas Region",
-    regionChuy: "Chuy Region",
+
+    regionBatken:
+      "Batken Region",
+
+    regionJalalAbad:
+      "Jalal-Abad Region",
+
+    regionIssykKul:
+      "Issyk-Kul Region",
+
+    regionNaryn:
+      "Naryn Region",
+
+    regionOsh:
+      "Osh Region",
+
+    regionTalas:
+      "Talas Region",
+
+    regionChuy:
+      "Chuy Region",
+
     trustTitle:
       "SECURITY.\nTRANSPARENCY.\nVERIFIED DEALS.",
 
@@ -2368,7 +2966,7 @@ lotImageProcessingFailed:
     /* PUBLIC LOT 1 */
 
     publicLot1Animal:
-    "Photo and video available after registration",
+      "Photo and video available after registration",
 
     publicLot1Id:
       "[ LOT #00101 | CATTLE — BULLS ]",
@@ -2398,14 +2996,16 @@ lotImageProcessingFailed:
 
     publicLot2Name:
       "Cows / Swiss cattle (large wholesale / minced-meat raw material for processing plants)",
+
     lotImage:
-  "LOT PHOTO",
+      "LOT PHOTO",
 
-lotImageHint:
-  "JPG, PNG or WebP. Maximum 5 MB.",
+    lotImageHint:
+      "JPG, PNG or WebP. Maximum 5 MB.",
 
-lotImageRemove:
-  "REMOVE PHOTO",
+    lotImageRemove:
+      "REMOVE PHOTO",
+
     publicLot2Volume:
       "18 head",
 
@@ -2431,17 +3031,19 @@ lotImageRemove:
 
     publicLot3Volume:
       "220 head",
+
     lotImageInvalid:
-  "The photo could not be processed.",
+      "The photo could not be processed.",
 
-lotImageInvalidType:
-  "Only JPG, PNG or WebP images are allowed.",
+    lotImageInvalidType:
+      "Only JPG, PNG or WebP images are allowed.",
 
-lotImageTooLarge:
-  "The photo must not exceed 5 MB.",
+    lotImageTooLarge:
+      "The photo must not exceed 5 MB.",
 
-lotImageProcessingFailed:
-  "The photo could not be processed. Try another file.",
+    lotImageProcessingFailed:
+      "The photo could not be processed. Try another file.",
+
     publicLot3Region:
       "Naryn Region, Kochkor District",
 
@@ -2533,11 +3135,7 @@ lotImageProcessingFailed:
 
     filterRegion:
       "REGION",
-    currencyKgs: "Kyrgyz Som",
-currencyKzt: "Kazakhstani Tenge",
-currencyRub: "Russian Ruble",
-currencyEur: "Euro",
-currencyUsd: "US Dollar",
+
     filterStatus:
       "STATUS",
 
@@ -2654,7 +3252,7 @@ currencyUsd: "US Dollar",
       "CLOSE",
 
     bookLot:
-  "⚖️ RESERVE\nLOT",
+      "⚖️ RESERVE\nLOT",
 
     whatsapp:
       "WHATSAPP",
@@ -2760,26 +3358,28 @@ currencyUsd: "US Dollar",
 
     bookingRequests:
       "RESERVATION REQUESTS",
-batken:
-  "Batken Region",
 
-jalal_abad:
-  "Jalal-Abad Region",
+    batken:
+      "Batken Region",
 
-issyk_kul:
-  "Issyk-Kul Region",
+    jalal_abad:
+      "Jalal-Abad Region",
 
-naryn:
-  "Naryn Region",
+    issyk_kul:
+      "Issyk-Kul Region",
 
-osh:
-  "Osh Region",
+    naryn:
+      "Naryn Region",
 
-talas:
-  "Talas Region",
+    osh:
+      "Osh Region",
 
-chuy:
-  "Chuy Region",
+    talas:
+      "Talas Region",
+
+    chuy:
+      "Chuy Region",
+
     bookingNumber:
       "REQUEST",
 
@@ -3035,6 +3635,153 @@ chuy:
     privacySection12:
       "12. Operator Contacts",
 
+    privacyIntro:
+      "This Policy defines the procedure for processing and protecting the personal and commercial data of users of the AGROMAL.KG digital B2B platform.",
+
+    privacyOperator:
+      "Platform operator: Sole proprietor [Full Name].",
+
+    privacyGeneralText:
+      "AGROMAL uses data provided by users exclusively for platform operation, participant verification, creation and support of B2B lots, communication between Suppliers and Buyers, and other functions provided for by the platform's operating terms.",
+
+    privacyGeneralText2:
+      "Data processing is carried out in accordance with the applicable legislation of the Kyrgyz Republic, including the provisions of the Digital Code of the Kyrgyz Republic.",
+
+    privacyDataIntro:
+      "Depending on the type of user, the following data may be processed:",
+
+    privacyData1:
+      "name and contact details;",
+
+    privacyData2:
+      "organization details and TIN;",
+
+    privacyData3:
+      "information about a farm or enterprise;",
+
+    privacyData4:
+      "data required for B2B verification;",
+
+    privacyData5:
+      "information about offered or requested lots;",
+
+    privacyData6:
+      "photographs and video materials of animals;",
+
+    privacyData7:
+      "animal identification data and accompanying documents;",
+
+    privacyData8:
+      "field inspector data required to perform their work;",
+
+    privacyData9:
+      "technical data required for the operation of the platform.",
+
+    privacyDataFinal:
+      "AGROMAL does not request data that is not necessary for the relevant processing purpose.",
+
+    privacyPurposesIntro:
+      "Data may be used for:",
+
+    privacyPurpose1:
+      "registration and identification of participants;",
+
+    privacyPurpose2:
+      "B2B verification;",
+
+    privacyPurpose3:
+      "publication and verification of lots;",
+
+    privacyPurpose4:
+      "communication between the Supplier and the Buyer;",
+
+    privacyPurpose5:
+      "veterinary and document support for lots;",
+
+    privacyPurpose6:
+      "organization of field inspector activities;",
+
+    privacyPurpose7:
+      "platform security;",
+
+    privacyPurpose8:
+      "processing user requests;",
+
+    privacyPurpose9:
+      "compliance with the requirements of the legislation of the Kyrgyz Republic.",
+
+    privacyCommercialText:
+      "Users' commercial information, including volumes, prices, contact details, farm locations, and supply terms, is not publicly disclosed without an appropriate legal basis or the user's consent.",
+
+    privacyCommercialText2:
+      "Public demonstration and archived lots may contain anonymized or modified data and should not be treated as current offers for entering into a transaction.",
+
+    privacyCommercialText3:
+      "Current commercial data is available only to platform participants in accordance with the established access rules.",
+
+    privacySecurityText:
+      "AGROMAL takes reasonable organizational and technical measures to protect data from unauthorized access, alteration, loss, disclosure, and other unlawful use.",
+
+    privacySecurityText2:
+      "Employees and engaged specialists are granted access to data only to the extent necessary to perform their functions.",
+
+    privacySecurityText3:
+      "AGROMAL does not guarantee absolute protection of information against all possible threats, but takes the necessary security measures within the scope of its responsibility.",
+
+    privacyTransferText:
+      "AGROMAL does not sell users' personal data to third parties.",
+
+    privacyTransferText2:
+      "Certain data may be transferred directly to a transaction participant, an engaged specialist, or another person only to the extent necessary to perform the relevant platform function, fulfill contractual obligations, or where required by the legislation of the Kyrgyz Republic.",
+
+    privacyMediaIntro:
+      "Photographs and video recordings of animals may be used for:",
+
+    privacyMedia1:
+      "lot verification;",
+
+    privacyMedia2:
+      "confirmation of its characteristics;",
+
+    privacyMedia3:
+      "preparation of the trading offer;",
+
+    privacyMedia4:
+      "providing information to a potential Buyer.",
+
+    privacyMediaText:
+      "Public publication of materials is carried out taking into account the established access and confidentiality regime.",
+
+    privacyMessengerText:
+      "A user may provide information to AGROMAL through the communication channels provided by the platform, including messengers.",
+
+    privacyMessengerText2:
+      "Data received in this manner is processed in accordance with this Policy and applicable law.",
+
+    privacyMessengerText3:
+      "AGROMAL does not extend its own security guarantees to the information infrastructure of third-party services.",
+
+    privacyRetentionText:
+      "Data is stored for the period necessary to fulfill the purposes of processing, operate the platform, and perform obligations, as well as where further storage is required by the legislation of the Kyrgyz Republic.",
+
+    privacyRightsText:
+      "A user may contact the Operator regarding the processing of their data, clarification of the information provided, and other matters related to data processing in accordance with the procedure established by the applicable legislation of the Kyrgyz Republic.",
+
+    privacyChangesText:
+      "AGROMAL may update this Policy when legislation, platform functionality, or data processing procedures change.",
+
+    privacyChangesText2:
+      "The current version of the Policy is published on the AGROMAL.KG website.",
+
+    privacyContactsOperator:
+      "Operator: Sole proprietor [Full Name]",
+
+    privacyContactsSite:
+      "Website: agromal.kg",
+
+    privacyContactsContact:
+      "Contact: [phone / e-mail]",
+
     privacyBack:
       "← BACK HOME",
 
@@ -3189,7 +3936,7 @@ const dynamicTranslations = {
 
     YAKS:
       "ТОПОЗДОР",
-    
+
     BREEDING:
       "СЕЛЕКЦИЯ",
 

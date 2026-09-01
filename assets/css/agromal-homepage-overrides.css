@@ -353,7 +353,7 @@ body.homepage .hero-b2b-title {
   max-width: 34ch;
   margin: 0;
   color: #f2f3ef;
-    font-size: 24px;
+    font-size: 22px;
   font-weight: 500;
   line-height: 1.22;
   letter-spacing: -.01em;
@@ -3654,6 +3654,7 @@ body.homepage .hero-b2b-systems--center
 
   body.homepage .homepage-demo-lots {
     margin-top: 0 !important;
+    
   }
 
 }
@@ -4133,7 +4134,7 @@ body.homepage .brand__name {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-
+    
     display: flex;
     align-items: flex-start;
     gap: 7px;
@@ -4231,4 +4232,1346 @@ left: 3px;
     line-height: 1.05 !important;
     letter-spacing: .02em !important;
   }
+}
+/* =========================================================
+   RESTORE ORIGINAL COMPACT FEATURE CARD SIZE
+   Не растягиваем 3 основные карточки по высоте блока.
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .ref-feature-grid {
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: repeat(3, auto) !important;
+
+    align-content: start !important;
+    gap: 8px !important;
+  }
+
+  body.homepage .ref-feature {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 9px 11px 10px !important;
+    box-sizing: border-box !important;
+  }
+}
+/* =========================================================
+   AGROMAL — FINAL COMPACT LAYOUT
+   Не меняет размеры hero / terminal / lots.
+   ========================================================= */
+
+
+/* =========================================================
+   1. ORIGINAL COMPACT FEATURE CARDS
+   Три карточки справа от принципов.
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .hero-b2b-principles-wrap {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      206px;
+
+    gap: 14px;
+
+    align-items: start !important;
+
+    flex: 0 0 auto !important;
+  }
+
+  body.homepage .ref-feature-grid {
+    width: 206px !important;
+    min-width: 206px !important;
+    max-width: 206px !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto !important;
+
+    gap: 8px !important;
+
+    align-content: start !important;
+  }
+
+  body.homepage .ref-feature {
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 9px 11px 10px !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+  }
+
+  body.homepage .ref-feature__head {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    font-size: 8.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  body.homepage .ref-feature__head > span:first-child {
+    flex: 0 0 17px !important;
+
+    width: 17px !important;
+    min-width: 17px !important;
+    max-width: 17px !important;
+
+    height: 17px !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px !important;
+    line-height: 1 !important;
+  }
+
+  body.homepage .ref-feature__head > span:last-child {
+    min-width: 0 !important;
+
+    width: auto !important;
+    max-width: 100% !important;
+
+    display: block !important;
+
+    white-space: normal !important;
+
+    overflow: hidden !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+
+    line-height: 1.2 !important;
+  }
+
+  body.homepage .ref-feature p {
+    margin: 6px 0 0 !important;
+
+    color: #8b938d !important;
+
+    font-size: 8.5px !important;
+    line-height: 1.45 !important;
+
+    overflow: hidden !important;
+  }
+
+}
+
+
+/* =========================================================
+   2. DISCLAIMER
+   Такой же размер, как обычный текст карточки.
+   ========================================================= */
+
+body.homepage .ref-feature__disclaimer {
+  display: block !important;
+
+  margin-top: 6px !important;
+
+  color: #8b938d !important;
+
+  font-size: 8.5px !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+
+  letter-spacing: 0 !important;
+
+  overflow: hidden !important;
+
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+
+/* =========================================================
+   3. FOUR CLIENT INFORMATION CARDS
+   Desktop: 2 × 2
+   Все четыре абсолютно одинакового размера.
+   ========================================================= */
+
+body.homepage .homepage-client-info {
+  width: min(var(--agro-shell), calc(100% - 28px)) !important;
+
+  margin: 0 auto var(--agro-gap) !important;
+
+  min-width: 0;
+}
+
+
+body.homepage .homepage-buyer-info {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr)) !important;
+
+  grid-template-rows:
+    repeat(2, 108px) !important;
+
+  gap: 8px !important;
+
+  align-items: stretch !important;
+}
+
+
+body.homepage .homepage-info-card {
+  width: 100% !important;
+
+  height: 108px !important;
+  min-height: 108px !important;
+  max-height: 108px !important;
+
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding: 9px 10px !important;
+
+  border: 1px solid #262d28 !important;
+  border-radius: 4px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #121613,
+      #0c100e
+    ) !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   4. CARD HEADER
+   ========================================================= */
+
+body.homepage .homepage-info-card__head {
+  width: 100% !important;
+  min-width: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 6px !important;
+
+  flex: 0 0 auto !important;
+
+  overflow: hidden !important;
+}
+
+
+body.homepage .homepage-info-card__head strong {
+  min-width: 0 !important;
+  max-width: 100% !important;
+
+  color: #aeb6b0 !important;
+
+  font-size: 7.5px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+
+  letter-spacing: .055em !important;
+
+  text-transform: uppercase;
+
+  overflow: hidden !important;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   5. CARD ICON
+   ========================================================= */
+
+body.homepage .homepage-info-card__icon {
+  width: 15px !important;
+  height: 15px !important;
+
+  min-width: 15px !important;
+  max-width: 15px !important;
+
+  flex: 0 0 15px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #39433d !important;
+  border-radius: 50% !important;
+
+  color: #9aa19b !important;
+
+  font-size: 6.5px !important;
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+}
+
+
+/* =========================================================
+   6. MAIN CARD TEXT
+   ========================================================= */
+
+body.homepage .homepage-info-card > p {
+  min-width: 0 !important;
+
+  margin: 5px 0 0 !important;
+
+  color: #858e88 !important;
+
+  font-size: 7px !important;
+  line-height: 1.4 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   7. SECONDARY TEXT
+   ========================================================= */
+
+body.homepage .homepage-info-card__sub {
+  margin-top: 4px !important;
+
+  color: #969f99 !important;
+
+  font-size: 6.7px !important;
+  line-height: 1.35 !important;
+
+  overflow: hidden !important;
+}
+
+
+body.homepage .homepage-info-card__note {
+  display: block !important;
+
+  margin-top: 4px !important;
+
+  color: #626b64 !important;
+
+  font-size: 5.8px !important;
+  line-height: 1.3 !important;
+
+  overflow: hidden !important;
+
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+
+/* =========================================================
+   8. BUTTON
+   ========================================================= */
+
+body.homepage .homepage-info-card__button {
+  align-self: flex-start !important;
+
+  width: fit-content !important;
+
+  min-height: 21px !important;
+  height: 21px !important;
+
+  margin-top: auto !important;
+
+  padding: 3px 7px !important;
+
+  border: 1px solid #354139 !important;
+  border-radius: 4px !important;
+
+  color: #aeb6b0 !important;
+
+  background: rgba(255,255,255,.02) !important;
+
+  font-size: 6px !important;
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: .04em !important;
+
+  text-decoration: none !important;
+  text-transform: uppercase;
+
+  box-sizing: border-box !important;
+}
+
+
+body.homepage .homepage-info-card__button:hover {
+  border-color: #496052 !important;
+
+  color: #d8ddd9 !important;
+
+  background: rgba(255,255,255,.04) !important;
+}
+
+
+/* =========================================================
+   9. SERVICE CARD
+   ========================================================= */
+
+body.homepage .homepage-info-card--service {
+  border-color: rgba(63,138,93,.35) !important;
+}
+
+
+body.homepage .homepage-info-card--service
+.homepage-info-card__icon {
+  border-color: rgba(63,138,93,.5) !important;
+
+  color: #3f8a5d !important;
+}
+
+
+/* =========================================================
+   10. FARMER PRICE
+   Компактный блок, не увеличивает высоту hero.
+   ========================================================= */
+
+/* =========================================================
+   FARMER PRICE — COMPACT CTA
+   Отдельный горизонтальный блок между HERO и INFO CARDS
+   ========================================================= */
+
+body.homepage .homepage-farmer-price {
+  width: min(var(--agro-shell), calc(100% - 28px));
+  min-width: 0;
+
+  margin: 0 auto 8px;
+
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 10px 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(169, 144, 94, .28);
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(169, 144, 94, .045),
+      rgba(169, 144, 94, .018)
+    );
+
+  overflow: hidden;
+
+  transition:
+    border-color .18s ease,
+    background .18s ease,
+    transform .18s ease;
+}
+
+
+/* Вся левая часть */
+
+body.homepage .homepage-farmer-price__main {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* Значок */
+
+body.homepage .homepage-farmer-price__icon {
+  width: 28px;
+  height: 28px;
+
+  min-width: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(169, 144, 94, .32);
+  border-radius: 50%;
+
+  color: var(--agro-gold-bright);
+
+  background: rgba(169, 144, 94, .045);
+
+  font-size: 8px;
+  line-height: 1;
+}
+
+
+/* Текст */
+
+body.homepage .homepage-farmer-price__content {
+  min-width: 0;
+
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  column-gap: 9px;
+  row-gap: 2px;
+}
+
+
+body.homepage .homepage-farmer-price__content strong {
+  flex: 0 0 auto;
+
+  color: #c4b17f;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+
+body.homepage .homepage-farmer-price__content span {
+  min-width: 0;
+
+  color: #7f8982;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  line-height: 1.3;
+}
+
+
+/* Кнопка */
+
+body.homepage .homepage-farmer-price__action {
+  flex: 0 0 auto;
+
+  min-height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  border: 1px solid rgba(169, 144, 94, .34);
+  border-radius: 4px;
+
+  color: #b7aa88;
+
+  background: rgba(169, 144, 94, .035);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  line-height: 1;
+  letter-spacing: .08em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    border-color .16s ease,
+    color .16s ease,
+    background .16s ease,
+    transform .16s ease;
+}
+
+
+body.homepage .homepage-farmer-price__action span:last-child {
+  font-size: 12px;
+  line-height: 1;
+}
+
+
+body.homepage .homepage-farmer-price:hover {
+  border-color: rgba(169, 144, 94, .4);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(169, 144, 94, .06),
+      rgba(169, 144, 94, .022)
+    );
+}
+
+
+body.homepage .homepage-farmer-price__action:hover {
+  border-color: rgba(169, 144, 94, .58);
+
+  color: #ddd0a9;
+
+  background: rgba(169, 144, 94, .07);
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   FARMER PRICE — MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .homepage-farmer-price {
+    width: calc(100% - 20px);
+
+    min-height: 58px;
+
+    margin: 0 auto 8px;
+
+    gap: 10px;
+
+    padding: 9px 10px;
+
+    border-radius: 5px;
+  }
+
+
+  body.homepage .homepage-farmer-price__main {
+    gap: 8px;
+  }
+
+
+  body.homepage .homepage-farmer-price__icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+
+    font-size: 7px;
+  }
+
+
+  body.homepage .homepage-farmer-price__content {
+    display: grid;
+
+    gap: 2px;
+  }
+
+
+  body.homepage .homepage-farmer-price__content strong {
+    font-size: 7px;
+    line-height: 1.15;
+  }
+
+
+  body.homepage .homepage-farmer-price__content span {
+    font-size: 6.5px;
+    line-height: 1.3;
+  }
+
+
+  body.homepage .homepage-farmer-price__action {
+    min-height: 28px;
+
+    padding: 6px 8px;
+
+    font-size: 6px;
+  }
+
+
+  body.homepage .homepage-farmer-price__action span:last-child {
+    font-size: 10px;
+  }
+
+}
+/* =========================================================
+   FARMER PRICE — CENTERED INFORMATION BLOCK
+   ========================================================= */
+
+body.homepage .homepage-price-note {
+  width: min(var(--agro-shell), calc(100% - 28px)) !important;
+
+  min-height: 92px !important;
+
+  margin: 0 auto 10px !important;
+  padding: 14px 20px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(169,144,94,.28) !important;
+  border-radius: 6px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(169,144,94,.025) 0%,
+      rgba(169,144,94,.045) 50%,
+      rgba(169,144,94,.025) 100%
+    ) !important;
+
+  overflow: hidden !important;
+
+  text-align: center !important;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+body.homepage .homepage-price-note__icon {
+  width: 30px !important;
+  height: 30px !important;
+
+  min-width: 30px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin-right: 12px !important;
+
+  border: 1px solid rgba(169,144,94,.34) !important;
+  border-radius: 50% !important;
+
+  color: #ad9966 !important;
+
+  background: rgba(169,144,94,.045) !important;
+
+  font-size: 8px !important;
+  line-height: 1 !important;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+body.homepage .homepage-price-note__content {
+  min-width: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 5px !important;
+
+  text-align: center !important;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+body.homepage .homepage-price-note__content strong {
+  display: block !important;
+
+  color: #c0ae7c !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+
+  line-height: 1.2 !important;
+
+  letter-spacing: .11em !important;
+
+  text-transform: uppercase !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+body.homepage .homepage-price-note__content span {
+  display: block !important;
+
+  max-width: 900px !important;
+
+  color: #9aa29c !important;
+
+  font-size: 10px !important;
+  font-weight: 500 !important;
+
+  line-height: 1.5 !important;
+
+  letter-spacing: .005em !important;
+
+  text-align: center !important;
+
+  overflow: visible !important;
+}
+
+
+/* =========================================================
+   DECORATIVE GOLD LINE
+   ========================================================= */
+
+body.homepage .homepage-price-note::before,
+body.homepage .homepage-price-note::after {
+  content: "";
+
+  width: 42px;
+  height: 1px;
+
+  flex: 0 0 42px;
+
+  background: rgba(169,144,94,.28);
+}
+
+
+body.homepage .homepage-price-note::before {
+  margin-right: 12px;
+}
+
+
+body.homepage .homepage-price-note::after {
+  margin-left: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .homepage-price-note {
+    width: calc(100% - 20px) !important;
+
+    min-height: 78px !important;
+
+    margin: 0 auto 8px !important;
+
+    padding: 11px 12px !important;
+
+    display: flex !important;
+
+    gap: 0 !important;
+  }
+
+
+  body.homepage .homepage-price-note__icon {
+    width: 24px !important;
+    height: 24px !important;
+
+    min-width: 24px !important;
+
+    margin-right: 8px !important;
+
+    font-size: 6px !important;
+  }
+
+
+  body.homepage .homepage-price-note__content {
+    gap: 4px !important;
+  }
+
+
+  body.homepage .homepage-price-note__content strong {
+    font-size: 8.5px !important;
+
+    letter-spacing: .08em !important;
+  }
+
+
+  body.homepage .homepage-price-note__content span {
+    max-width: 100% !important;
+
+    font-size: 7px !important;
+
+    line-height: 1.45 !important;
+  }
+
+
+  body.homepage .homepage-price-note::before,
+  body.homepage .homepage-price-note::after {
+    display: none !important;
+  }
+
+}
+/* =========================================================
+   FARMER PRICE — DESKTOP SPACING
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .homepage-price-note {
+    width: min(var(--agro-shell), calc(100% - 28px)) !important;
+
+    min-height: 92px !important;
+
+    /* Отодвигаем от HERO сверху и от карточек снизу */
+    margin: 18px auto 18px !important;
+
+    padding: 14px 20px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(169,144,94,.28) !important;
+    border-radius: 6px !important;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(169,144,94,.025) 0%,
+        rgba(169,144,94,.045) 50%,
+        rgba(169,144,94,.025) 100%
+      ) !important;
+  }
+
+
+  /* Сам текст строго по центру блока */
+  body.homepage .homepage-price-note__content {
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 6px !important;
+
+    text-align: center !important;
+  }
+
+
+  body.homepage .homepage-price-note__content strong {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .11em !important;
+  }
+
+
+  body.homepage .homepage-price-note__content span {
+    max-width: 900px !important;
+
+    font-size: 10px !important;
+    line-height: 1.55 !important;
+
+    color: #9aa29c !important;
+
+    text-align: center !important;
+  }
+
+}
+/* =========================================================
+   HOMEPAGE INFO CARDS — DESKTOP READABILITY
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .homepage-info-card {
+    padding: 12px 13px !important;
+  }
+
+
+  /* Заголовки */
+
+  body.homepage .homepage-info-card__head strong {
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+    letter-spacing: .045em !important;
+  }
+
+
+  /* Иконки */
+
+  body.homepage .homepage-info-card__icon {
+    width: 18px !important;
+    height: 18px !important;
+
+    min-width: 18px !important;
+    max-width: 18px !important;
+
+    flex: 0 0 18px !important;
+
+    font-size: 7.5px !important;
+  }
+
+
+  /* Основной текст */
+
+  body.homepage .homepage-info-card > p {
+    margin-top: 7px !important;
+
+    font-size: 8.5px !important;
+    line-height: 1.5 !important;
+
+    color: #9aa39d !important;
+  }
+
+
+  /* Дополнительный текст */
+
+  body.homepage .homepage-info-card__sub {
+    margin-top: 6px !important;
+
+    font-size: 8px !important;
+    line-height: 1.45 !important;
+
+    color: #969f99 !important;
+  }
+
+
+  /* Примечание */
+
+  body.homepage .homepage-info-card__note {
+    margin-top: 6px !important;
+
+    font-size: 8px !important;
+    line-height: 1.4 !important;
+
+    color: #78817b !important;
+  }
+
+
+  /* Кнопка */
+
+  body.homepage .homepage-info-card__button {
+    min-height: 24px !important;
+    height: 24px !important;
+
+    padding: 4px 8px !important;
+
+    font-size: 7px !important;
+  }
+
+}
+@media (min-width: 768px) {
+
+  body.homepage .homepage-buyer-info {
+    grid-template-rows: repeat(2, 124px) !important;
+  }
+
+  body.homepage .homepage-info-card {
+    height: 124px !important;
+    min-height: 124px !important;
+    max-height: 124px !important;
+  }
+
+  
+}
+@media (min-width: 768px) {
+  body.homepage .homepage-info-card__button {
+    align-self: flex-end !important;
+    margin-top: auto !important;
+    margin-left: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  body.homepage .homepage-info-card__button {
+    margin-top: 8px !important;
+  }
+}
+@media (max-width: 767px) {
+  body.homepage .homepage-client-info {
+    margin-bottom: 0px !important;
+  }
+}
+@media (max-width: 767px) {
+  body.homepage .homepage-price-note {
+    margin-top: 10px !important;
+  }
+    body.homepage .homepage-info-card > p {
+    margin-top: 7px !important;
+
+    font-size: 6px !important;
+    line-height: 1.5 !important;
+
+    color: #9aa39d !important;
+  }
+  
+}
+/* =========================================================
+   MOBILE — CLIENT INFO CARDS
+   Сохраняем исходную сетку и расстояния.
+   Увеличиваем только высоту 4 карточек.
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .homepage-buyer-info {
+    grid-template-rows: repeat(2, 150px) !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  body.homepage .homepage-client-info .homepage-info-card {
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+    box-sizing: border-box !important;
+  }
+
+}
+/* =========================================================
+   DESKTOP — CLIENT INFO SPACING
+   Приближаем 4 карточки к соседним блокам
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .homepage-client-info {
+    margin-top: 0 !important;
+    margin-bottom: 0px !important;
+  }
+
+}
+@media (min-width: 768px) {
+  body.homepage .homepage-client-info {
+    margin-top: -6px !important;
+  }
+}
+/* =========================================================
+   DESKTOP — PRICE NOTE SPACING
+   Приближаем блок "ЦЕНА ФЕРМЕРА" к соседним блокам
+   ========================================================= */
+
+@media (min-width: 768px) {
+  body.homepage .homepage-price-note {
+    margin: 12px auto 20px !important;
+  }
+}
+/* =========================================================
+   MOBILE — CLIENT INFO CARDS
+   Размер зависит от ширины экрана
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .homepage-buyer-info {
+    grid-template-rows: repeat(2, minmax(clamp(125px, 36vw, 150px), auto)) !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  body.homepage .homepage-client-info .homepage-info-card {
+    height: auto !important;
+    min-height: clamp(125px, 36vw, 150px) !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+}
+/* =========================================================
+   DESKTOP — CLIENT INFO CARDS
+   Размер адаптируется к ширине экрана
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+  body.homepage .homepage-buyer-info {
+    grid-template-rows: repeat(
+      2,
+      minmax(clamp(118px, 8vw, 140px), auto)
+    ) !important;
+
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  body.homepage .homepage-client-info .homepage-info-card {
+    height: auto !important;
+    min-height: clamp(118px, 8vw, 140px) !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+}
+@media (min-width: 768px) {
+  body.homepage .hero__terminal .hero-assist {
+    margin-top: 25px !important;
+  }
+}
+/* =========================================================
+   DESKTOP — ACCESS CARDS
+   Немного увеличиваем карточки выбора доступа
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .hero__terminal .hero-access-card {
+    min-height: 136px !important;
+    padding: 14px 14px 25px !important;
+  }
+
+}
+/* =========================================================
+   DESKTOP — ACCESS CAPTION
+   Немного опускаем "Выберите тип доступа..."
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body.homepage .hero__terminal .hero-access__caption {
+    margin-top: 5px !important;
+    margin-bottom: 25px !important;
+  }
+
+}
+/* =========================================================
+   FARMER PRICE — REMOVE ICONS + DECORATIVE LINES
+   ========================================================= */
+
+body.homepage .homepage-farmer-price__icon,
+body.homepage .homepage-price-note__icon {
+  display: none !important;
+}
+
+body.homepage .homepage-price-note::before,
+body.homepage .homepage-price-note::after {
+  display: none !important;
+  content: none !important;
+}
+/* =========================================================
+   MOBILE — LEGAL DOCUMENT LINKS
+   Ссылки переносятся на следующие строки
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  body.homepage .homepage-legal__copyright {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px 10px !important;
+    margin-top: 10px !important;
+  }
+
+  body.homepage .homepage-legal__copyright a {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    font-size: 7px !important;
+    line-height: 1.3 !important;
+  }
+
+}
+/* =========================================================
+   MOBILE — CARD TEXT SCALE
+   320px  → текущий маленький размер
+   767px  → значительно крупнее
+   DESKTOP не затрагивается
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* Заголовок карточки */
+  body.homepage .homepage-info-card__head strong {
+    font-size: clamp(7px, 1.11vw + 3.45px, 8.5px) !important;
+  }
+
+  /* Основной текст */
+  body.homepage .homepage-info-card > p {
+    font-size: clamp(6px, 0.99vw + 2.85px, 8.5px) !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Дополнительный текст */
+  body.homepage .homepage-info-card__sub {
+    font-size: clamp(6px, 0.85vw + 3.25px, 8px) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Примечание */
+  body.homepage .homepage-info-card__note {
+    font-size: clamp(5.8px, 0.85vw + 3.15px, 8px) !important;
+    line-height: 1.4 !important;
+  }
+
+}
+/* =========================================================
+   MOBILE — FOOTER BRAND + DOCUMENT LINKS
+   Верхний юридический текст НЕ ТРОГАЕМ
+   AgroMal + документы располагаем горизонтально
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* AgroMal слева */
+  body.homepage .homepage-legal__brand {
+    display: inline-grid !important;
+    justify-items: start !important;
+    align-content: start !important;
+
+    margin-top: 10px !important;
+  }
+
+  /* Блок документов — справа */
+  body.homepage .homepage-legal__copyright {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    margin-top: 10px !important;
+
+    gap: 5px 9px !important;
+
+    text-align: right !important;
+  }
+
+  body.homepage .homepage-legal__copyright a {
+    display: inline-block !important;
+
+    width: auto !important;
+    margin: 0 !important;
+
+    white-space: nowrap !important;
+
+    font-size: 6.5px !important;
+    line-height: 1.3 !important;
+
+    text-align: right !important;
+  }
+
 }
