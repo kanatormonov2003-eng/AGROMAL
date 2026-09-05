@@ -402,7 +402,11 @@ const messages = {
 
     publicLot1Region:
       "Чуйская обл., Сокулукский р-н",
-
+    marketProblemLabel: "ПРОБЛЕМА, КОТОРУЮ AGROMAL РЕШАЕТ ✅",
+    marketProblemTitle: "Прямые закупки скота вместо рынка и лишних посреднических звеньев.",
+marketProblemFact: "В 2026 году животноводы Кыргызстана обозначили необходимость развития механизма прямой закупки скота вместо приобретения через рынки и посреднические услуги.",
+marketProblemSolution: "AGROMAL создаёт цифровую инфраструктуру для такого взаимодействия — напрямую соединяя фермеров с профессиональными закупщиками.",
+marketProblemSource: "📋 Источник: Служба антимонопольного регулирования при Министерстве экономики и коммерции Кыргызской Республики, 2026 г.",
     publicLot1Status:
       "ТОТАЛЬНО ВЫКУПЛЕНО",
 
@@ -1713,7 +1717,15 @@ saleContract:
 
     slaughterShipment:
       "ЛОТ ЭТ КОМБИНАТЫНА ЖӨНӨТҮЛДҮ",
+    marketProblemLabel: "AGROMAL ЧЕЧКЕН КӨЙГӨЙ",
 
+marketProblemTitle: "ТҮЗ МАЛ САТЫП АЛУУ ЖАНА АРТЫКЧА ОРТОМЧУЛАРДЫН ЖОЮЛУШУ",
+
+marketProblemFact: "Мал чарбасындагы рынок көптөн бери ортомчуларга, ачык эмес шарттарга жана фермер менен сатып алуучунун ортосундагы ажырымга көз каранды болуп келген.",
+
+marketProblemSolution: "AGROMAL фермерлер менен кесипкөй сатып алуучуларды түз байланыштырган санариптик инфраструктураны түзөт.",
+
+marketProblemSource: "Булак: Кыргызстандын агроөнөр жай рыногу боюнча ачык маалыматтар жана аналитикалык материалдар, 2026-ж.",
     contractBuyout:
       "ЛОТ КЕЛИШИМ БОЮНЧА САТЫП АЛЫНДЫ",
 
@@ -3525,7 +3537,15 @@ saleContract:
 
     statusNote:
       "ADDITIONAL STATUS TEXT",
+    marketProblemLabel: "THE PROBLEM AGROMAL SOLVES",
 
+marketProblemTitle: "DIRECT LIVESTOCK PROCUREMENT WITHOUT UNNECESSARY INTERMEDIARIES",
+
+marketProblemFact: "The livestock market has long depended on intermediaries, opaque terms, and a gap between farmers and buyers.",
+
+marketProblemSolution: "AGROMAL provides digital infrastructure that directly connects farmers with professional buyers.",
+
+marketProblemSource: "Source: open data and analytical materials on Kyrgyzstan's agricultural market, 2026.",
     actionNote:
       "DISABLED BUTTON TEXT",
 
