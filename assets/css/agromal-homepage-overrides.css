@@ -6096,3 +6096,58 @@ body.homepage > main .hero-trust__source {
     display: none !important;
   }
 }
+@media (min-width: 768px) {
+  body.homepage .homepage-buyer-info {
+    grid-template-rows: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  body.homepage .homepage-buyer-info {
+    grid-template-rows: auto !important;
+  }
+}
+@media (min-width: 768px) {
+  body.homepage .homepage-client-info {
+    width: min(var(--agro-shell), calc(100% - 28px)) !important;
+  }
+
+  body.homepage .homepage-buyer-info {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: 1fr !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+  }
+
+  body.homepage .homepage-info-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+}
+@media (min-width: 768px) {
+
+  body.homepage .homepage-buyer-info {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    grid-template-rows: 140px !important;
+
+    gap: 8px !important;
+
+    align-items: stretch !important;
+  }
+
+  body.homepage .homepage-info-card {
+    width: 100% !important;
+    height: 100% !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    box-sizing: border-box !important;
+  }
+
+}
